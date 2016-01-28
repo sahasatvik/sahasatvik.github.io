@@ -61,16 +61,20 @@
         position: relative;
         left: 20px;
     }    
+    
+    #logo {
+        position: relative;
+        height: 300px;           
+    }    
+    
 </style>
 
 <body>
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container">
-
-            <a id="logo-container" href="#" class="brand-logo center" style="font-family: Pacifico; font-size: 44px;">
+        <div class="nav-wrapper container">            
+            <a id="logo-container" href="#" class="brand-logo center" style="font-family: Pacifico; font-size: 44px;">                         
                 Satvik Saha
             </a>
-
             <ul id="slide-out" class="side-nav">
                 <li><a href="#!" id="moveright">First Sidebar Link</a></li>
                 <li><a href="#!" id="moveright">Second Sidebar Link</a></li>
@@ -100,7 +104,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#!" class="waves-effect" id="moveright">
+                                        <a href="http://sahasatvik.ddns.net:8000" class="waves-effect" id="moveright">
                                             <i class="icon-violin myicon"></i> Music
                                         </a>
                                     </li>
@@ -124,23 +128,15 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="section">
-            <div class="row">
-                Welcome to my website!
-            </div>
-        </div>
-    </div>
 
-    <div class="parallax-container z-depth-1">
+    <div class="parallax-container z-depth-1" style="height: 550px">
         <div class="section no-pad-bot">
-            <div class="container">
+            <div class="container">                
                 <br>
-                <br>
-                <br>
-                <br>
-                <h1 class="header center white-text text-lighten-2">
-                    ABCD
+                <h1 class="header center white-text text-lighten-2" id="pxhead">
+                    Welcome <a class="text-lighten-3" style="color: lightgrey;">to my world ...</a>        
+                    <hr>            
+                    <img src="assets/Flame.svg" id="logo"></img> 
                 </h1>
                 <div class="row center">
                     <h5 class="header col s12 light">
@@ -153,17 +149,23 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m6">
-            <div class="card blue-grey darken-1 large z-depth-5 waves-effect waves-teal waves-ripple">
+        <div class="col s12 m6" style="width: 100%">
+            <div class="card blue-grey darken-1 large z-depth-5 waves-effect waves-teal waves-ripple" style="height: 300px">
                 <div class="card-content white-text">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                        require little markup to use effectively.</p>
+                    <span class="card-title">Satvik Saha's Music Stream</span>                    		
+			        <p>Click on the button below for a continuous stream of classical music !</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">This is a link</a>
-                    <a href="#">This is a link</a>
+                    <a href="http://sahasatvik.ddns.net:8000">Music</a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="section">
+            <div class="row">
             </div>
         </div>
     </div>

@@ -5,10 +5,7 @@
  *
  * Made By MaterializeCSS.com
  */
-@font-face {
-    font-family: Pacifico;
-    src: url('font/Pacifico.ttf');
-}
+
 @font-face {
     font-family: Console;
     src: url('font/clacon.ttf');
@@ -48,7 +45,7 @@ body {
 }
 
 .card-title {
-    font-family: Daniel;
+    font-family: Pacifico;
 }
 .card-content {
     font-family: cursive;

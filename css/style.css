@@ -5,7 +5,18 @@
  *
  * Made By MaterializeCSS.com
  */
-
+@font-face {
+    font-family: Pacifico;
+    src: url('../font/Pacifico.ttf');
+    }
+@font-face {
+    font-family: Console;
+    src: url('../font/clacon.ttf');
+}
+@font-face {
+    font-family: Daniel;
+    src: url('../font/daniel.ttf');
+}
 nav a.button-collapse {
     float: left;
     position: relative;

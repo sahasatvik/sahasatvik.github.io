@@ -1,0 +1,11 @@
+.cube {
+    position: relative;
+    padding-top: 4pt; 
+    padding-left: 10pt; 
+    padding-right: 10pt;
+}
+
+.logo {
+    position: relative;
+    width: 100%;    
+}

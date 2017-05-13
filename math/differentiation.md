@@ -3,7 +3,35 @@
 
 For a function $x \mapsto f(x)$, its derivative $f'$ is given by
 
-$$ f' \;=\; \dfrac{\mathrm{d}}{\mathrm d x}f(x) \;=\; \lim_{h \to 0}\dfrac{f(x + h) - f(x)}{h} $$
+$$ f' \;=\; \dfrac{\mathrm{d}}{\mathrm d x}f(x) \;=\; \lim_{h \to 0}\dfrac{f(x + h) - f(x)}{h} \tag{1}$$
+
+## Computing Derivatives
+
+Let there be a function $f$ in the variable $x$ such that:
+
+$$ y \;=\; f(x) \tag{2}$$
+
+It follows that a change in the independent variable $x$ corresponds to a change in the dependent variable $y$. Let the changes in $x$ and $y$ be $\Delta x$ and $\Delta y$ respectively.
+
+$$
+\begin{align}
+y + \Delta y                 \;&=\;  f(x + \Delta x)                          \\
+\Delta y                     \;&=\;  f(x + \Delta x) - f(x) \tag{From (2)}    \\
+                                                                              \\
+\dfrac{\Delta y}{\Delta x}   \;&=\;  \dfrac{f(x + \Delta x) - f(x)}{\Delta x} \\
+\end{align}
+$$
+
+The above expression is simply the average rate of change in the value of $y$ with a change in $x$. In order to find the instantaneous rate of change of $y$ at some point $x$, we can reduce $\Delta x$ to a value approaching $0$. Thus, the derivative of $f$ is simply the limit of $\frac{\Delta y}{\Delta x}$ as $\Delta x$ approaches $0$.
+
+$$
+\dfrac{\mathrm{d}y}{\mathrm d x} 
+		\;=\; \lim_{\Delta x \to 0}\dfrac{\Delta y}{\Delta x} 
+		\;=\; \lim_{\Delta x \to 0}\dfrac{f(x + \Delta x) - f(x)}{\Delta x}
+		\tag{3}
+$$
+
+With a change in notation, this is precisely equation $(1)$.
 
 ## Some Basic Formulae for Computing Derivatives
 
@@ -14,34 +42,34 @@ $$ \dfrac{\mathrm{d}}{\mathrm d x}e^x \;=\; e^x $$
 ### Addition and Subtraction
 
 $$
-\begin{aligned}
+\begin{align}
 (f + g)'   \;&=\;   f' + g' \\
 (f - g)'   \;&=\;   f' - g'
-\end{aligned}
+\end{align}
 $$
 
 ### Multiplication and Division
 
 $$
-\begin{aligned}
+\begin{align}
 (f \cdot g)                  \;&=\;    f'g + gf'                     \\
 \left(\dfrac{f}{g}\right)'   \;&=\;    \dfrac{f'g - fg'}{g^2}
-\end{aligned}
+\end{align}
 $$
 
 ### Composition (Chain Rule)
 
 $$
-\begin{aligned}
+\begin{align}
 (f \circ g)'                             \;&=\;    (f' \circ g)(g')  \\
 \dfrac{\mathrm{d}}{\mathrm d x}f(g(x))   \;&=\;    f'(g(x))g'(x)
-\end{aligned}
+\end{align}
 $$
 
 ### Exponentials and Logarithms
 
 $$
-\begin{aligned}
+\begin{align}
 \dfrac{\mathrm{d}}{\mathrm d x}x^n \;&=\; nx^{n-1}                                        &
 \dfrac{\mathrm{d}}{\mathrm d x}\left(\dfrac{1}{x^n}\right) 
 												 \;&=\;    -\dfrac{m}{x^{m + 1}}                   \\
@@ -49,13 +77,13 @@ $$
 \dfrac{\mathrm{d}}{\mathrm d x}\log_a x  \;&=\;     \dfrac{1}{x\ln a}                      \\
 \dfrac{\mathrm{d}}{\mathrm d x}e^x       \;&=\;     e^x                                   &
 \dfrac{\mathrm{d}}{\mathrm d x}a^x       \;&=\;     a^x\ln a                               \\
-\end{aligned}
+\end{align}
 $$
 
 ### Trigonometric Functions
 
 $$
-\begin{aligned}
+\begin{align}
 \dfrac{\mathrm{d}}{\mathrm d x}\sin x       \;&=\;    \cos x                              &
 \dfrac{\mathrm{d}}{\mathrm d x}\sin^{-1}x   \;&=\;    \dfrac{1}{\sqrt{1 - x^2}}            \\
 \dfrac{\mathrm{d}}{\mathrm d x}\cos x       \;&=\;   -\sin x                              &
@@ -68,7 +96,7 @@ $$
 \dfrac{\mathrm{d}}{\mathrm d x}\csc^{-1}x   \;&=\;   -\dfrac{1}{x\sqrt{x^2 - 1}}           \\
 \dfrac{\mathrm{d}}{\mathrm d x}\cot x       \;&=\;   -\csc^2 x                            &
 \dfrac{\mathrm{d}}{\mathrm d x}\cot^{-1}x   \;&=\;   -\dfrac{1}{1 + x^2}                   \\
-\end{aligned}
+\end{align}
 $$
 
 ## Taylor Series
@@ -87,11 +115,11 @@ $$ \displaystyle\sum_{n=0}^{\infty} \dfrac{f^{(n)}(0)\,x^n}{n!} $$
 
 Thus, we have
 $$
-\begin{aligned}
+\begin{align}
 e^x                \;& =\;    1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \cdots    &x& \in \mathbb{R}  \\
 \dfrac{1}{1-x}     \;& =\;    1 + x + x^2 + x^3 + x^4 + \cdots                                        &x& \in (-1, 1)     \\
 \ln{(1 + x)}       \;& =\;    x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dfrac{x^4}{4} + \cdots           &x& \in \mathbb{R}  \\
 \sin x             \;& =\;    x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots        &x& \in \mathbb{R}  \\
 \cos x             \;& =\;    1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots        &x& \in \mathbb{R}  \\
-\end{aligned}
+\end{align}
 $$

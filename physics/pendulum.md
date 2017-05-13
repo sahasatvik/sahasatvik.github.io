@@ -5,11 +5,11 @@ This is an experiment to observe the variations in the time period of oscillatio
 
 We already know that given a simple pendulum of effective length $L$, its time period of oscillation $T$ is given by
 
-$$ T = 2\pi\sqrt{\dfrac{L}{g}} $$
+$$ T \;=\; 2\pi\sqrt{\dfrac{L}{g}}     \tag{1} $$
 
 Rearranging the equation to make $g$ (acceleration due to gravity) its subject, we have
 
-$$ g = 4\pi^2\dfrac{L}{T^2} $$
+$$ g \;=\; 4\pi^2\dfrac{L}{T^2}        \tag{2} $$
 
 ## Aim
 
@@ -56,7 +56,7 @@ The line of best fit has a slope $\dfrac{\Delta T^2}{\Delta L} \approx 0.040558 
 
 ## Calculations
 
-We have 
+From equation $(2)$, we have 
 $$ g = 4\pi^2\dfrac{\Delta L}{\Delta T^2} $$
 On substituting $\frac{\Delta L}{\Delta T^2}$ with $\frac{1}{4.0558}$ and simplifying, we have
 $$ g \approx 9.7338 \,\mathrm{ms^{-2}} $$

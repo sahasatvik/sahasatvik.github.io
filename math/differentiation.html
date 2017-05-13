@@ -474,45 +474,73 @@ pre[class*="language-"] {
 
 <p>For a function \(x \mapsto f(x)\), its derivative \(f&#39;\) is given by</p>
 
-<p>\[ f&#39; \;=\; \dfrac{\mathrm{d}}{\mathrm d x}f(x) \;=\; \lim_{h \to 0}\dfrac{f(x + h) - f(x)}{h} \]</p>
+<p>\[ f&#39; \;=\; \dfrac{\mathrm{d}}{\mathrm d x}f(x) \;=\; \lim_{h \to 0}\dfrac{f(x + h) - f(x)}{h} \tag{1}\]</p>
 
-<h2 id="toc_1">Some Basic Formulae for Computing Derivatives</h2>
+<h2 id="toc_1">Computing Derivatives</h2>
+
+<p>Let there be a function \(f\) in the variable \(x\) such that:</p>
+
+<p>\[ y \;=\; f(x) \tag{2}\]</p>
+
+<p>It follows that a change in the independent variable \(x\) corresponds to a change in the dependent variable \(y\). Let the changes in \(x\) and \(y\) be \(\Delta x\) and \(\Delta y\) respectively.</p>
+
+<p>\[
+\begin{align}
+y + \Delta y                 \;&amp;=\;  f(x + \Delta x)                          \\
+\Delta y                     \;&amp;=\;  f(x + \Delta x) - f(x) \tag{From (2)}    \\
+                                                                              \\
+\dfrac{\Delta y}{\Delta x}   \;&amp;=\;  \dfrac{f(x + \Delta x) - f(x)}{\Delta x} \\
+\end{align}
+\]</p>
+
+<p>The above expression is simply the average rate of change in the value of \(y\) with a change in \(x\). In order to find the instantaneous rate of change of \(y\) at some point \(x\), we can reduce \(\Delta x\) to a value approaching \(0\). Thus, the derivative of \(f\) is simply the limit of \(\frac{\Delta y}{\Delta x}\) as \(\Delta x\) approaches \(0\).</p>
+
+<p>\[
+\dfrac{\mathrm{d}y}{\mathrm d x} 
+        \;=\; \lim_{\Delta x \to 0}\dfrac{\Delta y}{\Delta x} 
+        \;=\; \lim_{\Delta x \to 0}\dfrac{f(x + \Delta x) - f(x)}{\Delta x}
+        \tag{3}
+\]</p>
+
+<p>With a change in notation, this is precisely equation \((1)\).</p>
+
+<h2 id="toc_2">Some Basic Formulae for Computing Derivatives</h2>
 
 <p>Let \(n \in \mathbb{Z}\), \(a \in \mathbb{R}\) and \(f\), \(g\) be functions in the variable \(x\).</p>
 
 <p>\[ \dfrac{\mathrm{d}}{\mathrm d x}e^x \;=\; e^x \]</p>
 
-<h3 id="toc_2">Addition and Subtraction</h3>
+<h3 id="toc_3">Addition and Subtraction</h3>
 
 <p>\[
-\begin{aligned}
+\begin{align}
 (f + g)&#39;   \;&amp;=\;   f&#39; + g&#39; \\
 (f - g)&#39;   \;&amp;=\;   f&#39; - g&#39;
-\end{aligned}
+\end{align}
 \]</p>
 
-<h3 id="toc_3">Multiplication and Division</h3>
+<h3 id="toc_4">Multiplication and Division</h3>
 
 <p>\[
-\begin{aligned}
+\begin{align}
 (f \cdot g)                  \;&amp;=\;    f&#39;g + gf&#39;                     \\
 \left(\dfrac{f}{g}\right)&#39;   \;&amp;=\;    \dfrac{f&#39;g - fg&#39;}{g^2}
-\end{aligned}
+\end{align}
 \]</p>
 
-<h3 id="toc_4">Composition (Chain Rule)</h3>
+<h3 id="toc_5">Composition (Chain Rule)</h3>
 
 <p>\[
-\begin{aligned}
+\begin{align}
 (f \circ g)&#39;                             \;&amp;=\;    (f&#39; \circ g)(g&#39;)  \\
 \dfrac{\mathrm{d}}{\mathrm d x}f(g(x))   \;&amp;=\;    f&#39;(g(x))g&#39;(x)
-\end{aligned}
+\end{align}
 \]</p>
 
-<h3 id="toc_5">Exponentials and Logarithms</h3>
+<h3 id="toc_6">Exponentials and Logarithms</h3>
 
 <p>\[
-\begin{aligned}
+\begin{align}
 \dfrac{\mathrm{d}}{\mathrm d x}x^n \;&amp;=\; nx^{n-1}                                        &amp;
 \dfrac{\mathrm{d}}{\mathrm d x}\left(\dfrac{1}{x^n}\right) 
                                                  \;&amp;=\;    -\dfrac{m}{x^{m + 1}}                   \\
@@ -520,13 +548,13 @@ pre[class*="language-"] {
 \dfrac{\mathrm{d}}{\mathrm d x}\log_a x  \;&amp;=\;     \dfrac{1}{x\ln a}                      \\
 \dfrac{\mathrm{d}}{\mathrm d x}e^x       \;&amp;=\;     e^x                                   &amp;
 \dfrac{\mathrm{d}}{\mathrm d x}a^x       \;&amp;=\;     a^x\ln a                               \\
-\end{aligned}
+\end{align}
 \]</p>
 
-<h3 id="toc_6">Trigonometric Functions</h3>
+<h3 id="toc_7">Trigonometric Functions</h3>
 
 <p>\[
-\begin{aligned}
+\begin{align}
 \dfrac{\mathrm{d}}{\mathrm d x}\sin x       \;&amp;=\;    \cos x                              &amp;
 \dfrac{\mathrm{d}}{\mathrm d x}\sin^{-1}x   \;&amp;=\;    \dfrac{1}{\sqrt{1 - x^2}}            \\
 \dfrac{\mathrm{d}}{\mathrm d x}\cos x       \;&amp;=\;   -\sin x                              &amp;
@@ -539,10 +567,10 @@ pre[class*="language-"] {
 \dfrac{\mathrm{d}}{\mathrm d x}\csc^{-1}x   \;&amp;=\;   -\dfrac{1}{x\sqrt{x^2 - 1}}           \\
 \dfrac{\mathrm{d}}{\mathrm d x}\cot x       \;&amp;=\;   -\csc^2 x                            &amp;
 \dfrac{\mathrm{d}}{\mathrm d x}\cot^{-1}x   \;&amp;=\;   -\dfrac{1}{1 + x^2}                   \\
-\end{aligned}
+\end{align}
 \]</p>
 
-<h2 id="toc_7">Taylor Series</h2>
+<h2 id="toc_8">Taylor Series</h2>
 
 <p>For a real or complex values function \(x \mapsto f(x)\) which is infinitely differentiable at some real or complex number \(a\), its Taylor Series is given by</p>
 
@@ -550,7 +578,7 @@ pre[class*="language-"] {
 
 <p>where \(f^{(n)}\) is the \(n^{\text{th}}\) derivative of \(f\)</p>
 
-<h3 id="toc_8">Maclaurin Series</h3>
+<h3 id="toc_9">Maclaurin Series</h3>
 
 <p>The Maclaurin Series of \(x \mapsto f(x)\) is simply its Taylor Series at \(a=0\)</p>
 
@@ -558,13 +586,13 @@ pre[class*="language-"] {
 
 <p>Thus, we have
 \[
-\begin{aligned}
+\begin{align}
 e^x                \;&amp; =\;    1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \dfrac{x^4}{4!} + \cdots    &amp;x&amp; \in \mathbb{R}  \\
 \dfrac{1}{1-x}     \;&amp; =\;    1 + x + x^2 + x^3 + x^4 + \cdots                                        &amp;x&amp; \in (-1, 1)     \\
 \ln{(1 + x)}       \;&amp; =\;    x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dfrac{x^4}{4} + \cdots           &amp;x&amp; \in \mathbb{R}  \\
 \sin x             \;&amp; =\;    x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots        &amp;x&amp; \in \mathbb{R}  \\
 \cos x             \;&amp; =\;    1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots        &amp;x&amp; \in \mathbb{R}  \\
-\end{aligned}
+\end{align}
 \]</p>
 
 

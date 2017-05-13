@@ -1,9 +1,5 @@
+# The Motion of a Simple Pendulum
 ---
-title: "The Motion of a Simple Pendulum"
-output: html_document
----
-
------
 
 This is an experiment to observe the variations in the time period of oscillation of a simple pendulum with changes in its effective length. The data gathered will be sufficient to determine an approximate value for the acceleration due to gravity at the site of experimentation.
 
@@ -17,13 +13,9 @@ $$ g = 4\pi^2\dfrac{L}{T^2} $$
 
 ## Aim
 
------
-
 To find the acceleration due to gravity $g$ by measuring the variation in time period $T$ with the effective length $L$ of a simple pendulum.
 
 ## Materials Required
-
------
 
 * A fixed support to suspend the pendulum from.
 * A suitably long strand of inelastic string.
@@ -32,8 +24,6 @@ To find the acceleration due to gravity $g$ by measuring the variation in time p
 * A device for measuring time intervals (a stopwatch).
 
 ## Method
-
------
 
 1. Tie the mass to one end of the string and suspend the other end from the support such that its length is adjustable.
 2. Note the distance of the point of contact of the string with the mass and the centre of gravity of the mass as $r$. For a spherical mass, this is simply its radius.
@@ -45,9 +35,9 @@ To find the acceleration due to gravity $g$ by measuring the variation in time p
 
 ## Experimental Data
 
------
-
 $\text{Radius of spherical mass}\;(r) = 1.29\,\mathrm{cm}$
+
+<center>
 
 | $l$ in $\mathrm{cm}$ | $L = l + r$ in $\mathrm{cm}$ | $T_{20}$ in $\mathrm{s}$ | $T = \frac{T_{20}}{20}$ in $\mathrm{s}$ | $T^2$ in $\mathrm{s^2}$ |
 |:------------:|:----------------------:|:-----------------:|:------------------------------:|:----------------:|
@@ -57,23 +47,14 @@ $\text{Radius of spherical mass}\;(r) = 1.29\,\mathrm{cm}$
 | 110          | 111.29                 | 42.69             | 2.1345                         | 4.55609025       |
 | 120          | 121.29                 | 44.50             | 2.2250                         | 4.95062500       |
 
+![$T^2$ vs $L$ Graph](pendulum.png)
 
-```{r, echo=FALSE, fig.align='center'}
-library(latex2exp)
-EffectiveLength <- c(81.29, 91.29, 101.29, 111.29, 121.29)
-TimeSquared <- c(3.3179, 3.7714, 4.1128, 4.5561, 4.9506)
-par(mar = c(5, 5, 4, 2) + 0.1)
-plot(EffectiveLength, TimeSquared, main=TeX("$T^2-L$ Graph for a freely oscillating Simple Pendulum"),
-     xlab=TeX("Effective Length ($L$) in $cm$"), ylab=TeX("Time Squared ($T^2$) in $s^2$"), pch=4)
-abline(lm(TimeSquared~EffectiveLength), col="red")
-```
+</center>
 
 We can see that the points on the $T^2\!-\!L$ graph clearly approximate a straight line.  
 The line of best fit has a slope $\dfrac{\Delta T^2}{\Delta L} \approx 0.040558 \,\mathrm{s^2cm^{-1}} = 4.0558 \,\mathrm{s^2m^{-1}}$
 
 ## Calculations
-
------
 
 We have 
 $$ g = 4\pi^2\dfrac{\Delta L}{\Delta T^2} $$

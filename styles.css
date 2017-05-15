@@ -1,3 +1,17 @@
+.logo {
+	width: 200px;
+	opacity: 0.9;
+	transition: opacity 0.5s, transform 1s;
+	-webkit-transition: opacity 0.5s, transform 1s;
+	transition-timing-function: ease-out;
+	-webkit-transition-timing-function: ease-out;
+}
+
+.logo:hover {
+	transform: scale(1.02, 1.02);
+	opacity: 1.0;
+}
+
 #social {
 	align-content: center;
 	text-decoration: none;

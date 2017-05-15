@@ -2,7 +2,7 @@
 <link href="styles.css" rel="stylesheet">
 
 <center>
-	<img src="images/cube.png" alt="Cube" style="width: 200px;"/>
+	<img class="logo" src="images/cube.png" alt="Cube"/>
 Satvik Saha
 ---
 My collection of all things me!

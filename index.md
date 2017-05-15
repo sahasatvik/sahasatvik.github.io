@@ -16,6 +16,7 @@ My collection of all things me!
 
 ### Mathematics
 * [Differentiation](math/differentiation.html)
+* [Integration](math/integration.html)
 
 
 <br>

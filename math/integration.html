@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>index</title>
+<title>integration</title>
 
 
 <style type="text/css">
@@ -468,44 +468,82 @@ pre[class*="language-"] {
 
 <body>
 
-<p><link href="https://file.myfontastic.com/kUVLXKmpzM24jFhpdaJJyT/icons.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet"></p>
+<h1 id="toc_0">Integration</h1>
 
-<p><center>
-    <img src="images/cube.png" alt="Cube" style="width: 200px;"/></p>
+<hr>
 
-<h2 id="toc_0">Satvik Saha</h2>
+<p>For a function \(x \mapsto f(x)\) of a real variable \(x\) and an interval \([a, b]\) of the real number line, the definite integral:</p>
 
-<p>My collection of all things me!
-</center>
-<br></p>
+<p>\[ \int_{a}^{b}f(x)\,\mathrm{d}x \]</p>
 
-<h2 id="toc_1">My Notes</h2>
+<p>is defined informally as the signed area in the \(xy\)-plane hat is bounded by the function \(f\), the \(x\)-axis and the vertical lines \(x=a\) and \(x=b\).</p>
 
-<h3 id="toc_2">Physics</h3>
+<p>An indefinite integral, also known as an antiderivative, is a function \(F\) whose derivative is the given function \(f\).</p>
 
-<ul>
-<li><a href="physics/pendulum.html">The Motion of a Simple Pendulum</a></li>
-</ul>
+<p>\[ F(x) = \int f(x)\,\mathrm{d}x \]</p>
 
-<h3 id="toc_3">Mathematics</h3>
+<h2 id="toc_1">The Fundamental Theorem of Calculus</h2>
 
-<ul>
-<li><a href="math/differentiation.html">Differentiation</a></li>
-<li><a href="math/integration.html">Integration</a></li>
-</ul>
+<p>If \(f\) is a continuous real-valued function defined on a closed interval \([a,b]\) then once the antiderivative \(F\) of \(f\) is known, the definite integral of \(f\) over that interval is given by</p>
 
-<h2 id="toc_4"><br></h2>
+<p>\[ \int_{a}^{b}f(x)\,\mathrm{d}x \;=\; F(b) - F(a) \]</p>
 
-<p><center>
-    <a id="social" href="mailto:sahasatvik@gmail.com"><i class="icon icon-gmail"></i></a>
-    <a id="social" href="https://www.quora.com/profile/Satvik-Saha"><i class="icon icon-quora"></i></a>
-    <a id="social" href="https://medium.com/@sahasatvik"><i class="icon icon-medium"></i></a>
-    <a id="social" href="https://github.com/sahasatvik/"><i class="icon icon-github"></i></a>
-    <a id="social" href="http://stackoverflow.com/users/5589030/satvik-saha"><i class="icon icon-stack-overflow"></i></a>
-    <a id="social" href="https://plus.google.com/u/0/114842405913299374026"><i class="icon icon-google-plus"></i></a>
-    <a id="social" href="mailto:sahasatvik@outlook.com"><i class="icon icon-outlook"></i></a>
-</center></p>
+<h2 id="toc_2">Some Basic Formulae for Computing Integrals</h2>
+
+<p>Let \(n \in \mathbb{Z}\), \(a \in \mathbb{R}\) and \(f\), \(g\) be functions in the variable \(x\).</p>
+
+<p>\[ \int e^x \,\mathrm{d}x \;=\; e^x + C \]</p>
+
+<h3 id="toc_3">Addition and Subtraction</h3>
+
+<p>\[
+\begin{align}
+\int (f + g) \,\mathrm{d}x      \;&amp;=\;     \int f \,\mathrm{d}x + \int g \,\mathrm{d}x     \\
+\int (f - g) \,\mathrm{d}x      \;&amp;=\;     \int f \,\mathrm{d}x - \int g \,\mathrm{d}x
+\end{align}
+\]</p>
+
+<h3 id="toc_4">Multiplication (Integration by Parts)</h3>
+
+<p>\[
+\begin{align}
+\int f \,\mathrm{d}g            \;&amp;=\;     fg - \int g \,\mathrm{d}f     \\
+\int fg \,\mathrm{d}x           \;&amp;=\;     f\int g \,\mathrm{d}x - \int (u&#39;\int g \,\mathrm{d}x)\,\mathrm{d}x
+\end{align}
+\]</p>
+
+<h3 id="toc_5">Composition (Integration by Substitution)</h3>
+
+<p>\[ \int_{\varphi(a)}^{\varphi(b)} f(x) \,\mathrm{d}x   \;=\;   \int_{a}^{b} f(\varphi(t))\varphi&#39;(t) \,\mathrm{d}t \]</p>
+
+<p>Here, the substitution \(x = \varphi(t)\) yielded \(\frac{\mathrm{d}x}{\mathrm{d}t} = \varphi&#39;(t)\), further yielding the
+substitution \(\mathrm{d}x = \varphi&#39;(t)\,\mathrm{d}t\).</p>
+
+<h3 id="toc_6">Exponentials and Logarithms</h3>
+
+<p>\[ 
+\begin{align}
+\int x^n \,\mathrm{d}x               \;&amp;=\;     \dfrac{1}{n}x^{n+1} \;+ C               &amp;
+\int \dfrac{1}{x} \,\mathrm{d}x      \;&amp;=\;     \ln |x| \;+ C                            \\
+\int \ln x \,\mathrm{d}x.            \;&amp;=\;     x\ln{x} - x \;+ C                       &amp;
+\int \log_a{x} \,\mathrm{d}x         \;&amp;=\;     \dfrac{x\ln{x} - x}{\ln a} \;+ C         \\
+\int e^x \,\mathrm{d}x               \;&amp;=\;     e^x \;+ C                               &amp;
+\int a^x \,\mathrm{d}x               \;&amp;=\;     \dfrac{a^x}{\ln x} \;+ C                 \\
+\end{align}
+\]</p>
+
+<h3 id="toc_7">Trigonometric Functions</h3>
+
+<p>\[ 
+\begin{align}
+\int \sin x                          \;&amp;=\;     -\cos x \;+ C                           &amp;
+\int \sin^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\sin^{-1}x + \sqrt{1 - x^2} \;+ C       \\
+\int \cos x                          \;&amp;=\;     \sin x \;+ C                            &amp;
+\int \cos^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\cos^{-1}x - \sqrt{1 - x^2} \;+ C       \\
+\int \tan x                          \;&amp;=\;     -\log\cos x \;+ C                       &amp;
+\int \tan^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\tan^{-1}x - \dfrac{\ln(1 + x^2)}{2} \;+ C    \\
+\end{align}
+\]</p>
 
 
 

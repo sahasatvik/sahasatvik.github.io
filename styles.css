@@ -13,7 +13,13 @@
 	opacity: 0.5;
 	font-color: #8C8C8C;
 	transition: color 1s, opacity 0.5s;
+	transition-timing-function: ease-out;
 	-webkit-transition: color 1s, opacity 0.5s;
+	-webkit-transition-timing-function: ease-out;
+}
+
+.icon:hover {
+	opacity: 1.0;
 }
 
 .icon-github {
@@ -33,30 +39,23 @@
 }
 
 .icon-github:hover {
-	opacity: 1.0;
 	color: #000000 !important;
 }
 .icon-quora:hover {
-	opacity: 1.0;
 	color: #a82400 !important;
 }
 .icon-google-plus:hover {
-	opacity: 1.0;
 	color: #dd4b39 !important;
 }
 .icon-outlook:hover {
-	opacity: 1.0;
 	color: #00a1f1 !important;
 }
 .icon-medium:hover {
-	opacity: 1.0;
 	color: #02b875 !important;
 }
 .icon-gmail:hover {
-	opacity: 1.0;
 	color: #ea4335 !important;
 }
 .icon-stack-overflow:hover {
-	opacity: 1.0;
 	color: #f48024 !important;
 }

@@ -12,6 +12,8 @@
 	font-size: 32px;
 	opacity: 0.5;
 	font-color: #8C8C8C;
+	transition: color 1s, opacity 0.5s;
+	-webkit-transition: color 1s, opacity 0.5s;
 }
 
 .icon-github {

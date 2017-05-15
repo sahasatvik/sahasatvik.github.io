@@ -1,13 +1,19 @@
 <link href="https://file.myfontastic.com/kUVLXKmpzM24jFhpdaJJyT/icons.css" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
+<script src="quotes.js"></script>
 
 <center>
 	<img class="logo" src="images/cube.png" alt="Cube"/>
 Satvik Saha
 ---
-My collection of all things me!
+<div id="qtext"></div>
+<div id="qauthor"></div>
 </center>
 <br>
+
+<script type="text/javascript">
+	showQuote();
+</script>
 
 ## My Notes
 

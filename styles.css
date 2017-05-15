@@ -12,9 +12,9 @@
 	font-size: 32px;
 	opacity: 0.5;
 	font-color: #8C8C8C;
-	transition: color 1s, opacity 0.5s;
+	transition: color 0.8s, opacity 0.5s;
 	transition-timing-function: ease-out;
-	-webkit-transition: color 1s, opacity 0.5s;
+	-webkit-transition: color 0.8s, opacity 0.5s;
 	-webkit-transition-timing-function: ease-out;
 }
 
@@ -26,16 +26,14 @@
 	font-size: 44px;
 }
 .icon-gmail {
-	font-size: 38px;
+	font-size: 42px;
 	padding: 0px;
 }
 .icon-outlook {
 	font-size: 28px;
-	padding: 10px;
 }
 .icon-google-plus {
 	font-size: 28px;
-	padding: 10px;
 }
 
 .icon-github:hover {

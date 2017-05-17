@@ -3,19 +3,19 @@
 
 For a function $x \mapsto f(x)$ of a real variable $x$ and an interval $[a, b]$ of the real number line, the definite integral:
 
-$$ \int_{a}^{b}f(x)\,\mathrm{d}x $$
+$$ \int_{a}^{b}f(x)\,\mathrm{d}x \tag{1} $$
 
 is defined informally as the signed area in the $xy$-plane hat is bounded by the function $f$, the $x$-axis and the vertical lines $x=a$ and $x=b$.
 
 An indefinite integral, also known as an antiderivative, is a function $F$ whose derivative is the given function $f$.
 
-$$ F(x) = \int f(x)\,\mathrm{d}x $$
+$$ F(x) = \int f(x)\,\mathrm{d}x \tag{2} $$
 
 ## The Fundamental Theorem of Calculus
 
 If $f$ is a continuous real-valued function defined on a closed interval $[a,b]$ then once the antiderivative $F$ of $f$ is known, the definite integral of $f$ over that interval is given by
 
-$$ \int_{a}^{b}f(x)\,\mathrm{d}x \;=\; F(b) - F(a) $$
+$$ \int_{a}^{b}f(x)\,\mathrm{d}x \;=\; F(b) - F(a) \tag{3} $$
 
 ## Some Basic Formulae for Computing Integrals
 

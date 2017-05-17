@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>integration</title>
+<title>complex</title>
 
 
 <style type="text/css">
@@ -468,80 +468,179 @@ pre[class*="language-"] {
 
 <body>
 
-<h1 id="toc_0">Integration</h1>
+<h1 id="toc_0">Complex Numbers</h1>
 
 <hr>
 
-<p>For a function \(x \mapsto f(x)\) of a real variable \(x\) and an interval \([a, b]\) of the real number line, the definite integral:</p>
+<p>A complex number is a number \(z\) which can be expressed in the form</p>
 
-<p>\[ \int_{a}^{b}f(x)\,\mathrm{d}x \tag{1} \]</p>
+<p>\[ z \;=\; a + ib \tag{1} \]</p>
 
-<p>is defined informally as the signed area in the \(xy\)-plane hat is bounded by the function \(f\), the \(x\)-axis and the vertical lines \(x=a\) and \(x=b\).</p>
+<p>where \(a, b \in \mathbb{R}\) and \(i\) is an imaginary unit satisfying the equation \(i^2 = -1\). Here, \(a\) is the real part and \(b\) is the imaginary part of \(z\). This is written as \( \mathit{Re}(z) = a,\; \mathit{Im}(z) = b \).</p>
 
-<p>An indefinite integral, also known as an antiderivative, is a function \(F\) whose derivative is the given function \(f\).</p>
+<h2 id="toc_1">Euler&#39;s Formula</h2>
 
-<p>\[ F(x) = \int f(x)\,\mathrm{d}x \tag{2} \]</p>
+<p>For \(x \in \mathbb{R}\)</p>
 
-<h2 id="toc_1">The Fundamental Theorem of Calculus</h2>
+<p>\[ e^{ix} \;=\; \cos x \;+\; i\sin x \tag{2} \]</p>
 
-<p>If \(f\) is a continuous real-valued function defined on a closed interval \([a,b]\) then once the antiderivative \(F\) of \(f\) is known, the definite integral of \(f\) over that interval is given by</p>
+<p>This leads directly to Euler&#39;s Identity</p>
 
-<p>\[ \int_{a}^{b}f(x)\,\mathrm{d}x \;=\; F(b) - F(a) \tag{3} \]</p>
+<p>\[ e^{i\pi} \;+\; 1  \;=\; 0 \tag{3} \]</p>
 
-<h2 id="toc_2">Some Basic Formulae for Computing Integrals</h2>
+<h3 id="toc_2">De Moivre&#39;s Formula</h3>
 
-<p>Let \(n \in \mathbb{Z}\), \(a \in \mathbb{R}\) and \(f\), \(g\) be functions in the variable \(x\).</p>
+<p>\[ (\cos x \;+\; i\sin x)^n \;=\; \cos(nx) \;+\; i\sin(nx) \tag{4} \]</p>
 
-<p>\[ \int e^x \,\mathrm{d}x \;=\; e^x + C \]</p>
+<h3 id="toc_3">Trigonometric functions</h3>
 
-<h3 id="toc_3">Addition and Subtraction</h3>
-
-<p>\[
-\begin{align}
-\int (f + g) \,\mathrm{d}x      \;&amp;=\;     \int f \,\mathrm{d}x + \int g \,\mathrm{d}x     \\
-\int (f - g) \,\mathrm{d}x      \;&amp;=\;     \int f \,\mathrm{d}x - \int g \,\mathrm{d}x
-\end{align}
-\]</p>
-
-<h3 id="toc_4">Multiplication (Integration by Parts)</h3>
+<p>Euler&#39;s Formula can also be used to write</p>
 
 <p>\[
 \begin{align}
-\int f \,\mathrm{d}g            \;&amp;=\;     fg - \int g \,\mathrm{d}f     \\
-\int fg \,\mathrm{d}x           \;&amp;=\;     f\int g \,\mathrm{d}x - \int (u&#39;\int g \,\mathrm{d}x)\,\mathrm{d}x
+\cos{x} = \dfrac{e^{ix} + e^{-ix}}{2}                     \\
+\sin{x} = \dfrac{e^{ix} - e^{-ix}}{2i}
 \end{align}
 \]</p>
 
-<h3 id="toc_5">Composition (Integration by Substitution)</h3>
+<h2 id="toc_4">Some Basic Operations</h2>
 
-<p>\[ \int_{\varphi(a)}^{\varphi(b)} f(x) \,\mathrm{d}x   \;=\;   \int_{a}^{b} f(\varphi(t))\varphi&#39;(t) \,\mathrm{d}t \]</p>
+<h3 id="toc_5">Addition and Subtraction</h3>
 
-<p>Here, the substitution \(x = \varphi(t)\) yielded \(\frac{\mathrm{d}x}{\mathrm{d}t} = \varphi&#39;(t)\), further yielding the
-substitution \(\mathrm{d}x = \varphi&#39;(t)\,\mathrm{d}t\).</p>
-
-<h3 id="toc_6">Exponentials and Logarithms</h3>
-
-<p>\[ 
+<p>\[
 \begin{align}
-\int x^n \,\mathrm{d}x               \;&amp;=\;     \dfrac{1}{n}x^{n+1} \;+ C               &amp;
-\int \dfrac{1}{x} \,\mathrm{d}x      \;&amp;=\;     \ln |x| \;+ C                            \\
-\int \ln x \,\mathrm{d}x.            \;&amp;=\;     x\ln{x} - x \;+ C                       &amp;
-\int \log_a{x} \,\mathrm{d}x         \;&amp;=\;     \dfrac{x\ln{x} - x}{\ln a} \;+ C         \\
-\int e^x \,\mathrm{d}x               \;&amp;=\;     e^x \;+ C                               &amp;
-\int a^x \,\mathrm{d}x               \;&amp;=\;     \dfrac{a^x}{\ln x} \;+ C                 \\
+(a + ib) + (c + id) \;&amp;=\; (a + c) + i(b + d)              \\
+(a + ib) - (c + id) \;&amp;=\; (a + c) - i(b + d)
 \end{align}
 \]</p>
 
-<h3 id="toc_7">Trigonometric Functions</h3>
+<h3 id="toc_6">Multiplication and Division</h3>
 
-<p>\[ 
+<p>\[
 \begin{align}
-\int \sin x                          \;&amp;=\;     -\cos x \;+ C                           &amp;
-\int \sin^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\sin^{-1}x + \sqrt{1 - x^2} \;+ C       \\
-\int \cos x                          \;&amp;=\;     \sin x \;+ C                            &amp;
-\int \cos^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\cos^{-1}x - \sqrt{1 - x^2} \;+ C       \\
-\int \tan x                          \;&amp;=\;     -\log\cos x \;+ C                       &amp;
-\int \tan^{-1}x \,\mathrm{d}x        \;&amp;=\;     x\tan^{-1}x - \dfrac{\ln(1 + x^2)}{2} \;+ C    \\
+(a + ib)(c + id)            \;&amp;=\; (ac - bd) + i(bc + ad)  \\ \\
+\dfrac{(a + ib)}{(c + id)}  \;&amp;=\; \dfrac{(ac + bd) + i(bc - ad)}{c^2 + d^2}
+\end{align}
+\]</p>
+
+<h3 id="toc_7">Conjugate</h3>
+
+<p>\[
+\begin{align}
+\bar{z}          \;&amp;=\;    \mathit{Re}(z) - \mathit{Im}(z)  \\
+\overline{a + ib}\;&amp;=\;    a - ib
+\end{align}
+\]</p>
+
+<p>Consequentially, we have</p>
+
+<p>\[
+\begin{align}
+\overline{z_1 \pm z_2}   \;&amp;=\;    \overline{z_1} \pm \overline{z_2}    \\
+\overline{z_1 z_2}       \;&amp;=\;    \overline{z_1}\,\overline{z_2}       \\
+\overline{z_1/z_2}       \;&amp;=\;    \overline{z_1}/\overline{z_2}
+\end{align}
+\]</p>
+
+<h3 id="toc_8">Reciprocal</h3>
+
+<p>For \(z = a + ib\)</p>
+
+<p>\[ \dfrac{1}{z} \;=\; \dfrac{\bar{z}}{z\bar{z}} \;=\; \dfrac{a}{a^2 + b^2} - i\dfrac{b}{a^2 + b^2}\]</p>
+
+<h3 id="toc_9">Absolute Value</h3>
+
+<p>For \(z = a + ib\)</p>
+
+<p>\[
+\begin{align}
+|z|      \;&amp;=\;      \sqrt{a^2 + b^2}               \\
+|z_1 z_2|\;&amp;=\;       |z_1||z_2|                    \\
+|z|^2    \;&amp;=\;  z\bar{z}  \;=\;   a^2 + b^2
+\end{align}
+\]</p>
+
+<h3 id="toc_10">Argument</h3>
+
+<p>The argument of \(z = a + ib\), written \(\mathit{arg}(z)\), is the angle between the line joining the points \((0,0)\), \((a,b)\) and the \(x\)-axis.</p>
+
+<p>\[
+\begin{align}
+\varphi \;=\; \mathit{arg}(z) \;=\;
+                \begin{cases}
+                    \tan^{-1}(\frac{y}{x})       &amp; \quad \text{if } x &gt; 0 \\
+                    \tan^{-1}(\frac{y}{x}) + \pi &amp; \quad \text{if } x &lt; 0 \text{ and } y \geq 0   \\
+                    \tan^{-1}(\frac{y}{x}) - \pi &amp; \quad \text{if } x &lt; 0 \text{ and } y &lt; 0      \\
+                    \frac{\pi}{2}                &amp; \quad \text{if } x = 0 \text{ and } y &gt; 0      \\
+                    -\frac{\pi}{2}               &amp; \quad \text{if } x = 0 \text{ and } y &lt; 0      \\
+                    \text{indeterminate}         &amp; \quad \text{if } x = 0 \text{ and } y = 0
+                \end{cases}
+\end{align}
+\]</p>
+
+<h2 id="toc_11">Representations of Complex Numbers</h2>
+
+<h3 id="toc_12">Cartesian or Rectangular Coordinate System</h3>
+
+<p>Complex numbers can be represented in the two-dimensional complex plane or Argand plane by using the horizontal axis for the real part and the vertical axis for the imaginary part. The complex number \(a + ib\) can be identified with the point \((a, b)\) in the complex plane.</p>
+
+<p>\[ z \;=\; a + ib \]</p>
+
+<h3 id="toc_13">Polar Coordinate System</h3>
+
+<p>An alternative way of representing a complex number \(z\) in the complex plane is by using the length of the line segment joining its position with the origin \(r\) along with the angle it subtends with the positive real axis \(\varphi\)</p>
+
+<p>\[ z \;=\; r(\cos\varphi + i\sin\varphi) \tag {5} \]</p>
+
+<p>From Euler&#39;s Formula, we can write</p>
+
+<p>\[ z \;=\; re^{i\varphi} \tag{6} \]</p>
+
+<p>Consequentially</p>
+
+<p>\[
+\begin{align}
+z_1 z_2   \;&amp;=\;   r_1 r_2(\cos(\varphi_1 + \varphi_2) + i\sin(\varphi_1 + \varphi_2)  \\ \\
+\frac{z_1}{z_2}   \;&amp;=\;   \frac{r_1}{r_2}(\cos(\varphi_1 - \varphi_2) + i\sin(\varphi_1 - \varphi_2)
+\end{align}
+\]</p>
+
+<h3 id="toc_14">Matrix Representation</h3>
+
+<p>A complex number \(z = a + ib\) can be represented by \(2 \times 2\) matrices as follows.</p>
+
+<p>\[
+z \;=\; \begin{pmatrix}
+            a   &amp;   -b     \\
+            b   &amp;    a
+          \end{pmatrix}
+\]</p>
+
+<p>This is convenient for performing operations on complex numbers such as multiplication or finding absolute values.</p>
+
+<p>\[
+\begin{align}
+\bar{z} \;&amp;=\;  \begin{pmatrix}
+                        a   &amp;   b      \\
+                        -b  &amp;    a
+                    \end{pmatrix}        \\ \\
+z_1 z_2 \;&amp;=\;  \begin{pmatrix}
+                        a   &amp;   -b     \\
+                        b   &amp;    a
+                    \end{pmatrix}
+                    \begin{pmatrix}
+                        c   &amp;   -d     \\
+                        d   &amp;    c
+                    \end{pmatrix}
+            \;=\;   \begin{pmatrix}
+                        ac - bd   &amp;   -ad - bc  \\
+                        bc + ad   &amp;    bd + ac
+                    \end{pmatrix}                 \\ \\
+|z|^2       \;&amp;=\;  \begin{vmatrix}
+                        a   &amp;   -b      \\
+                        b   &amp;    a
+                    \end{vmatrix}
+            \;=\;   a^2 + b^2
 \end{align}
 \]</p>
 

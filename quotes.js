@@ -45,7 +45,7 @@ function showQuote() {
 			author: "Ted Nelson"
 		},
 		{
-			text: "There is no place like 127.0.0.1",
+			text: "There is no place like ~",
 			author: "Anonymous"
 		},
 		{
@@ -95,6 +95,38 @@ function showQuote() {
 		{
 			text: "You can't lie to the compiler.",
 			author: "Andrew Stevenson"
+		},
+		{
+			text: "Be nice or I'll replace you with a very small shell script.",
+			author: "Anonymous"
+		},
+		{
+			text: "Those who don't understand Unix are condemned to reinvent it, poorly.",
+			author: "Henry Spencer"
+		},
+		{
+			text: "Unix is user-friendly. It's just picky about who its friends are.",
+			author: "Anonymous"
+		},
+		{
+			text: "If you have any trouble sounding condescending, find a UNIX user to show you how it's done.",
+			author: "Scott Adams"
+		},
+		{
+			text: "/* You are not expected to understand this. */",
+			author: "Anonymous"
+		},
+		{
+			text: "When in doubt, use brute force.",
+			author: "Ken Thompson"
+		},
+		{
+			text: "Simplicity is the ultimate sophistication.",
+			author: "Leonardo da Vinci"
+		},
+		{
+			text: "My definition of an expert in any field is a person who knows enough about what’s really going on to be scared.",
+			author: "P. J. Plauger"
 		}
 	]
 	

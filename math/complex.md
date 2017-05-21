@@ -107,6 +107,17 @@ $$
 \end{align}
 $$
 
+### Logarithm
+
+For $k \in \mathbb{Z}$
+
+$$
+\begin{align}
+\ln z              \;&=\; \ln |z| + i\,\mathit{arg}(z)               \\
+\ln(re^{i\varphi}) \;&=\; \ln r \,+ i(\varphi + 2k\pi)
+\end{align}
+$$
+
 ## Representations of Complex Numbers
 
 ### Cartesian or Rectangular Coordinate System

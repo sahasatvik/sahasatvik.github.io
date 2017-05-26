@@ -56,7 +56,7 @@ $$
 
 $$
 \begin{align}
-\bar{z}          \;&=\;    \mathit{Re}(z) - \mathit{Im}(z)  \\
+\bar{z}          \;&=\;    \mathit{Re}(z) - i\,\mathit{Im}(z)  \\
 \overline{a + ib}\;&=\;    a - ib
 \end{align}
 $$

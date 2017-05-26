@@ -71,12 +71,6 @@ $$
 \end{align}
 $$
 
-### Reciprocal
-
-For $z = a + ib$
-
-$$ \dfrac{1}{z} \;=\; \dfrac{\bar{z}}{z\bar{z}} \;=\; \dfrac{a}{a^2 + b^2} - i\dfrac{b}{a^2 + b^2}$$
-
 ### Absolute Value
 
 For $z = a + ib$
@@ -89,13 +83,27 @@ $$
 \end{align}
 $$
 
+### Reciprocal
+
+For $z = a + ib$
+
+$$ \dfrac{1}{z} \;=\; \dfrac{\bar{z}}{z\bar{z}} \;=\; \dfrac{a}{a^2 + b^2} - i\dfrac{b}{a^2 + b^2}$$
+
 ### Argument
 
-The argument of $z = a + ib$, written $\mathit{arg}(z)$, is the angle between the line joining the points $(0,0)$, $(a,b)$ and the $x$-axis.
+The argument of $z = a + ib$, written $\mathit{arg}(z)$, is the angle between the vector representation of $z$ and the positive $x$-axis in the complex plane. There are multiple values of $\mathit{arg}(z)$ since rotations by integer multiples of $2\pi$, *i.e.* whole circle rotations, clearly do not change the point represented by $z$.
+
+$$
+\varphi \;=\; \mathit{arg}(z)   \iff   z \;=\; |z|e^{i\varphi}
+$$
+
+When a well defined value for $\mathit{arg}(z)$ is required, the usual choice is a value in the range $(-\pi, \pi]$. This is written as the function $\mathit{Arg}(z)$.
 
 $$
 \begin{align}
-\varphi \;=\; \mathit{arg}(z) \;=\;
+\mathit{arg}(z) \;&=\; \{\mathit{Arg}(z) + 2\pi n \;|\; n\in\mathbb{Z}\}
+\\\\
+\mathit{Arg}(z) \;&=\;
 				\begin{cases}
 					\tan^{-1}(\frac{y}{x})       & \quad \text{if } x > 0 \\
 					\tan^{-1}(\frac{y}{x}) + \pi & \quad \text{if } x < 0 \text{ and } y \geq 0   \\
@@ -128,7 +136,7 @@ $$ z \;=\; a + ib $$
 
 ### Polar Coordinate System
 
-An alternative way of representing a complex number $z$ in the complex plane is by using the length of the line segment joining its position with the origin $r$ along with the angle it subtends with the positive real axis $\varphi$
+An alternative way of representing a complex number $z$ in the complex plane is by using the length of the line segment joining its position with the origin $r = |z|$ along with the angle it subtends with the positive real axis $\varphi = \mathit{arg}(z)$
 
 $$ z \;=\; r(\cos\varphi + i\sin\varphi) \tag {5} $$
 

@@ -542,13 +542,7 @@ pre[class*="language-"] {
 \end{align}
 \]</p>
 
-<h3 id="toc_8">Reciprocal</h3>
-
-<p>For \(z = a + ib\)</p>
-
-<p>\[ \dfrac{1}{z} \;=\; \dfrac{\bar{z}}{z\bar{z}} \;=\; \dfrac{a}{a^2 + b^2} - i\dfrac{b}{a^2 + b^2}\]</p>
-
-<h3 id="toc_9">Absolute Value</h3>
+<h3 id="toc_8">Absolute Value</h3>
 
 <p>For \(z = a + ib\)</p>
 
@@ -560,13 +554,27 @@ pre[class*="language-"] {
 \end{align}
 \]</p>
 
+<h3 id="toc_9">Reciprocal</h3>
+
+<p>For \(z = a + ib\)</p>
+
+<p>\[ \dfrac{1}{z} \;=\; \dfrac{\bar{z}}{z\bar{z}} \;=\; \dfrac{a}{a^2 + b^2} - i\dfrac{b}{a^2 + b^2}\]</p>
+
 <h3 id="toc_10">Argument</h3>
 
-<p>The argument of \(z = a + ib\), written \(\mathit{arg}(z)\), is the angle between the line joining the points \((0,0)\), \((a,b)\) and the \(x\)-axis.</p>
+<p>The argument of \(z = a + ib\), written \(\mathit{arg}(z)\), is the angle between the vector representation of \(z\) and the positive \(x\)-axis in the complex plane. There are multiple values of \(\mathit{arg}(z)\) since rotations by integer multiples of \(2\pi\), <em>i.e.</em> whole circle rotations, clearly do not change the point represented by \(z\).</p>
+
+<p>\[
+\varphi \;=\; \mathit{arg}(z)   \iff   z \;=\; |z|e^{i\varphi}
+\]</p>
+
+<p>When a well defined value for \(\mathit{arg}(z)\) is required, the usual choice is a value in the range \((-\pi, \pi]\). This is written as the function \(\mathit{Arg}(z)\).</p>
 
 <p>\[
 \begin{align}
-\varphi \;=\; \mathit{arg}(z) \;=\;
+\mathit{arg}(z) \;&amp;=\; \{\mathit{Arg}(z) + 2\pi n \;|\; n\in\mathbb{Z}\}
+\\\\
+\mathit{Arg}(z) \;&amp;=\;
                 \begin{cases}
                     \tan^{-1}(\frac{y}{x})       &amp; \quad \text{if } x &gt; 0 \\
                     \tan^{-1}(\frac{y}{x}) + \pi &amp; \quad \text{if } x &lt; 0 \text{ and } y \geq 0   \\
@@ -599,7 +607,7 @@ pre[class*="language-"] {
 
 <h3 id="toc_14">Polar Coordinate System</h3>
 
-<p>An alternative way of representing a complex number \(z\) in the complex plane is by using the length of the line segment joining its position with the origin \(r\) along with the angle it subtends with the positive real axis \(\varphi\)</p>
+<p>An alternative way of representing a complex number \(z\) in the complex plane is by using the length of the line segment joining its position with the origin \(r = |z|\) along with the angle it subtends with the positive real axis \(\varphi = \mathit{arg}(z)\)</p>
 
 <p>\[ z \;=\; r(\cos\varphi + i\sin\varphi) \tag {5} \]</p>
 

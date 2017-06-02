@@ -163,6 +163,14 @@ function showQuote() {
 		{
 			text: "Good mathematicians see analogies between theorems. The very best ones see analogies between analogies.",
 			author: "Stanislaw M. Ulam (quoting Stefan Banach)"
+		},
+		{
+			text: "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.",
+			author: "Douglas Adams"
+		},
+		{
+			text: "Don't Panic.",
+			author: "Douglas Adams"
 		}
 	]
 	

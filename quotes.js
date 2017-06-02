@@ -127,6 +127,42 @@ function showQuote() {
 		{
 			text: "My definition of an expert in any field is a person who knows enough about what’s really going on to be scared.",
 			author: "P. J. Plauger"
+		},
+		{
+			text: "A monad is just a monoid in the category of endofunctors. What's the problem?",
+			author: "James Iry"
+		},
+		{
+			text: "If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.",
+			author: "John von Neumann"
+		},
+		{
+			text: "Mathematics is the art of giving the same name to different things.",
+			author: "Henri Poincaré"
+		},
+		{
+			text: "The more you know, the less sure you are.",
+			author: "Voltaire"
+		},
+		{
+			text: "Beauty is the first test: there is no permanent place in the world for ugly mathematics.",
+			author: "G H Hardy"
+		},
+		{
+			text: "The traditional mathematician recognizes and appreciates mathematical elegance when he sees it ... if it is clumsy, it is not mathematics.",
+			author: "Edsger W. Dijkstra"
+		},
+		{
+			text: "The art of doing mathematics consists in finding that special case which contains all the germs of generality.",
+			author: "David Hilbert"
+		},
+		{
+			text: "Mathematics may be defined as the subject in which we never know what we are talking about, nor whether what we are saying is true.",
+			author: "Bertrand Russell"
+		},
+		{
+			text: "Good mathematicians see analogies between theorems. The very best ones see analogies between analogies.",
+			author: "Stanislaw M. Ulam (quoting Stefan Banach)"
 		}
 	]
 	

@@ -101,7 +101,7 @@ $$
 
 ## Taylor Series
 
-For a real or complex values function $x \mapsto f(x)$ which is infinitely differentiable at some real or complex number $a$, its Taylor Series is given by
+For a real or complex valued function $x \mapsto f(x)$ which is infinitely differentiable at some real or complex number $a$, its Taylor Series is given by
 
 $$ \displaystyle\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(x - a)^n $$
 

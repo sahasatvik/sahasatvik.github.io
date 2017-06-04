@@ -54,7 +54,7 @@ $$
 \begin{align}
 \int x^n \,\mathrm{d}x               \;&=\;     \dfrac{1}{n}x^{n+1} \;+ C               &
 \int \dfrac{1}{x} \,\mathrm{d}x      \;&=\;     \ln |x| \;+ C                            \\
-\int \ln x \,\mathrm{d}x.            \;&=\;     x\ln{x} - x \;+ C                       &
+\int \ln x \,\mathrm{d}x             \;&=\;     x\ln{x} - x \;+ C                       &
 \int \log_a{x} \,\mathrm{d}x         \;&=\;     \dfrac{x\ln{x} - x}{\ln a} \;+ C         \\
 \int e^x \,\mathrm{d}x               \;&=\;     e^x \;+ C                               &
 \int a^x \,\mathrm{d}x               \;&=\;     \dfrac{a^x}{\ln x} \;+ C                 \\

@@ -25,6 +25,9 @@ Satvik Saha
 * [Integration](math/integration.html)
 * [Complex Numbers](math/complex.html)
 
+### Case Studies
+* [Sliding down Chords of a Circle](studies/sliding.pdf)
+* [The Range of a Projectile](studies/projectile.pdf)
 
 <br>
 ---

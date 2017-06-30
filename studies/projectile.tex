@@ -1,0 +1,58 @@
+\documentclass[11pt,reqno]{article}
+\usepackage{geometry}
+\geometry{letterpaper}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{The Range of a Projctile}
+\author{Satvik Saha}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+	\coordinate [label=right:$x$]		(X)		at	(8,0);
+	\coordinate [label=above:$y$]		(Y)		at	(0,4);
+	\coordinate 						(A)		at	(0,2);
+	\coordinate							(B)		at	(7,0);
+	
+	\draw[<->] (X) -| (Y);
+	\draw[<->, >=stealth, line width=0.2mm] (-1mm,0) -- ($ (A) - (1mm,0)$)
+											node[midway, left] {$y_0$};
+	\draw[<->, >=stealth, line width=0.2mm] (0,-1mm) -- ($ (B) - (0,1mm)$)
+											node[midway, below] {$R$};
+											
+	\draw[dotted] (A) -- ($(A) + (X)$);
+	\draw[-latex, thick] (A) -- ++ (38:2) node[midway, above, sloped] {$\vec{v}_0$};
+	\draw[-latex] (A) ++ (0:4mm) arc (0:38:4mm);
+	\node at ($ (A) + (6mm, 2mm)$) {$\theta$};
+	
+	\draw[dotted, very thick, blue] (A) .. controls ($(A) + (38:4)$) and ($(A) + (10:5)$) .. (B);
+	
+	
+\end{tikzpicture}
+\end{center}
+
+Consider the equations of motion of a projectile, launched at an elevation $\theta$ from a height $y_0$, experiencing uniform acceleration $-g$ along the $y$-axis.
+
+\begin{align}
+	x(t)	\;&=\;	v_0 \cos\theta									\\
+	y(t)	\;&=\;	y_0 \;+\; v_0 \sin\theta \;-\;\frac{1}{2}gt^2
+\end{align}
+
+When the projectile hits the ground, we see that $y(t_{flight}) = 0$.
+
+\begin{align*}
+	0		\;&=\;	y_0 \;+\; v_0 \sin\theta \;-\;\frac{1}{2}gt^2	\\
+	t		\;&=\;	\frac{1}{g}(\sin\theta \;+\; \sqrt{v_0^2\sin^2\theta + 2gy_0})
+\end{align*}
+
+\end{document}  

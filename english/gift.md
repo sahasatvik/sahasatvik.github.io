@@ -39,7 +39,7 @@ Remember the blood of my martyred sons!
 		<dd> clothing </dd>
 	<dt> priceless treasures </dt>
 		<dd> a metaphor for the brave soldiers of India </dd>
-	<dt>stricken womb </dt>	
+	<dt> stricken womb </dt>	
 		<dd> the cursed womb of a mother whose children are taken away from her and sacrificed at the altar of war </dd>
 	<dt> drum-beats </dt>
 		<dd> invitation to war </dd>

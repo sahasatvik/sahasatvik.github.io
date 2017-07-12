@@ -18,7 +18,11 @@ Satvik Saha
 ## My Notes
 
 ### English
-* [The Gift of India](english/gift.html)
+##### Prose
+* [Salvatore](english/salvatore.html) - *William Somerset Maugham*
+
+##### Poetry
+* [The Gift of India](english/gift.html) - *Sarojini Naidu*
 
 ### Physics
 * [The Motion of a Simple Pendulum](physics/pendulum.html)

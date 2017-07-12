@@ -31,6 +31,7 @@ Satvik Saha
 * [Complex Numbers](math/complex.html)
 
 ### Case Studies
+* [Variable Force on a Moving Body](studies/variableForce.pdf)
 * [Sliding down Chords of a Circle](studies/sliding.pdf)
 * [The Range of a Projectile](studies/projectile.pdf)
 * [Aiming a Projectile at an Aircraft](studies/aircraftTarget.pdf)

@@ -86,9 +86,15 @@ Mother India gets a vague compensation by the depth of the pride she feels in th
 > Of the torn red banners of victory?  
 > when the terror and the tumult of hate shall cease
 
-Victory comes at the cost of the ultimate sacrifice - the life of a young soldier - making the banners of celebration red with the colour of blood. Mother India has a sad vision of these bloody flags proclaiming victory at the cost of her sons. Her soldiers died despite winning a decisive victory for their masters.
+Victory comes at the cost of the ultimate sacrifice - the life of a young soldier - which makes the banners of celebration red with the colour of blood. Mother India has a sad vision of these bloody flags proclaiming victory at the cost of her sons. Her soldiers died despite winning a decisive victory for their masters.
 
 The end of terror and tumult, violence and conflict would bring in a reign of peace and prosperity. Life would be refashioned on the foundations of peace. Peace would become the equation of existence. The world would thank the Indian soldiers for their contribution and sacrifice for ushering in an era of peace.
 
 
 The poet says that the day is not far when the violent commotion of war would come to an end. Life would be peaceful and normal again. The speaker is hopeful that the bravery of the Indian soldiers would be remembered with gratitude. The brave acts of the dead Indian soldiers would be acknowledged and honoured.
+
+---
+
+<center>
+*(Modified from notes dictated by Mr. Anirban Roy)*
+</center>

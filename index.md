@@ -18,10 +18,7 @@ Satvik Saha
 ## My Notes
 
 ### English
-##### Prose
 * [Salvatore](english/salvatore.html) - *William Somerset Maugham*
-
-##### Poetry
 * [The Gift of India](english/gift.html) - *Sarojini Naidu*
 
 ### Physics

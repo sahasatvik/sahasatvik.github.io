@@ -2,8 +2,8 @@
 	width: 200px;
 	opacity: 0.9;
 	transition: opacity 0.5s, transform 1s;
-	-webkit-transition: opacity 0.5s, transform 1s;
 	transition-timing-function: ease-out;
+	-webkit-transition: opacity 0.5s, transform 1s;
 	-webkit-transition-timing-function: ease-out;
 }
 

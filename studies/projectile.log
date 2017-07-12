@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  10 JUL 2017 18:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  12 JUL 2017 19:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -575,13 +575,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 (./projectile.aux) ) 
 Here is how much of TeX's memory you used:
- 13434 strings out of 492995
- 268727 string characters out of 6132704
- 304066 words of memory out of 5000000
- 16737 multiletter control sequences out of 15000+600000
+ 13439 strings out of 492995
+ 268843 string characters out of 6132704
+ 305066 words of memory out of 5000000
+ 16742 multiletter control sequences out of 15000+600000
  10132 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,9n,54p,419b,687s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,54p,419b,687s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
@@ -590,11 +590,12 @@ ts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 m/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb>
-Output written on projectile.pdf (2 pages, 79109 bytes).
+0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb>
+Output written on projectile.pdf (2 pages, 89364 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

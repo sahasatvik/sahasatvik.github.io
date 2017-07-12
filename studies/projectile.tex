@@ -30,12 +30,15 @@
 	\draw[<->, >=stealth, line width=0.2mm] (0,-1mm) -- ($ (B) - (0,1mm)$)
 											node[midway, below] {$R$};
 											
-	\draw[dotted] (A) -- ($(A) + (X)$);
+	\draw[loosely dotted] (A) -- ($(A) + (X)$);
 	\draw[-latex, thick] (A) -- ++ (38:2) node[midway, above, sloped] {$\vec{v}_0$};
+	\draw[-latex, thick, red] (A) --++ (0:1.576021507213444) node[midway, below] 						{$\vec{v}_0\cos\theta$};
+	\draw[-latex, thick, blue] (A) -- ($ (A) + (90:1.231322950651317)$) node[midway, above, sloped] 	{$\vec{v}_0\sin\theta$};
+	
 	\draw[-latex] (A) ++ (0:4mm) arc (0:38:4mm);
 	\node at ($ (A) + (6mm, 2mm)$) {$\theta$};
 	
-	\draw[dotted, very thick, blue] (A) .. controls ($(A) + (38:4)$) and ($(A) + (10:5)$) .. (B);
+	\draw[dotted, very thick, green!50!black] (A) .. controls ($(A) + (38:4)$) and ($(A) + (10:5)$) .. (B);
 	
 	
 \end{tikzpicture}
@@ -57,6 +60,14 @@ When the projectile hits the ground, we see that $y(t) = 0$. Let this time be $t
 	\tag{3}
 \end{align*}
 
-For $R = R_{max}$, we have $\frac{d}{d\theta}R = 0$
+For $R = R_{max}$, we have $\frac{d}{d\theta}R = 0$.
+Solving the resultant equations, we have
+
+\begin{align*}
+	\boxed{\theta_{max} \;=\; \cos^{-1}\sqrt{\frac{2gy_0 + v_0^2}{2gy_0 + 2v_0^2}}}
+	\tag{4}
+\end{align*}
+
+Note that setting $y_0$ to $0$ simply reduces $\theta_{max}$ to $cos^{-1}\frac{1}{\sqrt{2}} = 45^\circ$.
 
 \end{document}  

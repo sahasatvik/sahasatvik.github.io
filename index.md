@@ -12,6 +12,7 @@ Satvik Saha
 <br>
 
 <script type="text/javascript">
+	document.title='Satvik Saha'
 	showQuote();
 </script>
 

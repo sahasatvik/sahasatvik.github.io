@@ -19,8 +19,8 @@ Satvik Saha
 ## My Notes
 
 ### English
-* [Salvatore](english/salvatore.html) - *William Somerset Maugham*
-* [The Gift of India](english/gift.html) - *Sarojini Naidu*
+* [Salvatore](english/salvatore.html) *(William Somerset Maugham)*
+* [The Gift of India](english/gift.html) *(Sarojini Naidu)*
 
 ### Physics
 * [The Motion of a Simple Pendulum](physics/pendulum.html)
@@ -33,6 +33,7 @@ Satvik Saha
 ### Case Studies
 * [Sliding down Chords of a Circle](studies/sliding.pdf)
 * [The Range of a Projectile](studies/projectile.pdf)
+* [Aiming a Projectile at an Aircraft](studies/aircraftTarget.pdf)
 
 <br>
 ---

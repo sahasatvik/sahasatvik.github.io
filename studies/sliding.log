@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  30 JUN 2017 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  9 JUL 2017 19:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -478,8 +478,7 @@ s.code.tex
 \pgfdecorationsegmentlength=\dimen175
 )
 \tikz@lib@dec@box=\box39
-)
-No file sliding.aux.
+) (./sliding.aux)
 \openout1 = `sliding.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -494,6 +493,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -602,8 +602,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
 sliding.aux) ) 
 Here is how much of TeX's memory you used:
- 14445 strings out of 492995
- 296367 string characters out of 6132704
+ 14447 strings out of 492995
+ 296391 string characters out of 6132704
  325348 words of memory out of 5000000
  17732 multiletter control sequences out of 15000+600000
  10132 words of font info for 39 fonts, out of 8000000 for 9000

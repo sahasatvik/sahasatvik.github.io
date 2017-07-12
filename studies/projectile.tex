@@ -45,14 +45,18 @@ Consider the equations of motion of a projectile, launched at an elevation $\the
 
 \begin{align}
 	x(t)	\;&=\;	v_0 \cos\theta									\\
-	y(t)	\;&=\;	y_0 \;+\; v_0 \sin\theta \;-\;\frac{1}{2}gt^2
+	y(t)	\;&=\;	y_0 \;+\; v_0 t \sin\theta \;-\;\frac{1}{2}gt^2
 \end{align}
 
-When the projectile hits the ground, we see that $y(t_{flight}) = 0$.
+When the projectile hits the ground, we see that $y(t) = 0$. Let this time be $t{flight}$ and the corresponding horizontal displacement be $R$.
 
 \begin{align*}
 	0		\;&=\;	y_0 \;+\; v_0 \sin\theta \;-\;\frac{1}{2}gt^2	\\
-	t		\;&=\;	\frac{1}{g}(\sin\theta \;+\; \sqrt{v_0^2\sin^2\theta + 2gy_0})
+	t_{flight}	\;&=\;	\frac{1}{g}(v_0 \sin\theta \;+\; \sqrt{v_0^2\sin^2\theta + 2gy_0}) \\\\
+	R		\;&=\;	\frac{1}{g}(v_0 \cos\theta)(v_0 \sin\theta \;+\; \sqrt{v_0^2\sin^2\theta + 2gy_0})
+	\tag{3}
 \end{align*}
+
+For $R = R_{max}$, we have $\frac{d}{d\theta}R = 0$
 
 \end{document}  

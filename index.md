@@ -17,6 +17,9 @@ Satvik Saha
 
 ## My Notes
 
+### English
+* [The Gift of India](english/gift.html)
+
 ### Physics
 * [The Motion of a Simple Pendulum](physics/pendulum.html)
 

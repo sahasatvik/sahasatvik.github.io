@@ -32,6 +32,7 @@ Satvik Saha
 
 ### Case Studies
 * [Variable Force on a Moving Body](studies/variableForce.pdf)
+* [Flashlight Tracking Aircraft](studies/flashlight.pdf)
 * [Sliding down Chords of a Circle](studies/sliding.pdf)
 * [The Range of a Projectile](studies/projectile.pdf)
 * [Aiming a Projectile at an Aircraft](studies/aircraftTarget.pdf)

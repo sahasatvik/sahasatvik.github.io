@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  15 JUL 2017 20:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  15 JUL 2017 20:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -606,30 +606,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+./ladderSlip.tex:82: Undefined control sequence.
+<recently read> \tao 
+                     
+l.82 \end{align*}
+                 
+? 
+./ladderSlip.tex:82: Emergency stop.
+<recently read> \tao 
+                     
+l.82 \end{align*}
+                 
+End of file on the terminal!
 
- []
-
-[2] (./ladderSlip.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 14034 strings out of 492995
- 279357 string characters out of 6132704
- 317864 words of memory out of 5000000
+ 14032 strings out of 492995
+ 279324 string characters out of 6132704
+ 317858 words of memory out of 5000000
  17325 multiletter control sequences out of 15000+600000
  10440 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,13n,54p,419b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
+ 55i,9n,54p,419b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
+./ladderSlip.tex:82:  ==> Fatal error occurred, no output PDF file produced!
+xmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb>
-Output written on ladderSlip.pdf (2 pages, 94141 bytes).
+Output written on ladderSlip.pdf (2 pages, 94127 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream

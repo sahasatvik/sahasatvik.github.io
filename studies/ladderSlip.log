@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  15 JUL 2017 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.6.19)  15 JUL 2017 20:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**aircraftTarget.tex
-(./aircraftTarget.tex
+**ladderSlip.tex
+(./ladderSlip.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -484,8 +484,8 @@ File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
-) (./aircraftTarget.aux)
-\openout1 = `aircraftTarget.aux'.
+) (./ladderSlip.aux)
+\openout1 = `ladderSlip.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
@@ -606,15 +606,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./aircraftTarget.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 84--86
+
+ []
+
+[2] (./ladderSlip.aux) ) 
 Here is how much of TeX's memory you used:
- 13979 strings out of 492995
- 278413 string characters out of 6132704
- 314877 words of memory out of 5000000
- 17270 multiletter control sequences out of 15000+600000
+ 14034 strings out of 492995
+ 279357 string characters out of 6132704
+ 317864 words of memory out of 5000000
+ 17325 multiletter control sequences out of 15000+600000
  10440 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,14n,54p,423b,649s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,54p,419b,706s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
@@ -624,11 +628,11 @@ nts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb>
-Output written on aircraftTarget.pdf (1 page, 86999 bytes).
+sy10.pfb>
+Output written on ladderSlip.pdf (2 pages, 94141 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

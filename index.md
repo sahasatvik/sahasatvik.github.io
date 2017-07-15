@@ -35,6 +35,7 @@ Satvik Saha
 * [Sliding down Chords of a Circle](studies/sliding.pdf)
 * [The Range of a Projectile](studies/projectile.pdf)
 * [Aiming a Projectile at an Aircraft](studies/aircraftTarget.pdf)
+* [Ladder in Equilibrium](studies/ladderSlip.pdf)
 
 <br>
 ---

@@ -1,6 +1,6 @@
 <link href="https://file.myfontastic.com/kUVLXKmpzM24jFhpdaJJyT/icons.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <script src="quotes.js"></script>
 
 <center>

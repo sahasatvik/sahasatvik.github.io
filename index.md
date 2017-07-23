@@ -28,6 +28,7 @@ Satvik Saha
 * [Differentiation](math/differentiation.html)
 * [Integration](math/integration.html)
 * [Complex Numbers](math/complex.html)
+* [Olympiad Inequalities](math/olympiadInequalities.pdf)
 
 ### Case Studies
 * [Variable Force on a Moving Body](studies/variableForce.pdf)

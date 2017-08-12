@@ -180,24 +180,33 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 14.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+./olympiadInequalities.tex:28: Undefined control sequence.
+<argument> a_1a_2\dotsa 
+                        _n
+l.28 	\sqrt[n]{a_1a_2\dotsa_n}
+                              		\;\geq\;		\dfrac{n}{\frac{1}{a_1} + \frac{1}...
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (4.084pt too wide) in paragraph at lines 67--69
- \OT1/cmr/bx/n/10.95 The-o-rem 8 (H^^?older)[] \OT1/cmr/m/it/10.95 Let $\OT1/cm
-r/m/n/10.95 (\OML/cmm/m/it/10.95 a[]; a[]; [] ; a[]\OT1/cmr/m/n/10.95 )\OML/cmm
-/m/it/10.95 ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 b[]; b[]; [] ; b[]\OT1/cm
-r/m/n/10.95 )\OML/cmm/m/it/10.95 ; []  ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
-5 z[]; z[]; [] ; z[]\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 be se-quences
- []
+? 
+./olympiadInequalities.tex:28: Emergency stop.
+<argument> a_1a_2\dotsa 
+                        _n
+l.28 	\sqrt[n]{a_1a_2\dotsa_n}
+                              		\;\geq\;		\dfrac{n}{\frac{1}{a_1} + \frac{1}...
+End of file on the terminal!
 
-
-Overfull \hbox (28.99051pt too wide) detected at line 72
-\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/
-10.95 a[] \OT1/cmr/m/n/10.95 + [] + \OML/cmm/m/it/10.95 a[]\OT1/cmr/m/n/10.95 )
-[](\OML/cmm/m/it/10.95 b[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[] \OT1/cm
-r/m/n/10.95 + [] + \OML/cmm/m/it/10.95 b[]\OT1/cmr/m/n/10.95 )[] [] (\OML/cmm/m
-/it/10.95 z[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 z[] \OT1/cmr/m/n/10.95 +
+ 
+Here is how much of TeX's memory you used:
+ 1644 strings out of 492995
+ 20515 string characters out of 6132704
+ 80196 words of memory out of 5000000
+ 5221 multiletter control sequences out of 15000+600000
+ 10786 words of font info for 41 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 27i,6n,26p,236b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
+./olympiadInequalities.tex:28:  ==> Fatal error occurred, no output PDF file pr
+oduced!
+/10.95 + \OML/cmm/m/it/10.95 z[] \OT1/cmr/m/n/10.95 +
  [] + \OML/cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[]  \OMS/cmsy/m/n/10.95 ^^U  \
 OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[]b[]  []  z[] \OT1/cmr/m/n/10.95 +  []
   + \OML/cmm/m/it/10.95 a[]b[]  []  z[]\OT1/cmr/m/n/10.95 )

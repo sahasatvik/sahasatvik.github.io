@@ -173,6 +173,22 @@ var quotes = [
 	{
 		text: "Don't Panic.",
 		author: "Douglas Adams"
+	},
+	{
+		text: "To err is human, but to really foul things up you need a computer.",
+		author: "Paul R. Ehrlich"
+	},
+	{
+		text: "A computer once beat me at chess, but it was no match for me at kick boxing.",
+		author: "Emo Phillips"
+	},
+	{
+		text: "Computers are useless. They can only give you answers.",
+		author: "Pablo Picasso"
+	},
+	{
+		text: "People think computers will keep them from making mistakes. They're wrong. With computers you make mistakes faster.",
+		author: "Adam Osborne"
 	}
 ]
 

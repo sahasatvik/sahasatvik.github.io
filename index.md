@@ -21,6 +21,11 @@ Satvik Saha
 * [Salvatore](english/salvatore.html) *(William Somerset Maugham)*
 * [The Gift of India](english/gift.html) *(Sarojini Naidu)*
 
+**The Tempest** *(William Shakespeare)*
+
+* [Act I, Scene 1](english/tempest/I1.html)
+* [Act I, Scene 2](english/tempest/I2.html)
+
 ### Physics
 * [The Motion of a Simple Pendulum](physics/pendulum.html)
 

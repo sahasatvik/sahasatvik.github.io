@@ -1,6 +1,6 @@
 html, body {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	background-color: #FFFFFF;
 	font-family: Helvetica, arial, sans-serif; 
 }
@@ -12,21 +12,30 @@ html, body {
 	margin-bottom: 0;
 }
 
+h2, h3, h4 {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
 hr {
 	opacity: 0.4;
-	border-top: 0px single #DDDDDD;
+	height: 1px;
+	width: 70vw;
+	border-top: 3px single #DDDDDD;
 	border-bottom: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
-	height: 1px;
-	width: 70%;
+}
+
+a {
+	color: #1188CC;
 }
 
 .logo {
+	opacity: 0.9;
+	width: 200px;
 	padding-top: 16px;
 	padding-bottom: 16px;
-	width: 200px;
-	opacity: 0.9;
 	transition: opacity 0.5s, transform 1s;
 	transition-timing-function: ease-out;
 	-webkit-transition: opacity 0.5s, transform 1s;
@@ -34,8 +43,8 @@ hr {
 }
 
 .logo:hover {
-	transform: scale(1.02, 1.02);
 	opacity: 1.0;
+	transform: scale(1.02, 1.02);
 }
 
 .quote {
@@ -45,38 +54,41 @@ hr {
 }
 
 .content {
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-top: 0;
-	padding-bottom: 80px;
+	font-size: 14px;
+	line-height: 20px;
+
+	margin-left: 15vw;
+	margin-right: 15vw;
+	margin-top: 0;
+	margin-bottom: 80px;
 }
 
 .footer {
 	position: fixed;
 	background-color: #FFFFFF;
-	margin: 0;
 	left: 0;
 	bottom: 0;
+	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	width: 100%;
+	margin: 0;
 	overflow: hidden;
-	box-shadow: 0 8px 10px 6px black;
+	box-shadow: 0 2px 8px 0px black;
 	z-index: 3;
 }
 
 .social-bar {
+	position: absolute;
 	align-content: center;
 	width: 100%;
-	position: absolute;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 .right-bar {
 	align-content: center;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
 
 #footer-icon {
@@ -84,16 +96,14 @@ hr {
 	align-content: center;
 	vertical-align: center;
 	text-decoration: none;
-	color: #5B5B5B;
 }
 
 .icon {
-	vertical-align: middle;
-	padding: 8px;
+	color: #5B5B5B;
 	font-size: 32px;
-	border-radius: 20px;
 	opacity: 0.5;
-	font-color: #8C8C8C;
+	padding: 8px;
+	vertical-align: middle;
 	transition: color 0.8s, opacity 0.5s;
 	transition-timing-function: ease-out;
 	-webkit-transition: color 0.8s, opacity 0.5s;
@@ -105,11 +115,13 @@ hr {
 }
 
 .icon-shuffle {
+	color: #E20022;
 	float: right;
 	padding-right: 24px;
 }
 
 .icon-github {
+	opacity: 1.0;
 	text-align: center;
 	font-size: 44px;
 }
@@ -125,7 +137,8 @@ hr {
 	padding-left: 2px;
 }
 .icon-stack-overflow {
-	padding-left: 4px;
+	padding-left: 2px;
+	padding-right: 4px;
 }
 
 .icon-shuffle:hover {

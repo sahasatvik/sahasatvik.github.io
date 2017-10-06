@@ -87,7 +87,7 @@ a {
 #footer.active {
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	border-top: 2px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
 }
 
 .social-bar {

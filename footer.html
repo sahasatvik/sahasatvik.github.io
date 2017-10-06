@@ -34,7 +34,7 @@
 <body>
 
 <div align="center">
-	<img class="logo" src="images/cube.svg" alt="Cube"/>
+	<img class="logo" id="mainCube" src="images/cube.svg" alt="Cube"/>
 	<div class="main-title">Satvik Saha</div>
 	<hr>
 
@@ -105,11 +105,19 @@
 
 <script type="text/javascript" charset="utf-8">
 	var footer = document.getElementById('footer');
+	var mainCube = document.getElementById('mainCube');
+	var sideCube = document.getElementById('sideCube');
 	window.onscroll = function(evt) {
 		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
 			footer.classList.add('active');
 		} else {
 			footer.classList.remove('active');
+		}
+
+		if (window.scrollY >= mainCube.offsetHeight) {
+			sideCube.classList.add('active');
+		} else {
+			sideCube.classList.remove('active');
 		}
 	}
 </script>

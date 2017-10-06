@@ -197,7 +197,8 @@ function showQuote() {
 	var text = '"' + quote.text + '"';
 	var color = '#E20022'
 	document.getElementById("qauthor").innerHTML = '<i>' + quote.author + '</i>';
-	for (i = 0; i <= text.length; i++) {
+	
+	for (i = 1; i <= text.length; i++) {
 		(function(i){
 			setTimeout(function() {
 				document.getElementById("qtext").innerHTML = text.substring(0, i-1) 

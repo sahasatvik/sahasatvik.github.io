@@ -43,13 +43,21 @@ hr {
 	line-height: 20px;
 }
 
+.content {
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 0;
+	padding-bottom: 80px;
+}
+
 .footer {
-	position: absolute;
+	position: fixed;
 	background-color: #FFFFFF;
 	margin: 0;
+	left: 0;
+	bottom: 0;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	bottom: 0;
 	width: 100%;
 	overflow: hidden;
 	box-shadow: 0 8px 10px 6px black;

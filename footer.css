@@ -73,6 +73,12 @@ hr {
 	padding: 0;
 }
 
+.right-bar {
+	align-content: center;
+	margin: 0;
+	padding: 0;
+}
+
 #footer-icon {
 	text-align: center;
 	align-content: center;
@@ -181,8 +187,8 @@ hr {
 		font-size: 4vw;
 	}
 	.footer .icon-shuffle {
-		padding: 1vw;
-		padding-right: 5%;
+		padding-top: 5px;
+		padding-right: 5vw;
 	}
 }
 

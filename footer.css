@@ -5,7 +5,7 @@ html, body {
 	font-family: Helvetica, arial, sans-serif; 
 }
 
-h1 {
+.main-title {
 	font-size: 24px;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
@@ -24,6 +24,7 @@ hr {
 
 .logo {
 	padding-top: 16px;
+	padding-bottom: 16px;
 	width: 200px;
 	opacity: 0.9;
 	transition: opacity 0.5s, transform 1s;
@@ -145,3 +146,43 @@ hr {
 .icon-lichess:hover {
 	color: #000000 !important;
 }
+
+
+@media (max-width: 512px) {
+	.footer {
+		padding-top: 5px;
+	}
+	.footer .icon {
+		font-size: 5vw;
+		padding: 0.5vw;
+		padding-bottom: 1vw;
+	}
+	.footer .icon-gmail {
+		font-size: 6vw;
+		padding-right: 0;
+	}
+	.footer .icon-quora {	
+		padding-left: 0;
+	}
+	.footer .icon-github {
+		font-size: 7vw;
+		padding-right: 0;
+	}
+	.footer .icon-stackoverflow {
+		font-size: 4vw;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.footer .icon-lichess {
+		padding-left: 0;
+		font-size: 6vw;
+	}
+	.footer .icon-outlook {
+		font-size: 4vw;
+	}
+	.footer .icon-shuffle {
+		padding: 1vw;
+		padding-right: 5%;
+	}
+}
+

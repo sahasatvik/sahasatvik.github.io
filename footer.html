@@ -1,8 +1,8 @@
 <html>
 
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <link href="https://file.myfontastic.com/kUVLXKmpzM24jFhpdaJJyT/icons.css" rel="stylesheet">
 <link rel="stylesheet" href="footer.css">
 <script src="init.js"></script>
@@ -88,7 +88,7 @@
 		</ul>
 </div>
 
-<div align="center" class="footer">
+<div align="center" class="footer" id="footer">
 	<div class="social-bar">
 		<a id="footer-icon" href="mailto:sahasatvik@gmail.com"><i class="icon icon-gmail"></i></a>
 		<a id="footer-icon" href="https://www.quora.com/profile/Satvik-Saha"><i class="icon icon-quora"></i></a>
@@ -102,5 +102,17 @@
 		<a id="footer-icon" onclick="showQuote()"><i class="icon icon-shuffle"></i></a>
 	</div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+	var footer = document.getElementById('footer');
+	window.onscroll = function(evt) {
+		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
+			footer.classList.add('active');
+		} else {
+			footer.classList.remove('active');
+		}
+	}
+</script>
+
 </body>
 </html>

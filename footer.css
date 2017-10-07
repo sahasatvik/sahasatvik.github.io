@@ -9,19 +9,29 @@ html, body {
 	font-size: 24px;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
+	width: 70%;
+	padding-bottom: 12px;
 	margin-bottom: 0;
+	border-bottom: 1px solid #CCCCCC;
 }
 
-h2, h3, h4 {
+h1, h2, h3, h4 {
+	font-weight: bold;
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
+
+h1 {	
+	font-size: 24px;
+	border-bottom: 1px solid #CCCCCC;
+}
+h2 {	font-size: 18px;}
 
 hr {
 	opacity: 0.4;
 	height: 1px;
 	width: 70vw;
-	border-top: 3px single #DDDDDD;
+	border-top: 3px single #CCCCCC;
 	border-bottom: 0 none;
 	border-left: 0 none;
 	border-right: 0 none;
@@ -34,8 +44,8 @@ a {
 .logo {
 	opacity: 0.9;
 	width: 200px;
-	padding-top: 16px;
-	padding-bottom: 16px;
+	padding-top: 24px;
+	padding-bottom: 24px;
 	transition: opacity 0.5s ease-out, transform 1s ease-out;
 	-webkit-transition: opacity 0.5 ease-out, transform 1s ease-out;
 }
@@ -50,13 +60,15 @@ a {
 	font-kerning: auto;
 	line-height: 20px;
 
+	padding-top: 12px;
+	padding-bottom: 16px;
 	padding-left: 10%;
 	padding-right: 10%;
 }
 
 #content {
 	font-size: 14px;
-	line-height: 20px;
+	line-height: 1.5;
 	
 	width: 70%;
 	margin-left: 15%;
@@ -189,7 +201,7 @@ a {
 	.icon-outlook {       font-size: 4vw;}
 }
 
-@media (max-height: 240px) {
+@media (max-height: 260px) {
 	#content {
 		margin-bottom: 0px;
 	}

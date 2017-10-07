@@ -1,214 +1,79 @@
-html, body {
-	padding: 0;
-	margin: 0;
-	background-color: #FFFFFF;
-	font-family: Helvetica, arial, sans-serif; 
-}
-
-.main-title {
-	font-size: 24px;
-	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
-	width: 70%;
-	padding-bottom: 12px;
-	margin-bottom: 0;
-	border-bottom: 1px solid #CCCCCC;
-}
-
-h1, h2, h3, h4 {
-	font-weight: bold;
-	padding-bottom: 0;
-	margin-bottom: 0;
-}
-
-h1 {	
-	font-size: 24px;
-	border-bottom: 1px solid #CCCCCC;
-}
-h2 {	font-size: 18px;}
-
-hr {
-	opacity: 0.4;
-	height: 1px;
-	width: 70vw;
-	border-top: 3px single #CCCCCC;
-	border-bottom: 0 none;
-	border-left: 0 none;
-	border-right: 0 none;
-}
-
-a {
-	color: #1188CC;
-}
-
 .logo {
-	opacity: 0.9;
 	width: 200px;
-	padding-top: 24px;
-	padding-bottom: 24px;
-	transition: opacity 0.5s ease-out, transform 1s ease-out;
-	-webkit-transition: opacity 0.5 ease-out, transform 1s ease-out;
+	opacity: 0.9;
+	transition: opacity 0.5s, transform 1s;
+	transition-timing-function: ease-out;
+	-webkit-transition: opacity 0.5s, transform 1s;
+	-webkit-transition-timing-function: ease-out;
 }
 
 .logo:hover {
-	opacity: 1.0;
 	transform: scale(1.02, 1.02);
+	opacity: 1.0;
 }
 
-#quote {
-	font-size: 14px;
-	font-kerning: auto;
-	line-height: 20px;
-
-	padding-top: 12px;
-	padding-bottom: 16px;
-	padding-left: 10%;
-	padding-right: 10%;
-}
-
-#content {
-	font-size: 14px;
-	line-height: 1.5;
-	
-	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
-	margin-top: 0;
-	margin-bottom: 80px;
-}
-
-#footer {
-	position: fixed;
-	background-color: #FFFFFF;
-	
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 48px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin: 0;
-	overflow: hidden;
-	
-	box-shadow: 0 2px 10px 0px black;
-	-webkit-box-shadow: 0 -8px -6px -6px black;
-	transition: all 0.3s ease-out;
-	-webkit-transition: all 0.3s ease-out;
-}
-
-#footer.active {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	border-top: 1px solid #DDDDDD;
-}
-
-.icon-bar {
-	position: absolute;
-	height: 48px;
-}
-
-#socialBar {
-	left: 10vw;
-	width: 80vw;
-}
-
-#rightBar {
-	right: 24px;
-	width: 10vw;
-}
-
-.icon-bar > a {
-	display: inline-block;
-	width: 56px;
-	height: 48px;
+#social {
+	text-align: center;
 	align-content: center;
-	vertical-align: middle;
 	text-decoration: none;
-	padding: 0;
-	margin: 0;
-}
-
-.icon-bar > a > i {
-	position: relative;
-	display: inline-block;
-	width: 100%;
-	top: 50%;
-	transform: translateY(-50%);
-	padding: 0;
-	margin: 0;
+	color: #5B5B5B;
 }
 
 .icon {
-	color: #5B5B5B;
+	vertical-align: middle;
+	padding: 8px;
+	padding-bottom: 8px;
+	padding-top: 8px;
 	font-size: 32px;
 	opacity: 0.5;
-	padding: 8px;
-	
-	vertical-align: middle;
-	transition: color 0.8s ease-out, opacity 0.5s ease-out;
-	-webkit-transition: color 0.8s ease-out, opacity 0.5s ease-out;
+	font-color: #8C8C8C;
+	transition: color 0.8s, opacity 0.5s;
+	transition-timing-function: ease-out;
+	-webkit-transition: color 0.8s, opacity 0.5s;
+	-webkit-transition-timing-function: ease-out;
 }
 
 .icon:hover {
 	opacity: 1.0;
 }
 
-.icon-shuffle {	color: #E20022;}
 .icon-github {
-	opacity: 1.0;
+	text-align: center;
 	font-size: 44px;
 }
-.icon-gmail {   font-size: 48px;}
-.icon-medium {  font-size: 30px;}
-.icon-outlook { font-size: 27px;}
-.icon-lichess { font-size: 38px;}
-
-.icon-shuffle:hover {        color: #E20022 !important;}
-.icon-github:hover {         color: #000000 !important;}
-.icon-quora:hover {          color: #a82400 !important;}
-.icon-outlook:hover {        color: #00a1f1 !important;}
-.icon-medium:hover {         color: #02b875 !important;}
-.icon-gmail:hover {          color: #ea4335 !important;}
-.icon-stack-overflow:hover { color: #f48024 !important;}
-.icon-lichess:hover {        color: #000000 !important;}
-
-
-@media (max-width: 600px) {
-	#footer {
-		height: 8vw;
-		padding-top: 8px;
-		padding-bottom: 8px;
-	}
-	.icon-bar {
-		height: 8vw;
-		top: 2wv;
-	}
-	.icon-bar > a {
-		width: 9vw;
-		height: 8vw;
-	}
-	#rightBar {
-		right: 4vw;
-	}
-	.icon {
-		font-size: 5vw;
-		padding: 0.5vw;
-	}
-	.icon-gmail {         font-size: 7vw;}
-	.icon-github {        font-size: 7vw;}
-	.icon-stackoverflow { font-size: 4vw;}
-	.icon-lichess {       font-size: 6vw;}
-	.icon-outlook {       font-size: 4vw;}
+.icon-gmail {
+	font-size: 42px;
+	padding: 0px;
+}
+.icon-outlook {
+	font-size: 28px;
+}
+.icon-lichess {
+	font-size: 38px;
+	padding-left: 2px;
+}
+.icon-stack-overflow {
+	padding-left: 4px;
 }
 
-@media (max-height: 260px) {
-	#content {
-		margin-bottom: 0px;
-	}
-	#footer {
-		position: relative;
-		box-shadow: none;
-		-webkit-box-shadow: none;
-		border-top: 1px solid #DDDDDD;
-	}
+.icon-github:hover {
+	color: #000000 !important;
+}
+.icon-quora:hover {
+	color: #a82400 !important;
+}
+.icon-outlook:hover {
+	color: #00a1f1 !important;
+}
+.icon-medium:hover {
+	color: #02b875 !important;
+}
+.icon-gmail:hover {
+	color: #ea4335 !important;
+}
+.icon-stack-overflow:hover {
+	color: #f48024 !important;
+}
+.icon-lichess:hover {
+	color: #000000 !important;
 }

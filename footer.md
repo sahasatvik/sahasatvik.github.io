@@ -1,5 +1,5 @@
 <link href="https://file.myfontastic.com/kUVLXKmpzM24jFhpdaJJyT/icons.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="footer.css">
 <script src="quotes.js"></script>
 
 <center>

@@ -1,0 +1,50 @@
+\documentclass[a4paper, 11pt, reqno]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{mathtools, amsmath, amssymb}
+
+\geometry{letterpaper}
+
+\title{Sequences and Series}
+\author{Satvik Saha}
+\date{}
+
+\begin{document}
+	\maketitle
+	\paragraph{Problem}
+	Calculate the given sum, to $n$ terms
+	\begin{equation*}
+		S_n  \;=\;  1(0!) + 3(1!) + 7(2!) + 13(3!) + 21(4!) + \dots + T_{n-1}
+	\end{equation*}
+	where $T_{k}$ is the $k^{\text{th}}$ term of the given series.
+	\paragraph{Solution}
+	Observe
+	\begin{align*}
+		T_k  \; &= \;  (k^2 + k + 1)\cdot k!
+	\end{align*}
+	Consider the definition
+	\begin{align*}
+		F_{k}  \; &= \;  k\cdot k!
+	\end{align*}
+	Note that $n! = n\cdot (n-1)!$
+	\begin{align*}
+		F_{k+1}  \; &= \; (k + 1)\cdot (k + 1)! \\
+			 \; &= \; (k + 1)\cdot (k + 1)\cdot k! \\
+			 \; &= \; (k^2 + 2k + 1)\cdot k! \\
+			 \; &= \; (k^2 + k + 1)\cdot k! + k\cdot k! \\
+			 \; &= \; T_k + F_k \\
+		\Aboxed{T_k \; &= \;  F_{k+1} - F_{k}}
+	\end{align*}
+	The required sum $S_n$ is thus is given by
+	\begin{align*}
+		S_n  	\; &= \; \sum_{k=0}^{n-1} T_k \\
+		 	\; &= \; \sum_{k=0}^{n-1} F_{k+1} - \sum_{k=0}^{n-1} F_{k} \\
+			\; &= \; \sum_{k=1}^{n} F_k - \sum_{k=0}^{n-1} F_k \\
+			\; &= \; F_n - F_0 \\
+			\; &= \; n\cdot n! - 0\cdot 0! \\\\
+		\Aboxed{S_n	\; &= \;  n\cdot n!}
+	\end{align*}
+	Hence, it is obvious that $S_{4000} = 4000\cdot 4000!$
+\end{document}

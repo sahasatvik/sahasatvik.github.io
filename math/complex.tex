@@ -1,0 +1,45 @@
+\documentclass[a4paper, 11pt, reqno]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+
+\geometry{letterpaper}
+
+\title{Complex Expressions}
+\author{Satvik Saha}
+\date{}
+
+\begin{document}
+	\maketitle
+	\paragraph{Problem}
+	Let $a + b + c = 0$. Prove the following, where $\omega^3 - 1 = 0$.
+	\begin{equation*}
+		(a + b\omega + c\omega ^2)^3 + (a + b\omega ^2 + c\omega)^3 = 27abc
+	\end{equation*}
+	\paragraph{Solution}
+	Note the following identities.
+	\begin{align}
+		1 + \omega + \omega ^2  \; &= \; 0 	\\ 
+		x^3 + y^3  \; &= \;  (x + y)(x\omega^2 + y\omega)(x\omega + y\omega^2) 
+	\end{align}
+	Let $x  =  a + b\omega + c\omega ^2$ and $y  =  a + b\omega ^2 + c\omega$.
+	Clearly,
+	\begin{align*}
+		x + y \; &= \; 2a + b(\omega + \omega^2) + c (\omega^2 + \omega )	\\
+			\; &= \;  2a - b - c 			\\
+			\; &= \;  3a				\\
+		x\omega^2 + y\omega  \; &= \; a(\omega^2 + \omega) + 2b + c(\omega + \omega^2) \\
+			\; &= \;  - a + 2b + - c		\\
+			\; &= \;  3b				\\
+		x\omega + y\omega^2  \; &= \; a(\omega + \omega^2) + b(\omega ^2 + \omega) + 2c \\
+			\; &= \;  - a - b + 2c			\\
+			\; &= \;  3c				
+	\end{align*}
+	Using $(2)$, we can write
+	\begin{align*}
+		x^3 + y^3 \; &= \; (3a)(3b)(3c)  \; = \; 27abc  
+	\end{align*}
+	which, with change in notation, is the desired result.
+\end{document}

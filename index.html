@@ -33,7 +33,7 @@
 
 <body>
 
-<div align="center">
+<div align="center" id="header">
 	<img class="logo" id="mainCube" src="images/cube.svg" alt="Cube"/>
 	<div class="main-title">Satvik Saha</div>
 
@@ -95,18 +95,33 @@
 		<a href="mailto:sahasatvik@outlook.com"><i class="icon icon-outlook"></i></a>
 	</div>
 	<div class="icon-bar" id="rightBar">
-		<a onclick="showQuote()"><i class="icon icon-shuffle"></i></a>
+		<a onclick="showQuote()" id="shuffleButton"><i class="icon icon-shuffle"></i></a>
 	</div>
 </div>
 
 <script type="text/javascript" charset="utf-8">
+	var mainCube = document.getElementById('mainCube');
+	var quoteBox = document.getElementById('quote');
 	var footer = document.getElementById('footer');
+	var shuffleButton = document.getElementById('shuffleButton');
 	window.onscroll = function(evt) {
 		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
 			footer.classList.add('active');
 		} else {
 			footer.classList.remove('active');
 		}
+
+		if (window.scrollY >= (mainCube.offsetTop + mainCube.offsetHeight)) {
+			shuffleButton.classList.add('vanished');
+		} else {
+			shuffleButton.classList.remove('vanished');
+		}
+	}
+	quote.onmouseenter = function() {
+		shuffleButton.classList.add('glow');
+	}
+	quote.onmouseleave = function() {
+		shuffleButton.classList.remove('glow');
 	}
 </script>
 

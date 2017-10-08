@@ -158,9 +158,17 @@ a {
 	-webkit-transition: transform 0.3s cubic-bezier(.5,-0.2,0.5,1.2), visibility 1s;
 }
 
+#shuffleButtonRight {
+	visibility: hidden;
+	position: absolute;
+	display: inline-block;
+	left: 90%;
+}
+
 .vanished {
 	visibility: hidden;
 	transform: scale(0, 0);
+	animation: none !important;
 }
 
 .glow {
@@ -205,6 +213,13 @@ a {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
+	#shuffleButton {
+		transition: none;
+		visibility: hidden;
+	}
+	#shuffleButtonRight {
+		visibility: visible;
+	}
 	.icon-bar {
 		height: 8vw;
 		top: 2wv;
@@ -227,7 +242,7 @@ a {
 	.icon-outlook {       font-size: 4vw;}
 }
 
-@media (max-height: 260px) {
+@media (max-height: 480px) {
 	#content {
 		margin-bottom: 0px;
 	}
@@ -236,5 +251,12 @@ a {
 		box-shadow: none;
 		-webkit-box-shadow: none;
 		border-top: 1px solid #DDDDDD;
+	}
+	#shuffleButton {
+		transition: none;
+		visibility: hidden;
+	}
+	#shuffleButtonRight {
+		visibility: visible;
 	}
 }

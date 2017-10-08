@@ -1,18 +1,26 @@
 \documentclass[a4paper, 11pt, reqno]{article}
 
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
 \usepackage{mathtools, amsmath, amssymb}
 
 \geometry{letterpaper}
 
-\title{Sequences and Series}
+\title{Telescoping Sums}
 \author{Satvik Saha}
 \date{}
 
 \begin{document}
 	\maketitle
+	
+	A sum in which subsequent terms cancel each other, leaving only its initial and final terms is called a
+	\textit{telescoping sum}.
+	\begin{align*}
+		S  \; &= \; \sum_{k=0}^{n-1} (T_{k+1} - T_{k})	\\
+		   \; &= \; (T_1 - T_0) + (T_2 - T_1) + (T_3 - T_2) + \dots (T_{n} - T_{n-1})	\\
+		   \; &= \; T_{n} - T_{0}
+	\end{align*}
+	
 	\paragraph{Problem}
 	Calculate the given sum, to $n$ terms
 	\begin{equation*}
@@ -40,8 +48,7 @@
 	The required sum $S_n$ is thus is given by
 	\begin{align*}
 		S_n  	\; &= \; \sum_{k=0}^{n-1} T_k \\
-		 	\; &= \; \sum_{k=0}^{n-1} F_{k+1} - \sum_{k=0}^{n-1} F_{k} \\
-			\; &= \; \sum_{k=1}^{n} F_k - \sum_{k=0}^{n-1} F_k \\
+		 	\; &= \; \sum_{k=0}^{n-1} (F_{k+1} - F_{k}) \\
 			\; &= \; F_n - F_0 \\
 			\; &= \; n\cdot n! - 0\cdot 0! \\\\
 		\Aboxed{S_n	\; &= \;  n\cdot n!}

@@ -165,6 +165,16 @@ a {
 	left: 90%;
 }
 
+@media (max-width: 600px), (max-height: 480px) {
+	#shuffleButton {
+		transition: none;
+		visibility: hidden;
+	}
+	#shuffleButtonRight {
+		visibility: visible;
+	}
+}
+
 .vanished {
 	visibility: hidden;
 	transform: scale(0, 0);
@@ -213,13 +223,6 @@ a {
 		padding-top: 8px;
 		padding-bottom: 8px;
 	}
-	#shuffleButton {
-		transition: none;
-		visibility: hidden;
-	}
-	#shuffleButtonRight {
-		visibility: visible;
-	}
 	.icon-bar {
 		height: 8vw;
 		top: 2wv;
@@ -251,12 +254,5 @@ a {
 		box-shadow: none;
 		-webkit-box-shadow: none;
 		border-top: 1px solid #DDDDDD;
-	}
-	#shuffleButton {
-		transition: none;
-		visibility: hidden;
-	}
-	#shuffleButtonRight {
-		visibility: visible;
 	}
 }

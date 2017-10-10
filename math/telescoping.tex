@@ -28,7 +28,7 @@
 	\problem
 	Calculate the given sum, to $n$ terms
 	\begin{equation*}
-		S_n  \;=\;  (1)\cdot 0! \,+\, (3)\cdot 1! \,+\, (7)\cdot 2! \,+\, (13)\cdot 3! \,+\, (21)\cdot 4! \,+\, \dots \,+\, (n^2 - n + 1)\cdot n!
+		S_n  \;=\;  (1)\cdot 0! \,+\, (3)\cdot 1! \,+\, (7)\cdot 2! \,+\, \dots \,+\, (n^2 - n + 1)\cdot n!
 	\end{equation*}
 	\solution
 	Define the sequences
@@ -87,5 +87,36 @@
 	\end{align*}\\
 	\begin{equation*}
 		\boxed{ S_\infty \; = \; \frac{1}{x - 1} } \tag{$x > 1$} 
+	\end{equation*}
+
+	\problem Define the function $f : \mathbb{N} \to \mathbb{R}$ as follows.
+	\begin{equation*}
+		f(n) \; = \;  \frac{4n + \sqrt{4n^2 - 1}}{\sqrt{2n+1} + \sqrt{2n-1}} 
+	\end{equation*}
+	Calculate the sum
+	\begin{equation*}
+		S_N \; = \; f(1) + f(2) + f(3) + \dots + f(N)
+	\end{equation*}
+	\solution
+	Rationalize and rearrange the expression for $f(n)$ as follows.
+	\begin{align*}
+		f(n)	\; &= \;  \frac{(4n + \sqrt{2n+1}\sqrt{2n-1})(\sqrt{2n+1} - \sqrt{2n-1})}{(2n + 1) - (2n - 1)} 	\\
+			\; &= \;  \frac{1}{2} \left(4n \sqrt{2n+1} - 4n \sqrt{2n-1} + (2n + 1)\sqrt{2n-1} - (2n - 1)\sqrt{2n+1}\right)	\\
+			\; &= \;  \frac{1}{2} \left((4n - 2n + 1)\sqrt{2n+1} - (4n - 2n - 1)\sqrt{2n-1}\right) \\
+			\; &= \;  \frac{1}{2} \left((2n + 1)^\frac{3}{2} - (2n - 1)^\frac{3}{2}\right)
+	\end{align*}
+	Define the function $g : \mathbb{N} \to \mathbb{R}$ as follows.
+	\begin{align*}
+		g(n)	\; &= \;  \frac{1}{2}\cdot (2n + 1)^\frac{3}{2}	\\
+		\implies
+		g(n - 1)\; &= \;  \frac{1}{2}\cdot (2n - 1)^\frac{3}{2}
+	\end{align*}
+	Finally
+	\begin{align*}
+		\sum_{n=1}^{N} f(n) \; &= \;  \sum_{n=1}^{N} \left( g(n) - g(n-1) \right) \\
+			\; &= \; g(N) - g(0) 
+	\end{align*}
+	\begin{equation*}
+		\boxed{ S_N \; = \; \frac{1}{2} (2N + 1)^\frac{3}{2} \,-\, \frac{1}{2}}
 	\end{equation*}
 \end{document}

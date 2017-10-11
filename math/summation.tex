@@ -1,0 +1,58 @@
+\documentclass[a4paper, 11pt, reqno]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+
+\geometry{letterpaper}
+
+\title{Summation Identities}
+\author{Satvik Saha}
+\date{}
+
+\newcounter{prob}
+\def\problem{\stepcounter{prob}\paragraph{Problem \arabic{prob}}}
+\def\solution{\paragraph{Solution}}
+
+\begin{document}
+	\maketitle
+	
+	\paragraph{General manipulations}
+	\begin{align*}
+		\sum_{n=s}^{t} C\cdot f(n) \; &= \; C\cdot \sum_{n=s}^{t} f(n)	\\
+		\sum_{n=s}^{t} f(n) \,\pm\, \sum_{n=s}^{t} g(n) \; &= \;  \sum_{n=s}^{t} \left[ f(n) \pm g(n) \right]	\\
+		\sum_{n=s}^{t} f(n) \; &= \!  \sum_{n=s+k}^{t+k} f(n - k)	\\
+		\sum_{n=a}^{b} f(n) + \!\!\sum_{n=b+1}^{c} f(n) \; &= \; \sum_{n=a}^{c} f(n)	\\
+		\sum_{i=k_0}^{k} \sum_{j=l_0}^{l} a_{i,j} \; &= \; \sum_{j=l_0}^{l} \sum_{i=k_0}^{k} a_{i,j} \\
+		\sum_{i=s}^{m} \sum_{j=t}^{n} a_i b_j \; &= \; \left( \sum_{i=s}^{m} a_i \right)\cdot \sum_{j=t}^{n} b_j
+	\end{align*}
+	\begin{align*}
+		\left( \sum_{k=0}^{n} a_k  \right)\cdot \left( \sum_{k=0}^{n} b_k  \right)
+			\; = \;  \sum_{k=0}^{2n}\sum_{i=0}^{k}a_i b_{k-i} - \sum_{k=0}^{n-1} \left( a_k \sum_{i=n+1}^{2n-k}b_i  
+											\;+\;	    b_k \sum_{i=n+1}^{2n-k}a_i \right)     
+	\end{align*}
+
+	\paragraph{Polynomial expressions}
+	\begin{align*}
+		\sum_{k=m}^{n} 1 	\; &= \;  n + 1 - m	\\
+		\sum_{k=1}^{n} k	\; &= \;  \frac{n(n + 1)}{2}	\\
+		\sum_{k=1}^{n} k^2	\; &= \;  \frac{n(n + 1)(2n + 1)}{6}	\\
+		\sum_{k=1}^{n} k^3	\; &= \;  \left[\frac{n(n + 1)}{2}\right]^2	\\
+		\sum_{k=1}^{n} k^4	\; &= \;  \frac{n(n + 1)(2n + 1)(3n^2 + 3n - 1)}{30}	\\
+		\sum_{k=0}^{n-1} a^k 	\; &= \;  \frac{a^n - 1}{a - 1}		\\
+		\sum_{k=0}^{n-1} ka^k 	\; &= \;  \frac{a - na^n + (n - 1)a^{n+1}}{(a + 1)^2}
+	\end{align*}
+
+	\paragraph{Binomial coefficients and Factorials}
+	\begin{align*}
+		\sum_{i=0}^{n} \binom{n}{i}	\; &= \; 2^n 	\\
+		\sum_{i=0}^{n} \binom{n}{i}^2	\; &= \; \binom{2n}{i}	\\
+		\sum_{i=0}^{n} \binom{m + i - 1}{i}	\; &= \; \binom{m + n}{n}	\\
+		\sum_{i=1}^{n} i\binom{n}{i}	\; &= \; n2^{n-1} 	\\
+		\sum_{i=0}^{n} i!\cdot \binom{n}{i} \; &= \; \lfloor{n!\cdot e}\rfloor	\\
+		\sum_{i=0}^{n} \binom{i}{k}	\; &= \; \binom{n + 1}{k + 1}	\\
+		\sum_{i=0}^{n} \binom{n}{i}a^{n-i}b^{i}	\; &= \; (a + b)^n
+	\end{align*}
+	
+	
+\end{document}

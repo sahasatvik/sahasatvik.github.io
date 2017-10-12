@@ -7,7 +7,7 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	font-family: 'Alegreya Sans SC', Helvetica, arial, sans-serif;
+	font-family: Helvetica, arial, sans-serif;
 	font-weight: bold;
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -50,7 +50,7 @@ a {	color: #1188CC;}
 
 #mainTitle {
 	display: block;
-	height: 40px;
+	height: 32px;
 	width: 70%;
 	padding-bottom: 12px;
 	margin-bottom: 0;

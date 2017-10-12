@@ -1,7 +1,3 @@
-@font-face {
-	font-family: Resphekt;
-	src: url(fonts/Resphekt-Regular.otf);
-}
 html, body {
 	padding: 0;
 	margin: 0;
@@ -36,6 +32,7 @@ hr {
 a {	color: #1188CC;}
 
 .logo {
+	display: block;
 	opacity: 0.9;
 	width: 200px;
 	padding-top: 44px;
@@ -49,11 +46,9 @@ a {	color: #1188CC;}
 	transform: scale(1.05, 1.05);
 }
 
-.main-title {
-	font-family: Resphekt, Helvetica, arial, sans-serif;
-	font-size: 48px;
-	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
+#main-title {
+	display: block;
+	height: 40px;
 	width: 70%;
 	padding-bottom: 12px;
 	margin-bottom: 0;

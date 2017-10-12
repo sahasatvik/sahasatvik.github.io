@@ -192,8 +192,9 @@ var quotes = [
 	}
 ]
 
-function showQuote() {
-	var quote = quotes[Math.floor(Math.random() * quotes.length)];
+function showQuote(quoteNumber) {
+	var i = (typeof(quoteNumber) == 'undefined')? Math.floor(Math.random() * quotes.length) : quoteNumber;
+	var quote = quotes[i];
 	var text = '"' + quote.text + '"';
 	var color = '#E20022'
 	document.getElementById("qauthor").innerHTML = '<i>' + quote.author + '</i>';

@@ -1,25 +1,21 @@
+@font-face {
+	font-family: Resphekt;
+	src: url(fonts/Resphekt-Regular.otf);
+}
 html, body {
 	padding: 0;
 	margin: 0;
 	background-color: #FFFFFF;
-	font-family: Helvetica, arial, sans-serif; 
-}
-
-.main-title {
-	font-size: 24px;
-	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
-	width: 70%;
-	padding-bottom: 12px;
-	margin-bottom: 0;
-	border-bottom: 1px solid #CCCCCC;
 }
 
 h1, h2, h3, h4 {
+	font-family: Helvetica, arial, sans-serif;
 	font-weight: bold;
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
+
+ul {	margin-top: 4px;}
 
 h1 {	
 	font-size: 24px;
@@ -37,15 +33,13 @@ hr {
 	border-right: 0 none;
 }
 
-a {
-	color: #1188CC;
-}
+a {	color: #1188CC;}
 
 .logo {
 	opacity: 0.9;
 	width: 200px;
 	padding-top: 44px;
-	padding-bottom: 32px;
+	padding-bottom: 16px;
 	transition: opacity 0.5s ease-out, transform 1s ease-out;
 	-webkit-transition: opacity 0.5 ease-out, transform 1s ease-out;
 }
@@ -55,7 +49,19 @@ a {
 	transform: scale(1.05, 1.05);
 }
 
+.main-title {
+	font-family: Resphekt, monospace;
+	font-size: 48px;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+	width: 70%;
+	padding-bottom: 12px;
+	margin-bottom: 0;
+	border-bottom: 1px solid #CCCCCC;
+}
+
 #quote {
+	font-family: monospace;
 	font-size: 14px;
 	font-kerning: auto;
 	line-height: 20px;
@@ -66,15 +72,21 @@ a {
 	padding-right: 10%;
 }
 
+#qauthor {font-weight: bold;}
+
 #content {
-	font-size: 14px;
-	line-height: 1.5;
-	
 	width: 70%;
 	margin-left: 15%;
 	margin-right: 15%;
 	margin-top: 0;
 	margin-bottom: 80px;
+}
+
+.content-text {
+	font-family: Helvetica, arial, sans-serif; 
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1.5;
 }
 
 #footer {

@@ -50,7 +50,7 @@ a {	color: #1188CC;}
 }
 
 .main-title {
-	font-family: Resphekt, monospace;
+	font-family: Resphekt, Helvetica, arial, sans-serif;
 	font-size: 48px;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;

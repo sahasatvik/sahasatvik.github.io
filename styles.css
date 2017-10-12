@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -5,7 +7,7 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	font-family: Helvetica, arial, sans-serif;
+	font-family: 'Alegreya Sans SC', Helvetica, arial, sans-serif;
 	font-weight: bold;
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -14,10 +16,10 @@ h1, h2, h3, h4 {
 ul {	margin-top: 4px;}
 
 h1 {	
-	font-size: 24px;
+	font-size: 26px;
 	border-bottom: 1px solid #CCCCCC;
 }
-h2 {	font-size: 18px;}
+h2 {	font-size: 22px;}
 
 hr {
 	opacity: 0.4;
@@ -46,7 +48,7 @@ a {	color: #1188CC;}
 	transform: scale(1.05, 1.05);
 }
 
-#main-title {
+#mainTitle {
 	display: block;
 	height: 40px;
 	width: 70%;
@@ -81,7 +83,7 @@ a {	color: #1188CC;}
 	font-family: Helvetica, arial, sans-serif; 
 	font-weight: normal;
 	font-size: 14px;
-	line-height: 1.5;
+	line-height: 1.6;
 }
 
 #footer {

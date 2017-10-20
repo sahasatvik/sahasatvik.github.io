@@ -299,7 +299,7 @@ a {
 
 @media (max-height: 480px) {
 	#content {
-		margin-bottom: 0px;
+		margin-bottom: 16px;
 	}
 	#footer {
 		position: relative;

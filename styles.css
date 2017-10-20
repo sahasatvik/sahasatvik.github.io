@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html, body {
 	padding: 0;
 	margin: 0;
@@ -5,19 +7,23 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	font-family: Helvetica, arial, sans-serif;
-	font-weight: bold;
+	font-family: Roboto, Helvetica, arial, sans-serif;
+	font-weight: 400;
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
 
-ul {	margin-top: 4px;}
+ul {	
+	margin-top: 4px;
+	list-style: none;
+	padding: 0;
+}
 
 h1 {	
-	font-size: 26px;
+	font-size: 28px;
 	border-bottom: 1px solid #CCCCCC;
 }
-h2 {	font-size: 22px;}
+h2 {	font-size: 24px;}
 
 hr {
 	opacity: 0.4;
@@ -29,7 +35,10 @@ hr {
 	border-right: 0 none;
 }
 
-a {	color: #1188CC;}
+a {	
+	color: #1188CC;
+	text-decoration: none;
+}
 
 .logo {
 	display: block;
@@ -70,11 +79,16 @@ a {	color: #1188CC;}
 #qauthor {font-weight: bold;}
 
 #content {
-	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 	margin-top: 0;
-	margin-bottom: 80px;
+	margin-bottom: 90px;
+	padding: 0;
+	align-content: center;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .content-text {
@@ -83,6 +97,37 @@ a {	color: #1188CC;}
 	font-size: 14px;
 	line-height: 1.6;
 }
+
+.card {
+	flex-grow: 1;
+	flex-shrink: 0;
+	float: center;
+	display: inline-block;
+	justify-content: left;
+
+	margin: 12px;
+	padding: 24px;
+	padding-right: 14px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	position: relative;
+	
+	background: #FFFFFF;
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card:hover {
+	box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
+	webkit-box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
+}
+
+#mathematics {	min-width: 180px;}
+#physics {	min-width: 220px;}
+#english {	min-width: 250px;}
 
 #footer {
 	position: fixed;
@@ -98,7 +143,7 @@ a {	color: #1188CC;}
 	overflow: hidden;
 	
 	box-shadow: 0 2px 10px 0px black;
-	-webkit-box-shadow: 0 -8px -6px -6px black;
+	-webkit-box-shadow: 0 2px 10px 0px black;
 	transition: all 0.3s ease-out;
 	-webkit-transition: all 0.3s ease-out;
 }

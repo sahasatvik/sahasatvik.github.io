@@ -7,7 +7,7 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	font-family: Roboto, Helvetica, arial, sans-serif;
+	font-family: 'Roboto', Helvetica, arial, sans-serif;
 	font-weight: 300;
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -92,7 +92,7 @@ a {
 }
 
 .content-text {
-	font-family: Helvetica, arial, sans-serif; 
+	font-family: 'Roboto', arial, sans-serif; 
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 1.6;

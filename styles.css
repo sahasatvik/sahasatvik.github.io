@@ -13,22 +13,23 @@ h1, h2, h3, h4 {
 	margin-bottom: 0;
 }
 
+h1 {	
+	font-size: 28px;
+	border-bottom: 1px solid #CCCCCC;
+}
+h2 {	font-size: 24px;}
+h3 {	font-weight: 400;}
+
 ul {	
 	margin-top: 4px;
 	list-style: none;
 	padding: 0;
 }
 
-h1 {	
-	font-size: 28px;
-	border-bottom: 1px solid #CCCCCC;
-}
-h2 {	font-size: 24px;}
-
 hr {
 	opacity: 0.4;
 	height: 1px;
-	width: 70vw;
+	width: 70%;
 	border-top: 3px single #CCCCCC;
 	border-bottom: 0 none;
 	border-left: 0 none;
@@ -36,8 +37,13 @@ hr {
 }
 
 a {	
-	color: #1188CC;
+	color: rgba(0, 0, 0, 0.7);
 	text-decoration: none;
+	transition: all 0.2s ease;
+	webkit-transition: all 0.3s ease;
+}
+a:hover {
+	color: rgba(30, 110, 220, 0.9);
 }
 
 .logo {
@@ -85,10 +91,6 @@ a {
 	margin-top: 0;
 	margin-bottom: 90px;
 	padding: 0;
-	align-content: center;
-	justify-content: center;
-	display: flex;
-	flex-wrap: wrap;
 }
 
 .content-text {
@@ -96,6 +98,15 @@ a {
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 1.6;
+}
+
+#notes {
+	margin: 0;
+	padding: 0;
+	align-content: center;
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .card {
@@ -106,8 +117,8 @@ a {
 	justify-content: left;
 
 	margin: 12px;
-	padding: 24px;
-	padding-right: 14px;
+	padding-left: 24px;
+	padding-right: 24px;
 	padding-top: 8px;
 	padding-bottom: 8px;
 	position: relative;
@@ -124,10 +135,6 @@ a {
 	box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
 	webkit-box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
 }
-
-#mathematics {	min-width: 180px;}
-#physics {	min-width: 220px;}
-#english {	min-width: 250px;}
 
 #footer {
 	position: fixed;

@@ -216,7 +216,7 @@ a:hover {
 	width: 80vw;
 }
 
-.icon-bar > a {
+.icon-bar a {
 	display: inline-block;
 	width: 56px;
 	height: 48px;
@@ -227,23 +227,21 @@ a:hover {
 	margin: 0;
 }
 
-.icon-bar > a > i {
+.icon {
 	position: relative;
 	display: inline-block;
 	width: 100%;
 	top: 50%;
 	transform: translateY(-50%);
+	vertical-align: middle;
+	
 	padding: 0;
 	margin: 0;
-}
-
-.icon {
+	
 	color: #5B5B5B;
 	font-size: 32px;
 	opacity: 0.5;
-	padding: 8px;
 	
-	vertical-align: middle;
 	transition: color 0.8s ease-out, opacity 0.5s ease-out;
 	-webkit-transition: color 0.8s ease-out, opacity 0.5s ease-out;
 }
@@ -280,7 +278,7 @@ a:hover {
 		height: 8vw;
 		top: 2wv;
 	}
-	.icon-bar > a {
+	.icon-bar a {
 		width: 9vw;
 		height: 8vw;
 	}

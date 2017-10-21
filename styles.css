@@ -74,6 +74,22 @@ a:hover {
 	width: 70%;
 }
 
+#content {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 10px;
+	margin-bottom: 90px;
+	padding: 0;
+}
+
+.content-text {
+	font-family: 'Roboto', arial, sans-serif; 
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
 #notes {
 	margin: 0;
 	padding: 0;
@@ -148,22 +164,6 @@ a:hover {
 		height: 10px;
 		opacity: 1;
 	}
-}
-
-#content {
-	width: 80%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 0;
-	margin-bottom: 90px;
-	padding: 0;
-}
-
-.content-text {
-	font-family: 'Roboto', arial, sans-serif; 
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 1.6;
 }
 
 #quote {

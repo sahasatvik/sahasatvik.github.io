@@ -34,25 +34,25 @@
 <body>
 
 <div align="center" id="header">
-	<img class="logo" id="mainCube" src="images/cube.svg" alt="Cube"/>
+	<div class="logo ripple-effect" id="cubeLogo"><img class="" id="mainCube" src="images/cube.svg" alt="Cube"></img></div>
 	<img class="name" id="mainTitle" src="images/main-title.svg" alt="Satvik Saha"></img>
 
-	<div id="quote">
-		<a onclick="showQuote()" id="shuffleButtonRight"><i class="icon icon-shuffle"></i></a>
-		<div id="qtext"></div>
-		<div id="qauthor"></div>
-	</div>
 </div>
 
 <br>
 
-<script type="text/javascript">
-	showQuote();
-</script>
 
 <div id="content">
 	<div class="content-text" id="notes">
-		<div class="card" id="mathematics">
+		<div class="card card-row ripple-effect" id="quote" align="center">
+			<div id="qtext"></div>
+			<div id="qauthor"></div>
+		</div>
+		<script type="text/javascript">
+			showQuote();
+		</script>
+		
+		<div class="card ripple-effect" id="mathematics">
 			<h2>Mathematics</h2>
 			<ul>
 				<li><a href="math/differentiation.html">Differentiation</a></li>
@@ -64,7 +64,7 @@
 				<li><a href="math/telescoping.pdf">Telescoping Sums</a></li>
 			</ul>
 		</div>
-		<div class="card" id="physics">
+		<div class="card ripple-effect" id="physics">
 			<h2>Physics</h2>
 			<ul>
 				<li><a href="physics/pendulum.html">The Motion of a Simple Pendulum</a></li>
@@ -76,7 +76,7 @@
 				<li><a href="physics/ladderSlip.pdf">Ladder in Equilibrium</a></li>
 			</ul>
 		</div>
-		<div class="card" id="english">
+		<div class="card ripple-effect" id="english">
 			<h2>English</h2>
 			<ul>
 				<li><a href="english/salvatore.html">Salvatore</a> <em>(William Somerset Maugham)</em></li>
@@ -102,35 +102,58 @@
 		<a href="https://en.lichess.org/@/sahasatvik"><i class="icon icon-lichess"></i></a>
 		<a href="mailto:sahasatvik@outlook.com"><i class="icon icon-outlook"></i></a>
 	</div>
-	<div class="icon-bar" id="rightBar">
-		<a onclick="showQuote()" id="shuffleButton"><i class="icon icon-shuffle"></i></a>
-	</div>
 </div>
 
 <script type="text/javascript" charset="utf-8">
-	var mainCube = document.getElementById('mainCube');
 	var quoteBox = document.getElementById('quote');
 	var footer = document.getElementById('footer');
 	var shuffleButton = document.getElementById('shuffleButton');
 	window.onscroll = function(evt) {
-		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
-			footer.classList.add('active');
+		if ((window.innerHeight + window.scrollY - 48 - footer.offsetHeight) >= document.body.offsetHeight) {
+			footer.classList.add('no-shadow');
 		} else {
-			footer.classList.remove('active');
-		}
-
-		if (window.scrollY >= (mainCube.offsetTop + mainCube.offsetHeight)) {
-			shuffleButton.classList.add('vanished');
-		} else {
-			shuffleButton.classList.remove('vanished');
+			footer.classList.remove('no-shadow');
 		}
 	}
+
 	quoteBox.onmouseenter = function() {
 		shuffleButton.classList.add('glow');
 	}
 	quoteBox.onmouseleave = function() {
 		shuffleButton.classList.remove('glow');
 	}
+	quoteBox.onmousedown = function() {
+		showQuote(-1, quotes);
+	};
+
+	var rippleEffect = (function() {
+		function rippleEffect(event) {
+			var time = 1500;
+			var self = this;
+			var rect = self.getBoundingClientRect();
+			var x    = event.clientX - rect.left;
+			var y    = event.clientY - rect.top;
+			var circle = document.createElement("div");
+
+			circle.style.top = y + 'px';
+			circle.style.left = x + 'px';
+			circle.style.pointerEvents = 'none';
+			circle.className = 'ripple animate';
+			self.appendChild(circle);
+			
+			setTimeout(function() {
+				self.removeChild(circle);
+			}, time);
+		}
+
+		var targets = document.getElementsByClassName('ripple-effect');
+		var l = targets.length;
+		var i;
+
+		for (i = 0; i < l; i++) {
+			targets[i].addEventListener('mousedown', rippleEffect, false);
+		}
+	}());
 </script>
 
 </body>

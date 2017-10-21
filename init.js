@@ -192,20 +192,17 @@ var quotes = [
 	}
 ]
 
-function showQuote(quoteNumber) {
-	var i = (typeof(quoteNumber) == 'undefined')? Math.floor(Math.random() * quotes.length) : quoteNumber;
-	var quote = quotes[i];
+function showQuote(quoteNumber, listOfQuotes) {
+	var i = (typeof(quoteNumber) == 'undefined' || quoteNumber < 0)? Math.floor(Math.random() * quotes.length) : quoteNumber;
+	var q = (typeof(listOfQuotes) == 'undefined')? quotes : listOfQuotes;
+	var quote = q[i];
 	var text = '"' + quote.text + '"';
-	var color = '#E20022'
 	document.getElementById("qauthor").innerHTML = '<i>' + quote.author + '</i>';
 	
 	for (i = 1; i <= text.length; i++) {
 		(function(i){
 			setTimeout(function() {
-				document.getElementById("qtext").innerHTML = text.substring(0, i-1) 
-					+ ((i != text.length)? ('<font color="' + color + '">') : '')
-					+ text.substring(i-1, i)
-					+ ((i != text.length)? '</font>' : '');
+				document.getElementById("qtext").innerHTML = text.substring(0, i);
 			}, 10*i);
 		}(i));
 	}

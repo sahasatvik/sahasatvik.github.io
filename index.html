@@ -107,7 +107,7 @@
 <script type="text/javascript" charset="utf-8">
 	var quoteBox = document.getElementById('quote');
 	var footer = document.getElementById('footer');
-	var shuffleButton = document.getElementById('shuffleButton');
+
 	window.onscroll = function(evt) {
 		if ((window.innerHeight + window.scrollY - 48 - footer.offsetHeight) >= document.body.offsetHeight) {
 			footer.classList.add('no-shadow');
@@ -116,12 +116,6 @@
 		}
 	}
 
-	quoteBox.onmouseenter = function() {
-		shuffleButton.classList.add('glow');
-	}
-	quoteBox.onmouseleave = function() {
-		shuffleButton.classList.remove('glow');
-	}
 	quoteBox.onmousedown = function() {
 		showQuote(-1, quotes);
 	};

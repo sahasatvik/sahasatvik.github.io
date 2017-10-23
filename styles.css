@@ -1,29 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html, body {
-	padding: 0;
+* {
 	margin: 0;
+	padding: 0;
+}
+
+html, body {
 	background-color: #FFFFFF;
 }
 
 h1, h2, h3, h4 {
 	font-family: 'Roboto', Helvetica, arial, sans-serif;
-	font-weight: 300;
-	padding-bottom: 0;
-	margin-bottom: 0;
-}
-
-h1 {	
-	font-size: 28px;
-	border-bottom: 1px solid #CCCCCC;
-}
-h2 {	font-size: 24px;}
-h3 {	font-weight: 400;}
-
-ul {	
-	margin-top: 4px;
-	list-style: none;
-	padding: 0;
+	font-weight: 400;
 }
 
 hr {
@@ -80,7 +68,6 @@ a:hover {
 	margin-right: 10%;
 	margin-top: 10px;
 	margin-bottom: 90px;
-	padding: 0;
 }
 
 .content-text {
@@ -91,8 +78,6 @@ a:hover {
 }
 
 #notes {
-	margin: 0;
-	padding: 0;
 	align-content: center;
 	justify-content: center;
 	display: flex;
@@ -104,14 +89,12 @@ a:hover {
 	flex-shrink: 0;
 	float: center;
 	display: inline-block;
+	position: relative;
 	justify-content: left;
 
 	margin: 12px;
-	padding-left: 24px;
-	padding-right: 24px;
 	padding-top: 8px;
 	padding-bottom: 8px;
-	position: relative;
 	
 	background: #FFFFFF;
 	border-radius: 2px;
@@ -132,6 +115,26 @@ a:hover {
 	box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
 	-webkit-box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
 }
+
+.card > * {
+	margin-left: 24px;
+	margin-right: 24px;
+}
+.card h2 {
+	font-size: 24px;
+	font-weight: 300;
+	margin-top: 20px;
+}
+.card h3 {	
+	font-weight: 400;
+	margin-top: 8px;
+}
+.card ul {	
+	margin-top: 4px;
+	margin-bottom: 20px;
+	list-style: none;
+}
+
 
 .ripple-effect {
 	position: relative;
@@ -190,7 +193,6 @@ a:hover {
 	height: 48px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	margin: 0;
 	overflow: hidden;
 	z-index: 100;
 	
@@ -223,8 +225,6 @@ a:hover {
 	align-content: center;
 	vertical-align: middle;
 	text-decoration: none;
-	padding: 0;
-	margin: 0;
 }
 
 .icon {
@@ -234,9 +234,6 @@ a:hover {
 	top: 50%;
 	transform: translateY(-50%);
 	vertical-align: middle;
-	
-	padding: 0;
-	margin: 0;
 	
 	color: #5B5B5B;
 	font-size: 32px;

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+@font-face {
+    font-family: "icons";
+    src: 
+    	 url("fonts/icons.eot?d1562fda53499558ef442bf3c502e47a?#iefix") format("embedded-opentype"),
+	 url("fonts/icons.woff2?d1562fda53499558ef442bf3c502e47a") format("woff2"),
+	 url("fonts/icons.woff?d1562fda53499558ef442bf3c502e47a") format("woff"),
+	 url("fonts/icons.ttf?d1562fda53499558ef442bf3c502e47a") format("truetype"),
+	 url("fonts/icons.svg?d1562fda53499558ef442bf3c502e47a#icons") format("svg");
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -188,6 +198,38 @@ a:hover {
 	border-top: 1px solid #DDDDDD;
 }
 
+i {
+    line-height: 1;
+}
+
+i:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: top;
+}
+
+.icons-github:before {
+    content: "\f101";
+}
+.icons-gmail:before {
+    content: "\f102";
+}
+.icons-lichess:before {
+    content: "\f103";
+}
+.icons-medium:before {
+    content: "\f104";
+}
+.icons-outlook:before {
+    content: "\f105";
+}
+.icons-quora:before {
+    content: "\f106";
+}
+.icons-stackoverflow:before {
+    content: "\f107";
+}
 .icon-bar {
 	position: absolute;
 	height: 48px;
@@ -227,22 +269,21 @@ a:hover {
 	opacity: 1.0;
 }
 
-.icon-github {
+#gitBox {
+	width: 70px;
+}
+.icons-github {
 	opacity: 1.0;
 	font-size: 44px;
 }
-.icon-gmail {   font-size: 48px;}
-.icon-medium {  font-size: 30px;}
-.icon-outlook { font-size: 27px;}
-.icon-lichess { font-size: 38px;}
 
-.icon-github:hover {         color: #000000 !important;}
-.icon-quora:hover {          color: #a82400 !important;}
-.icon-outlook:hover {        color: #00a1f1 !important;}
-.icon-medium:hover {         color: #02b875 !important;}
-.icon-gmail:hover {          color: #ea4335 !important;}
-.icon-stack-overflow:hover { color: #f48024 !important;}
-.icon-lichess:hover {        color: #000000 !important;}
+.icons-github:hover {         color: #000000 !important;}
+.icons-quora:hover {          color: #a82400 !important;}
+.icons-outlook:hover {        color: #00a1f1 !important;}
+.icons-medium:hover {         color: #02b875 !important;}
+.icons-gmail:hover {          color: #ea4335 !important;}
+.icons-stackoverflow:hover {  color: #f48024 !important;}
+.icons-lichess:hover {        color: #000000 !important;}
 
 
 @media (max-width: 600px) {
@@ -260,19 +301,17 @@ a:hover {
 		height: 8vw;
 		top: 2wv;
 	}
-	.icon-bar a {
-		width: 9vw;
+	.icon-bar a, #gitBox {
 		height: 8vw;
+		width: 9vw;
 	}
 	.icon {
 		font-size: 5vw;
 		padding: 0.5vw;
 	}
-	.icon-gmail {         font-size: 7vw;}
-	.icon-github {        font-size: 7vw;}
-	.icon-stackoverflow { font-size: 4vw;}
-	.icon-lichess {       font-size: 6vw;}
-	.icon-outlook {       font-size: 4vw;}
+	.icons-github {        
+		font-size: 7vw;
+	}
 }
 
 @media (max-height: 480px) {

@@ -155,13 +155,14 @@ a:hover {
 	font-family: monospace;
 	font-size: 14px;
 	font-kerning: auto;
-	line-height: 20px;
+	line-height: 18px;
 	
 	padding: 16px;
 }
 
 #qauthor {
 	font-weight: bold;
+	margin-top: 6px;
 }
 
 #footer {

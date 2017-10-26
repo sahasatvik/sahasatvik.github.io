@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
-@font-face {
-    font-family: "icons";
-    src: 
-    	 url("fonts/icons.eot?d1562fda53499558ef442bf3c502e47a?#iefix") format("embedded-opentype"),
-	 url("fonts/icons.woff2?d1562fda53499558ef442bf3c502e47a") format("woff2"),
-	 url("fonts/icons.woff?d1562fda53499558ef442bf3c502e47a") format("woff"),
-	 url("fonts/icons.ttf?d1562fda53499558ef442bf3c502e47a") format("truetype"),
-	 url("fonts/icons.svg?d1562fda53499558ef442bf3c502e47a#icons") format("svg");
-}
+@import url(fonts/icons.css);
 
 * {
 	margin: 0;
@@ -198,38 +189,6 @@ a:hover {
 	border-top: 1px solid #DDDDDD;
 }
 
-i {
-    line-height: 1;
-}
-
-i:before {
-    font-family: icons !important;
-    font-style: normal;
-    font-weight: normal !important;
-    vertical-align: top;
-}
-
-.icons-github:before {
-    content: "\f101";
-}
-.icons-gmail:before {
-    content: "\f102";
-}
-.icons-lichess:before {
-    content: "\f103";
-}
-.icons-medium:before {
-    content: "\f104";
-}
-.icons-outlook:before {
-    content: "\f105";
-}
-.icons-quora:before {
-    content: "\f106";
-}
-.icons-stackoverflow:before {
-    content: "\f107";
-}
 .icon-bar {
 	position: absolute;
 	height: 48px;

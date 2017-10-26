@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?9aec3d1420b6f417dd35e3a661136942?#iefix") format("embedded-opentype"),
+url("./icons.woff2?9aec3d1420b6f417dd35e3a661136942") format("woff2"),
+url("./icons.woff?9aec3d1420b6f417dd35e3a661136942") format("woff"),
+url("./icons.ttf?9aec3d1420b6f417dd35e3a661136942") format("truetype"),
+url("./icons.svg?9aec3d1420b6f417dd35e3a661136942#icons") format("svg");
+}
+
+i {
+    line-height: 1;
+}
+
+i:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: top;
+}
+
+.icons-github:before {
+    content: "\f101";
+}
+.icons-gmail:before {
+    content: "\f102";
+}
+.icons-lichess:before {
+    content: "\f103";
+}
+.icons-medium:before {
+    content: "\f104";
+}
+.icons-outlook:before {
+    content: "\f105";
+}
+.icons-quora:before {
+    content: "\f106";
+}
+.icons-stackoverflow:before {
+    content: "\f107";
+}

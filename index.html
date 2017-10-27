@@ -44,7 +44,7 @@
 
 <div id="content">
 	<div class="content-text" id="notes">
-		<div class="card card-row ripple-effect" id="quote" align="center">
+		<div class="card card-row pressable" id="quote" align="center">
 			<div id="qtext"></div>
 			<div id="qauthor"></div>
 		</div>
@@ -118,7 +118,7 @@
 		}
 	}
 
-	quoteBox.onmousedown = function() {
+	quoteBox.onmouseup = function() {
 		showQuote(-1, quotes);
 	};
 

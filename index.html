@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="styles.css">
 <script src="init.js"></script>
+<script src="hilbert.js"></script>
 
 <title>Satvik Saha</title>
 
@@ -35,6 +36,10 @@
 <body>
 
 <div align="center" id="header">
+	<div id="hilbert">
+		<canvas class="" id="hilbertCanvas"></canvas>
+		<div id="canvasText">Hi! I'm Satvik</div>
+	</div>
 	<div class="logo ripple-effect" id="cubeLogo">
 		<img id="mainCube" src="images/cube.svg" alt="Cube"></img>
 	</div>
@@ -93,7 +98,7 @@
 		
 </div>
 
-<div align="center" id="footer">
+<div align="center" id="footer" class="retracted">
 	<div class="icon-bar" id="socialBar">
 		<a href="mailto:sahasatvik@gmail.com">                        <i class="icon icons-gmail">          </i ></a>
 		<a href="https://www.quora.com/profile/Satvik-Saha">          <i class="icon icons-quora">          </i ></a>
@@ -111,7 +116,13 @@
 	var footer = document.getElementById('footer');
 
 	window.onscroll = function(evt) {
-		if ((window.innerHeight + window.scrollY - 48 - footer.offsetHeight) >= document.body.offsetHeight) {
+		if (window.scrollY <= footer.offsetHeight) {
+			footer.classList.add('retracted');
+		} else {
+			footer.classList.remove('retracted');
+		}
+		
+		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
 			footer.classList.add('no-shadow');
 		} else {
 			footer.classList.remove('no-shadow');
@@ -150,6 +161,52 @@
 			targets[i].addEventListener('mousedown', rippleEffect, false);
 		}
 	}());
+
+	var h = window.innerHeight;
+	var w = window.innerWidth;
+	var maxWH = Math.max(h, w);
+
+	var order = 5;
+	var line = (maxWH / ((1 << order) - 1));
+	var l = 1 << (2*order);
+	var delay = 40;
+	
+	var xo = (w/2) - line * (1 << (order - 1)) + (line / 2);
+	var yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
+
+	var c = document.getElementById('hilbertCanvas');
+	c.setAttribute('width', w);
+	c.setAttribute('height', h);
+
+	var ctx = c.getContext('2d');
+	
+	ctx.setStrokeColor('#D6D6D6');
+	ctx.setLineCap('round');
+
+	var drawLine = function (i, t, c) {	
+		setTimeout( function() {
+			var p = getPoint(order, i);
+			var q = getPoint(order, i+1);
+			ctx.beginPath();
+			ctx.setStrokeColor(c);
+			ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
+			ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
+			ctx.stroke();
+		}, t * delay);
+	};
+
+	var drawCurveFrom = function (start, color, totalSteps) {
+		var right = start;
+		var left = start - 1;
+		for (var step = 0; step <= ((l * totalSteps) / 2); step++, right++, left--) {
+			if (right < l)	drawLine(right - 1, step, color);
+			if (left >= 0)	drawLine(left, step, color);
+		}
+	};
+
+	drawCurveFrom(Math.random() * l, 'rgba(32, 200, 32, 0.5)', 1);
+	drawCurveFrom(Math.random() * l, 'rgba(32, 32, 255, 0.5)', 1);
+	drawCurveFrom(Math.random() * l, 'rgba(200, 32, 32, 0.5)', 1);
 </script>
 
 </body>

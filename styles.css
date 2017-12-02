@@ -25,13 +25,40 @@ a:hover {
 	color: rgba(30, 110, 220, 0.9);
 }
 
+#hilbert {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+#hilbertCanvas {
+	height: 100%;
+	width: 100%;
+	left: 0;
+	position: absolute;
+	background: black;
+}
+
+#canvasText {
+	z-index: 10;
+	position: absolute;
+	width: 100%;
+	height: 64px;
+	top: 42%;
+	line-height: 64px;
+	text-align: center;
+	font-family: monospace;
+	font-size: 64px;
+	color: #FFFFFF;
+}
+
 .logo {
 	display: block;
 	opacity: 0.9;
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
-	margin-top: 28px;
+	margin-top: 36px;
 	margin-bottom: 18px;
 }
 
@@ -191,6 +218,10 @@ a:hover {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	border-top: 1px solid #DDDDDD;
+}
+
+#footer.retracted {
+	bottom: -68px;
 }
 
 .icon-bar {

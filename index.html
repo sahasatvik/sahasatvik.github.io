@@ -165,11 +165,12 @@
 	var w = window.innerWidth;
 	var maxWH = Math.max(h, w);
 
-	var c = document.getElementById('hilbertCanvas');
-	c.setAttribute('width', w);
-	c.setAttribute('height', h);
-	
+	footer.onload = function () {console.log('Footer Loaded')};
 	window.onload = function () {
+		var c = document.getElementById('hilbertCanvas');
+		c.setAttribute('width', w);
+		c.setAttribute('height', h);
+	
 		var order = 5;
 		var line = (maxWH / ((1 << order) - 1));
 		var l = 1 << (2*order);
@@ -180,7 +181,7 @@
 
 		var ctx = c.getContext('2d');
 		
-		ctx.setStrokeColor('#D6D6D6');
+		ctx.strokeStyle = '#D6D6D6';
 		ctx.setLineCap('round');
 
 		var drawLine = function (i, t, c) {	
@@ -188,7 +189,7 @@
 				var p = getPoint(order, i);
 				var q = getPoint(order, i+1);
 				ctx.beginPath();
-				ctx.setStrokeColor(c);
+				ctx.strokeStyle = c;
 				ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
 				ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
 				ctx.stroke();

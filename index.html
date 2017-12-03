@@ -171,10 +171,9 @@
 		c.setAttribute('width', w);
 		c.setAttribute('height', h);
 	
-		var order = 5;
+		var order = 7;
 		var line = (maxWH / ((1 << order) - 1));
 		var l = 1 << (2*order);
-		var delay = 40;
 		
 		var xo = (w/2) - line * (1 << (order - 1)) + (line / 2);
 		var yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
@@ -184,30 +183,39 @@
 		ctx.strokeStyle = '#D6D6D6';
 		ctx.lineCap = 'round';
 
-		var drawLine = function (i, t, c) {	
+		var drawLine = function (i, t, c, s, lw) {	
 			setTimeout( function() {
 				var p = getPoint(order, i);
 				var q = getPoint(order, i+1);
 				ctx.beginPath();
 				ctx.strokeStyle = c;
+				ctx.lineWidth = lw;
 				ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
 				ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
 				ctx.stroke();
-			}, t * delay);
+			}, t * s);
 		};
 
-		var drawCurveFrom = function (start, color, totalSteps) {
+		var drawCurveFrom = function (start, color, totalSteps, speed, width) {
 			var right = start;
 			var left = start - 1;
 			for (var step = 0; step <= ((l * totalSteps) / 2); step++, right++, left--) {
-				if (right < l)	drawLine(right - 1, step, color);
-				if (left >= 0)	drawLine(left, step, color);
+				if (right < l)	drawLine(right - 1, step, color, speed, width);
+				if (left >= 0)	drawLine(left, step, color, speed, width);
 			}
 		};
+		
+		drawCurveFrom(Math.random() * l, 'rgba(32, 32, 255, 0.5)', 1, 10, 2);
 
-		drawCurveFrom(Math.random() * l, 'rgba(32, 200, 32, 0.5)', 1);
-		drawCurveFrom(Math.random() * l, 'rgba(32, 32, 255, 0.5)', 1);
-		drawCurveFrom(Math.random() * l, 'rgba(200, 32, 32, 0.5)', 1);
+                var drawCurveAtRandomTime = function(c, t, lw) {
+                        setTimeout(function() {
+                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 5 + Math.random() * 20, lw);
+                        }, Math.random() * t);
+                };
+                drawCurveAtRandomTime('rgba(0, 255, 0, 0.4)', 10000, 2);
+                drawCurveAtRandomTime('rgba(255, 0, 0, 0.4)', 10000, 2);
+                drawCurveAtRandomTime('rgba(255, 255, 0, 0.4)', 10000, 2);
+                drawCurveAtRandomTime('rgba(0, 0, 0, 1)', 20000, 5);
 	};
 </script>
 

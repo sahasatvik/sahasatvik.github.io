@@ -115,7 +115,7 @@
 	var footer = document.getElementById('footer');
 
 	window.onscroll = function(evt) {
-		if (window.scrollY <= footer.offsetHeight) {
+		if (window.scrollY <= footer.offsetHeight / 2) {
 			footer.classList.add('retracted');
 		} else {
 			footer.classList.remove('retracted');

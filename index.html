@@ -205,17 +205,42 @@
 			}
 		};
 		
-		drawCurveFrom(Math.random() * l, 'rgba(32, 32, 255, 0.5)', 1, 10, 2);
-
-                var drawCurveAtRandomTime = function(c, t, lw) {
+                var drawCurveAtTime = function(c, t, lw) {
                         setTimeout(function() {
-                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 5 + Math.random() * 20, lw);
-                        }, Math.random() * t);
+                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 2 + Math.random() * 20, lw);
+                        }, t);
                 };
-                drawCurveAtRandomTime('rgba(0, 255, 0, 0.4)', 10000, 2);
-                drawCurveAtRandomTime('rgba(255, 0, 0, 0.4)', 10000, 2);
-                drawCurveAtRandomTime('rgba(255, 255, 0, 0.4)', 10000, 2);
-                drawCurveAtRandomTime('rgba(0, 0, 0, 1)', 20000, 5);
+
+		//var multiColoredCurves = function() { 
+		//	drawCurveAtTime('rgba(32, 32, 255, 0.5)', 1000, 2);
+		//	drawCurveAtTime('rgba(0, 255, 0, 0.4)', 10000 * Math.random(), 2);
+		//	drawCurveAtTime('rgba(255, 0, 0, 0.4)', 10000 * Math.random(), 2);
+		//	drawCurveAtTime('rgba(255, 255, 0, 0.4)', 10000 * Math.random(), 2);
+		//	drawCurveAtTime('rgba(0, 0, 0, 1)', 10000 + 10000 * Math.random(), 5);
+		//	drawCurveAtTime('rgba(0, 0, 0, 1)', 15000 + 10000 * Math.random(), 5);
+		//	drawCurveAtTime('rgba(0, 0, 0, 1)', 20000 + 10000 * Math.random(), 5);
+		//	drawCurveAtTime('rgba(0, 0, 0, 1)', 30000 + 10000 * Math.random(), 5);
+		//};
+		//multiColoredCurves();
+		//setInterval(multiColoredCurves, 60000);
+		
+		var drawCurveBurst = function(color, duration, speed) {
+			drawCurveFrom(l/2, color, 1, speed, 2);
+			setTimeout(function() {
+				drawCurveFrom(l/2, 'black', 1, speed, 5);
+			}, duration);
+		};
+
+		var multiColoredBursts = function() {
+			drawCurveBurst('blue', 500, 5);
+			setTimeout(function() {drawCurveBurst('yellow', 500, 5)}, 3000);
+			setTimeout(function() {drawCurveBurst('green', 500, 5)}, 6000);
+			setTimeout(function() {drawCurveBurst('red', 500, 5)}, 9000);
+		};
+
+		multiColoredBursts();
+		setInterval(multiColoredBursts, 12000);
+
 	};
 </script>
 

@@ -252,7 +252,7 @@ a:hover {
 #footer.no-shadow {
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	border-top: 1px solid #DDDDDD;
+	border-top: none;
 }
 
 #footer.retracted {

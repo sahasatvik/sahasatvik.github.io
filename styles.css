@@ -50,7 +50,41 @@ a:hover {
 	font-family: monospace;
 	font-size: 64px;
 	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 	color: #FFFFFF;
+}
+
+#scrollToContent {
+	z-index: 10;
+	cursor: pointer;
+	position: absolute;
+	bottom: 42px;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	transform: translateX(-50%) rotate(-45deg);
+	-webkit-transform: translateX(-50%) rotate(-45deg);
+	border-left: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-12px) rotate(-45deg);
+		-webkit-transform: translateX(-50%) translateY(-12px) rotate(-45deg);
+	}
+	50% {
+		opacity: 1;
+		transform: translateX(-50%) rotate(-45deg);
+		-webkit-transform: translateX(-50%) rotate(-45deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(12px) rotate(-45deg);
+		-webkit-transform: translateX(-50%) translateY(12px) rotate(-45deg);
+	}
 }
 
 .logo {

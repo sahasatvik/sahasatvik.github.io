@@ -38,6 +38,7 @@
 	<div id="hilbert">
 		<canvas class="" id="hilbertCanvas"></canvas>
 		<div id="canvasText">Hi! I'm Satvik</div>
+		<a id="scrollToContent"></a>
 	</div>
 	<div class="logo ripple-effect" id="cubeLogo">
 		<img id="mainCube" src="images/cube.svg" alt="Cube"></img>
@@ -113,6 +114,8 @@
 	"use strict";
 	var quoteBox = document.getElementById('quote');
 	var footer = document.getElementById('footer');
+	var hilbert = document.getElementById('hilbertCanvas');
+	var scrollArrow = document.getElementById('scrollToContent');
 
 	window.onscroll = function(evt) {
 		if (window.scrollY <= footer.offsetHeight / 2) {
@@ -126,7 +129,7 @@
 		} else {
 			footer.classList.remove('no-shadow');
 		}
-	}
+	};
 
 	quoteBox.onmouseup = function() {
 		showQuote(-1, quotes);
@@ -160,29 +163,48 @@
 			targets[i].addEventListener('mousedown', rippleEffect, false);
 		}
 	}());
-	
-	var h = window.innerHeight;
-	var w = window.innerWidth;
-	var maxWH = Math.max(h, w);
 
-	footer.onload = function () {console.log('Footer Loaded')};
-	window.onload = function () {
-		var c = document.getElementById('hilbertCanvas');
+	var scrollTo = function scrollTo(element, to, duration) {
+		if (duration <= 0) return;
+		var difference = to - element.scrollTop;
+		var perTick = difference / duration * 10;
+
+		setTimeout(function() {
+			element.scrollTop = element.scrollTop + perTick;
+			if (element.scrollTop === to) return;
+			scrollTo(element, to, duration - 10);
+		}, 10);
+	};
+		
+	scrollArrow.onmousedown = function() {
+		scrollTo(document.body, hilbert.offsetTop + hilbert.offsetHeight, 200);
+	};
+	
+	var w, h, maxWH, line, xo, yo, c, ctx;
+	
+	var order = 7;
+	var l = 1 << (2*order);
+	
+	var initHilbertCanvas = function() {
+		h = window.innerHeight;
+		w = window.innerWidth;
+		maxWH = Math.max(h, w);
+		
+		c = document.getElementById('hilbertCanvas');
 		c.setAttribute('width', w);
 		c.setAttribute('height', h);
-	
-		var order = 7;
-		var line = (maxWH / ((1 << order) - 1));
-		var l = 1 << (2*order);
 		
-		var xo = (w/2) - line * (1 << (order - 1)) + (line / 2);
-		var yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
-
-		var ctx = c.getContext('2d');
-		
-		ctx.strokeStyle = '#D6D6D6';
+		ctx = c.getContext('2d');
+		ctx.clearRect(0, 0, c.width, c.height);
 		ctx.lineCap = 'round';
+		
+		line = (maxWH / ((1 << order) - 1));
+		
+		xo = (w/2) - line * (1 << (order - 1)) + (line / 2);
+		yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
+	};
 
+	var drawHilbertCanvas = function () {
 		var drawLine = function (i, t, c, s, lw) {	
 			setTimeout( function() {
 				var p = getPoint(order, i);
@@ -223,24 +245,14 @@
 		};
 		multiColoredCurves();
 		setInterval(multiColoredCurves, 60000);
-		
-		//var drawCurveBurst = function(color, duration, speed) {
-		//	drawCurveFrom(l/2, color, 1, speed, 2);
-		//	setTimeout(function() {
-		//		drawCurveFrom(l/2, 'black', 1, speed, 5);
-		//	}, duration);
-		//};
+	};
 
-		//var multiColoredBursts = function() {
-		//	drawCurveBurst('blue', 500, 5);
-		//	setTimeout(function() {drawCurveBurst('yellow', 500, 5)}, 3000);
-		//	setTimeout(function() {drawCurveBurst('green', 500, 5)}, 6000);
-		//	setTimeout(function() {drawCurveBurst('red', 500, 5)}, 9000);
-		//};
-
-		//multiColoredBursts();
-		//setInterval(multiColoredBursts, 12000);
-
+	window.onload = function() {
+		initHilbertCanvas();
+		drawHilbertCanvas();
+	};
+	window.onresize = function() {
+		initHilbertCanvas();
 	};
 </script>
 

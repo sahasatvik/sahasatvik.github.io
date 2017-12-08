@@ -181,14 +181,13 @@
 	};
 	
 	var w, h, maxWH, line, xo, yo, c, ctx;
-	
-	var order = 7;
-	var l = 1 << (2*order);
+	var order, l;
 	
 	var initHilbertCanvas = function() {
 		h = window.innerHeight;
 		w = window.innerWidth;
 		maxWH = Math.max(h, w);
+
 		
 		c = document.getElementById('hilbertCanvas');
 		c.setAttribute('width', w);
@@ -197,6 +196,9 @@
 		ctx = c.getContext('2d');
 		ctx.clearRect(0, 0, c.width, c.height);
 		ctx.lineCap = 'round';
+		
+		order = (Math.min(w, h) < 600)? 6 : 7;
+		l = 1 << (2*order);
 		
 		line = (maxWH / ((1 << order) - 1));
 		
@@ -229,7 +231,7 @@
 		
                 var drawCurveAtTime = function(c, t, lw) {
                         setTimeout(function() {
-                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 2 + Math.random() * 20, lw);
+                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 5 + Math.random() * 20, lw);
                         }, t);
                 };
 

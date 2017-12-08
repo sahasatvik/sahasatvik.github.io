@@ -182,7 +182,10 @@
 	
 	var w, h, maxWH, minWH, line, xo, yo, c, ctx;
 	var order, l;
-	
+
+	var getRandomValue = () => Math.floor(Math.random() * 256);
+	var getRandomColor = () => 'rgba(' + getRandomValue() + ', ' + getRandomValue() + ', ' + getRandomValue() + ', ' + '0.5)';	
+
 	var initHilbertCanvas = function() {
 		h = window.innerHeight;
 		w = window.innerWidth;
@@ -228,25 +231,9 @@
 				if (left >= 0)	drawLine(left, step, color, speed, width);
 			}
 		};
-		
-                var drawCurveAtTime = function(c, t, lw) {
-                        setTimeout(function() {
-                                drawCurveFrom(Math.random() * l, c, 0.5 + Math.random()/2, 5 + Math.random() * 20, lw);
-                        }, t);
-                };
 
-		var multiColoredCurves = function() { 
-			drawCurveAtTime('rgba(32, 32, 255, 0.5)', 1000, 2);
-			drawCurveAtTime('rgba(0, 255, 0, 0.4)', 10000 * Math.random(), 2);
-			drawCurveAtTime('rgba(255, 0, 0, 0.4)', 10000 * Math.random(), 2);
-			drawCurveAtTime('rgba(255, 255, 0, 0.4)', 10000 * Math.random(), 2);
-			drawCurveAtTime('rgba(0, 0, 0, 1)', 10000 + 10000 * Math.random(), 5);
-			drawCurveAtTime('rgba(0, 0, 0, 1)', 15000 + 10000 * Math.random(), 5);
-			drawCurveAtTime('rgba(0, 0, 0, 1)', 20000 + 10000 * Math.random(), 5);
-			drawCurveAtTime('rgba(0, 0, 0, 1)', 30000 + 10000 * Math.random(), 5);
-		};
-		multiColoredCurves();
-		setInterval(multiColoredCurves, 60000);
+		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
+		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
 	};
 
 	window.onload = function() {

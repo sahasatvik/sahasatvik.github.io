@@ -180,14 +180,14 @@
 		scrollTo(document.body, hilbert.offsetTop + hilbert.offsetHeight, 200);
 	};
 	
-	var w, h, maxWH, line, xo, yo, c, ctx;
+	var w, h, maxWH, minWH, line, xo, yo, c, ctx;
 	var order, l;
 	
 	var initHilbertCanvas = function() {
 		h = window.innerHeight;
 		w = window.innerWidth;
 		maxWH = Math.max(h, w);
-
+		minWH = Math.min(h, w);
 		
 		c = document.getElementById('hilbertCanvas');
 		c.setAttribute('width', w);
@@ -197,7 +197,7 @@
 		ctx.clearRect(0, 0, c.width, c.height);
 		ctx.lineCap = 'round';
 		
-		order = (Math.min(w, h) < 600)? 6 : 7;
+		order = (minWH < 600)? 5 : (minWH < 1000)? 6 : 7;
 		l = 1 << (2*order);
 		
 		line = (maxWH / ((1 << order) - 1));

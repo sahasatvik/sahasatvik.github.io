@@ -209,36 +209,33 @@
 		yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
 	};
 
-	var drawHilbertCanvas = function () {
-		var drawLine = function (i, t, c, s, lw) {	
-			setTimeout( function() {
-				var p = getPoint(order, i);
-				var q = getPoint(order, i+1);
-				ctx.beginPath();
-				ctx.strokeStyle = c;
-				ctx.lineWidth = lw;
-				ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
-				ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
-				ctx.stroke();
-			}, t * s);
-		};
+	var drawLine = function (i, t, c, s, lw) {	
+		setTimeout( function() {
+			var p = getPoint(order, i);
+			var q = getPoint(order, i+1);
+			ctx.beginPath();
+			ctx.strokeStyle = c;
+			ctx.lineWidth = lw;
+			ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
+			ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
+			ctx.stroke();
+		}, t * s);
+	};
 
-		var drawCurveFrom = function (start, color, totalSteps, speed, width) {
-			var right = start;
-			var left = start - 1;
-			for (var step = 0; step <= ((l * totalSteps) / 2); step++, right++, left--) {
-				if (right < l)	drawLine(right - 1, step, color, speed, width);
-				if (left >= 0)	drawLine(left, step, color, speed, width);
-			}
-		};
-
-		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
-		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
+	var drawCurveFrom = function (start, color, totalSteps, speed, width) {
+		var right = start;
+		var left = start - 1;
+		for (var step = 0; step <= ((l * totalSteps) / 2); step++, right++, left--) {
+			if (right < l)	drawLine(right - 1, step, color, speed, width);
+			if (left >= 0)	drawLine(left, step, color, speed, width);
+		}
 	};
 
 	window.onload = function() {
 		initHilbertCanvas();
-		drawHilbertCanvas();
+		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
+		drawCurveFrom(Math.random() * l, getRandomColor(), 1, 10 + Math.random() * 30, 2);
+
 	};
 	window.onresize = function() {
 		initHilbertCanvas();

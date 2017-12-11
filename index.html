@@ -34,9 +34,9 @@
 
 <body>
 
-<div id="hilbert">
-	<canvas class="" id="hilbertCanvas"></canvas>
-	<div id="canvasText">Hi! I'm Satvik</div>
+<div id="fractal">
+	<canvas id="fractalCanvas"></canvas>
+	<div id="canvasText">Hi! I'm Satvi<span id="p12">k</span></div>
 	<a id="scrollToContent"></a>
 </div>
 
@@ -115,7 +115,7 @@
 	"use strict";
 	var quoteBox = document.getElementById('quote');
 	var footer = document.getElementById('footer');
-	var hilbert = document.getElementById('hilbertCanvas');
+	var fractal = document.getElementById('fractalCanvas');
 	var scrollArrow = document.getElementById('scrollToContent');
 
 	window.onscroll = function(evt) {
@@ -178,65 +178,32 @@
 	};
 		
 	scrollArrow.onmousedown = function() {
-		scrollTo(document.body, hilbert.offsetTop + hilbert.offsetHeight, 200);
+		scrollTo(document.body, fractal.offsetTop + fractal.offsetHeight, 200);
 	};
 	
-	var w, h, maxWH, minWH, line, xo, yo, c, ctx;
-	var order, l;
-
-	var getRandomValue = () => Math.floor(Math.random() * 256);
-	var getRandomColor = () => 'rgba(' + getRandomValue() + ', ' + getRandomValue() + ', ' + getRandomValue() + ', ' + '0.5)';	
-
-	var initHilbertCanvas = function() {
-		h = window.innerHeight;
-		w = window.innerWidth;
-		maxWH = Math.max(h, w);
-		minWH = Math.min(h, w);
-		
-		c = document.getElementById('hilbertCanvas');
-		c.setAttribute('width', w);
-		c.setAttribute('height', h);
-		
-		ctx = c.getContext('2d');
-		ctx.clearRect(0, 0, c.width, c.height);
-		ctx.lineCap = 'round';
-		
-		order = (minWH < 600)? 5 : (minWH < 1000)? 6 : 7;
-		l = 1 << (2*order);
-		
-		line = (maxWH / ((1 << order) - 1));
-		
-		xo = (w/2) - line * (1 << (order - 1)) + (line / 2);
-		yo = (h/2) - line * (1 << (order - 1)) + (line / 2);
+	var getRandomValue = (n) => Math.floor(Math.random() * n);
+	
+	var julia = {
+		c : [0.015246676937988424, 0.7671473615989055],
+		width : document.getWidth(),
+		height : document.getHeight(),
+		canvas : null,
+		canvasCTX : null,
+		xOffset : width / 2,
+		yOffset : height / 2
 	};
 
-	var drawLine = function (i, t, c, s, lw) {	
-		setTimeout( function() {
-			var p = getPoint(order, i);
-			var q = getPoint(order, i+1);
-			ctx.beginPath();
-			ctx.strokeStyle = c;
-			ctx.lineWidth = lw;
-			ctx.moveTo(xo + p[0]*line, yo + p[1]*line);
-			ctx.lineTo(xo + q[0]*line, yo + q[1]*line);
-			ctx.stroke();
-		}, t * s);
-	};
-
-	var drawCurveFrom = function (start, color, totalSteps, speed, width) {
-		var right = start;
-		var left = start - 1;
-		for (var step = 0; step <= ((l * totalSteps) / 2); step++, right++, left--) {
-			if (right < l)	drawLine(right - 1, step, color, speed, width);
-			if (left >= 0)	drawLine(left, step, color, speed, width);
-		}
+	var initCanvas = function() {
+		julia.canvas = document.getElementById('fractalCanvas');
+		julia.canvas.setAttribute('width', julia.width);
+		julia.canvas.setAttribute('height', julia.height);
+		
+		julia.canvasCTX = julia.canvas.getContext('2d');
+		julia.canvasCTX.clearRect(0, 0, c.width, c.height);
 	};
 
 	window.onload = function() {
-		initHilbertCanvas();
-		drawCurveFrom(Math.random() * l, getRandomColor(), 0.2 + Math.random() * 0.8, 10 + Math.random() * 30, 2);
-		drawCurveFrom(Math.random() * l, getRandomColor(), 0.2 + Math.random() * 0.8, 10 + Math.random() * 30, 2);
-
+		initCanvas();
 	};
 </script>
 

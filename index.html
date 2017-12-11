@@ -189,7 +189,7 @@
 		c           :	[-0.4473013137484204, 0.5850310203269729],
 		radius      :   null,
 		scale       :	null,
-		maxIter     :	150,
+		maxIter     :	200,
 		width       :	null,
 		height      :	null,
 		canvas      :	null,
@@ -252,20 +252,19 @@
 			for (y = 0; y <= julia.height; y++) {
 				i = julia.countIter(julia.convert(x, y));
 				if (i > 0) {
-					setPixel(julia.imageData, x, y, 0, 0, julia.colors[i], 255);
-					setPixel(julia.imageData, julia.width - x, julia.height - y, 0, 0, julia.colors[i], 255);
+					setPixel(julia.imageData, x, y, julia.colors[i]);
+					setPixel(julia.imageData, julia.width - x, julia.height - y, julia.colors[i]);
 				}
 			}
 		}
 		julia.canvasCTX.putImageData(julia.imageData, 0, 0);
 	}
-
-	var setPixel = function (id, x, y, r, g, b, a) {
-		var index = (x + y * id.width) * 4;
-		id.data[index++] = r;
-		id.data[index++] = g;
-		id.data[index++] = b;
-		id.data[index] = a;
+	
+	var index;
+	var setPixel = function (id, x, y, b) {
+		index = (x + y * id.width) << 2;
+		id.data[index + 2] = b;
+		id.data[index + 3] = 255;
 	};
 
 	var seed;

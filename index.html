@@ -182,28 +182,82 @@
 	};
 	
 	var getRandomValue = (n) => Math.floor(Math.random() * n);
-	
+	var getRandomSign  = ()  => Math.pow(-1, Math.round(Math.random()));
+
 	var julia = {
-		c : [0.015246676937988424, 0.7671473615989055],
-		width : document.getWidth(),
-		height : document.getHeight(),
-		canvas : null,
-		canvasCTX : null,
-		xOffset : width / 2,
-		yOffset : height / 2
+		c           :	[-0.4473013137484204, 0.5850310203269729],
+		radius      :   null,
+		scale       :	null,
+		maxIter     :	150,
+		width       :	null,
+		height      :	null,
+		canvas      :	null,
+		canvasCTX   :	null,
+		xOffset     :	null,
+		yOffset     :	null,
+		f           :	(z, c) => [(z[0]*z[0] - z[1]*z[1] + c[0]), (2 * z[0]*z[1] + c[1])],
+		abs         :	(z) => Math.sqrt(z[0]*z[0] + z[1]*z[1]),
+		convert     :	function (x, y) {
+					var a = this.scale * (x - this.xOffset);
+					var b = this.scale * (this.yOffset - y);
+					return [a, b];
+				},
+		countIter   :	function (z) {
+					var i;
+					for (i = 0; i < this.maxIter; i++) {
+						z = this.f(z, this.c);
+						if (this.abs(z) > this.radius) {
+							return i;
+						}
+					}
+					return this.maxIter;
+				},
+		shadeIter   :	function (i) {
+					var c = Math.round((Math.log(i)/Math.log(this.maxIter)) * 255);
+					c = c.toString(16);
+					if (c.length == 1) c = '0' + c;
+					return "#0000" + c;
+				},
+		init        :	function (c) {
+					if (typeof c !== 'undefined') this.c = c;
+					this.width = window.innerWidth;
+					this.height = window.innerHeight;
+					this.xOffset = this.width / 2;
+					this.yOffset = this.height / 2;
+
+					this.radius = (1 + Math.sqrt(1+4*this.abs(this.c))) / 2;
+					this.scale  = 2 * this.radius / Math.min(this.width, this.height);
+
+					this.canvas = document.getElementById('fractalCanvas');
+					this.canvas.setAttribute('width', this.width);
+					this.canvas.setAttribute('height', this.height);
+					this.canvasCTX = this.canvas.getContext('2d');
+					this.canvasCTX.clearRect(0, 0, this.width, this.height);
+				}
 	};
 
-	var initCanvas = function() {
-		julia.canvas = document.getElementById('fractalCanvas');
-		julia.canvas.setAttribute('width', julia.width);
-		julia.canvas.setAttribute('height', julia.height);
-		
-		julia.canvasCTX = julia.canvas.getContext('2d');
-		julia.canvasCTX.clearRect(0, 0, c.width, c.height);
+	var drawPoint = function (x, y, color, frac) {
+		frac.canvasCTX.fillStyle = color;
+		frac.canvasCTX.fillRect(x, y, 1, 1);
 	};
 
+	var drawCurve = function (c) {
+		julia.init(c);
+		var x, y, i;
+		for (x = 0; x <= julia.xOffset; x++) {
+			for (y = 0; y <= julia.height; y++) {
+				i = julia.countIter(julia.convert(x, y));
+				if (i > 0) {
+					drawPoint(x, y, julia.shadeIter(i), julia);
+					drawPoint(julia.width - x, julia.height - y, julia.shadeIter(i), julia);
+				}
+			}
+		}
+	}
+	var seed;
 	window.onload = function() {
-		initCanvas();
+		seed = [getRandomSign() * Math.random(), getRandomSign() * Math.random()];
+		drawCurve(seed);
 	};
 </script>
 

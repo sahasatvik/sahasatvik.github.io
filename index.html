@@ -183,6 +183,7 @@
 	
 	var getRandomValue = (n) => Math.floor(Math.random() * n);
 	var getRandomSign  = ()  => Math.pow(-1, Math.round(Math.random()));
+	var getRandomSeed  = ()  => [getRandomSign() * Math.random(), getRandomSign() * Math.random()];
 
 	var julia = {
 		c           :	[-0.4473013137484204, 0.5850310203269729],
@@ -193,8 +194,10 @@
 		height      :	null,
 		canvas      :	null,
 		canvasCTX   :	null,
+		imageData   :	null,
 		xOffset     :	null,
 		yOffset     :	null,
+		colors      :	[],
 		f           :	(z, c) => [(z[0]*z[0] - z[1]*z[1] + c[0]), (2 * z[0]*z[1] + c[1])],
 		abs         :	(z) => Math.sqrt(z[0]*z[0] + z[1]*z[1]),
 		convert     :	function (x, y) {
@@ -212,52 +215,65 @@
 					}
 					return this.maxIter;
 				},
-		shadeIter   :	function (i) {
-					var c = Math.round((Math.log(i)/Math.log(this.maxIter)) * 255);
-					c = c.toString(16);
-					if (c.length == 1) c = '0' + c;
-					return "#0000" + c;
-				},
-		init        :	function (c) {
+		initVars    :	function (c) {
 					if (typeof c !== 'undefined') this.c = c;
+
+					this.radius = (1 + Math.sqrt(1+4*this.abs(this.c))) / 2;
+					this.scale  = 2 * this.radius / Math.min(this.width, this.height);
+				},
+		initColors  :	function () {
+					for (var i = 1; i <= this.maxIter; i++) {
+						this.colors[i] = Math.round((Math.log(i)/Math.log(this.maxIter)) * 255);
+					}
+				},
+		initCanvas  :	function () {
 					this.width = window.innerWidth;
 					this.height = window.innerHeight;
 					this.xOffset = this.width / 2;
 					this.yOffset = this.height / 2;
-
-					this.radius = (1 + Math.sqrt(1+4*this.abs(this.c))) / 2;
-					this.scale  = 2 * this.radius / Math.min(this.width, this.height);
-
+					
 					this.canvas = document.getElementById('fractalCanvas');
 					this.canvas.setAttribute('width', this.width);
 					this.canvas.setAttribute('height', this.height);
 					this.canvasCTX = this.canvas.getContext('2d');
+				},
+		clearCanvas :	function () {
 					this.canvasCTX.clearRect(0, 0, this.width, this.height);
+					this.imageData = this.canvasCTX.createImageData(this.width, this.height);
 				}
 	};
 
-	var drawPoint = function (x, y, color, frac) {
-		frac.canvasCTX.fillStyle = color;
-		frac.canvasCTX.fillRect(x, y, 1, 1);
-	};
+	var drawJulia = function (c) {
+		julia.initVars(c);
+		julia.clearCanvas();
 
-	var drawCurve = function (c) {
-		julia.init(c);
 		var x, y, i;
 		for (x = 0; x <= julia.xOffset; x++) {
 			for (y = 0; y <= julia.height; y++) {
 				i = julia.countIter(julia.convert(x, y));
 				if (i > 0) {
-					drawPoint(x, y, julia.shadeIter(i), julia);
-					drawPoint(julia.width - x, julia.height - y, julia.shadeIter(i), julia);
+					setPixel(julia.imageData, x, y, 0, 0, julia.colors[i], 255);
+					setPixel(julia.imageData, julia.width - x, julia.height - y, 0, 0, julia.colors[i], 255);
 				}
 			}
 		}
+		julia.canvasCTX.putImageData(julia.imageData, 0, 0);
 	}
+
+	var setPixel = function (id, x, y, r, g, b, a) {
+		var index = (x + y * id.width) * 4;
+		id.data[index++] = r;
+		id.data[index++] = g;
+		id.data[index++] = b;
+		id.data[index] = a;
+	};
+
 	var seed;
 	window.onload = function() {
-		seed = [getRandomSign() * Math.random(), getRandomSign() * Math.random()];
-		drawCurve(seed);
+		julia.initCanvas();
+		julia.initColors();
+		seed = getRandomSeed();
+		drawJulia(seed);
 	};
 </script>
 

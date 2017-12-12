@@ -38,6 +38,7 @@
 	<canvas id="fractalCanvas"></canvas>
 	<div id="canvasText">Hi! I'm Satvi<span id="p12">k</span></div>
 	<a id="scrollToContent"></a>
+	<a id="refreshFractal"></a>
 </div>
 
 <div align="center" id="header">
@@ -117,6 +118,7 @@
 	var footer = document.getElementById('footer');
 	var fractal = document.getElementById('fractalCanvas');
 	var scrollArrow = document.getElementById('scrollToContent');
+	var refreshFractalButton = document.getElementById('refreshFractal');
 
 	window.onscroll = function(evt) {
 		if (window.scrollY <= footer.offsetHeight / 2) {
@@ -271,6 +273,11 @@
 	window.onload = function() {
 		julia.initCanvas();
 		julia.initColors();
+		seed = getRandomSeed();
+		drawJulia(seed);
+	};
+
+	refreshFractalButton.onmousedown = function () {
 		seed = getRandomSeed();
 		drawJulia(seed);
 	};

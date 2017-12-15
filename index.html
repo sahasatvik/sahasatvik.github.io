@@ -120,13 +120,20 @@
 	var scrollArrow = document.getElementById('scrollToContent');
 	var refreshFractalButton = document.getElementById('refreshFractal');
 
-	if (!!window.chrome) {
+	var chromeFooter = function() {
 		if (window.innerHeight >= 480) {
 			footer.style.position = 'sticky';
+		} else {
+			footer.style.position = 'relative';
 		}
-		document.getElementById('content').style.paddingBottom = 16;
-	}
+	};
 	
+	if (!!window.chrome) {
+		chromeFooter();
+		document.getElementById('content').style.paddingBottom = 16;
+		window.onresize = chromeFooter;
+	}
+
 	window.onscroll = function(evt) {
 		if (window.scrollY <= footer.offsetHeight / 2) {
 			footer.classList.add('retracted');

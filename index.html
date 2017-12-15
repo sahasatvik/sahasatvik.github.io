@@ -120,8 +120,10 @@
 	var scrollArrow = document.getElementById('scrollToContent');
 	var refreshFractalButton = document.getElementById('refreshFractal');
 
-	if (!!window.chrome && window.innerHeight >= 480) {
-		footer.style.position = 'sticky';
+	if (!!window.chrome) {
+		if (window.innerHeight >= 480) {
+			footer.style.position = 'sticky';
+		}
 		document.getElementById('content').style.paddingBottom = 16;
 	}
 	

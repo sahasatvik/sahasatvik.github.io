@@ -127,7 +127,7 @@
 			footer.classList.remove('retracted');
 		}
 		
-		if ((window.innerHeight + window.scrollY - footer.offsetHeight) >= document.body.offsetHeight) {
+		if ((window.innerHeight + window.scrollY + 16) >= document.body.offsetHeight) {
 			footer.classList.add('no-shadow');
 		} else {
 			footer.classList.remove('no-shadow');

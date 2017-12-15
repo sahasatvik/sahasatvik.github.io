@@ -146,7 +146,7 @@ a:hover {
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 10px;
-	margin-bottom: 90px;
+	padding-bottom: 90px;
 	transition: all 0.5s ease-out;
 	-webkit-transition: all 0.5s ease-out;
 }
@@ -257,9 +257,10 @@ a:hover {
 }
 
 #footer {
-	position: fixed;
+	position: fixed !important;
 	background-color: #FFFFFF;
-	
+	display: inline-block;
+
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -371,12 +372,11 @@ a:hover {
 
 @media (max-height: 480px) {
 	#content {
-		margin-bottom: 16px;
+		padding-bottom: 16px;
 	}
 	#footer {
 		position: relative;
 		box-shadow: none;
 		-webkit-box-shadow: none;
-		border-top: 1px solid #DDDDDD;
 	}
 }

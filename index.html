@@ -120,6 +120,11 @@
 	var scrollArrow = document.getElementById('scrollToContent');
 	var refreshFractalButton = document.getElementById('refreshFractal');
 
+	if (!!window.chrome) {
+		footer.style.position = 'sticky';
+		document.getElementById('content').style.paddingBottom = 16;
+	}
+	
 	window.onscroll = function(evt) {
 		if (window.scrollY <= footer.offsetHeight / 2) {
 			footer.classList.add('retracted');

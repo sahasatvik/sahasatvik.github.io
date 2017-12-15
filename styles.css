@@ -257,7 +257,7 @@ a:hover {
 }
 
 #footer {
-	position: fixed !important;
+	position: fixed;
 	background-color: #FFFFFF;
 	display: inline-block;
 
@@ -377,5 +377,7 @@ a:hover {
 	}
 	#footer {
 		position: relative;
+		box-shadow: none;
+		-webkit-box-shadow: none;
 	}
 }

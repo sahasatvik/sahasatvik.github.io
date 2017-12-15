@@ -347,7 +347,7 @@ a:hover {
 		width: 96%;
 		margin-left: 2%;
 		margin-right: 2%;
-		padding-bottom: 8vw;
+		margin-bottom: 0;
 	}
 	#footer {
 		height: 8vw;
@@ -373,11 +373,9 @@ a:hover {
 
 @media (max-height: 480px) {
 	#content {
-		padding-bottom: 16px;
+		margin-bottom: 0;
 	}
 	#footer {
 		position: relative;
-		box-shadow: none;
-		-webkit-box-shadow: none;
 	}
 }

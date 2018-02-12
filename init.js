@@ -27,7 +27,7 @@ var quotes = [
 		author: "Keith Bostic"
 	},
 	{
-		text: "Pro·gram·mer - An organism capable of converting caffeine in to code.",
+		text: "Pro·gram·mer - An organism capable of converting caffeine into code.",
 		author: "Anonymous"
 	},
 	{

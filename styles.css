@@ -71,7 +71,7 @@ a:hover {
 	-webkit-transform: translateX(-50%) rotate(-45deg);
 	border-left: 2px solid #FFFFFF;
 	border-bottom: 2px solid #FFFFFF;
-	animation: scroll 2s infinite;
+	animation: scroll 3s infinite;
 }
 
 #refreshFractal {
@@ -97,19 +97,20 @@ a:hover {
 
 @keyframes scroll {
 	0% {
-		opacity: 0;
-		transform: translateX(-50%) translateY(-12px) rotate(-45deg);
-		-webkit-transform: translateX(-50%) translateY(-12px) rotate(-45deg);
-	}
-	50% {
-		opacity: 1;
 		transform: translateX(-50%) rotate(-45deg);
 		-webkit-transform: translateX(-50%) rotate(-45deg);
 	}
+	45% {
+		transform: translateX(-50%) translateY(-3px) rotate(-45deg);
+		-webkit-transform: translateX(-50%) translateY(-3px) rotate(-45deg);
+	}
+	55% {
+		transform: translateX(-50%) translateY(6px) rotate(-45deg);
+		-webkit-transform: translateX(-50%) translateY(6px) rotate(-45deg);
+	}
 	100% {
-		opacity: 0;
-		transform: translateX(-50%) translateY(12px) rotate(-45deg);
-		-webkit-transform: translateX(-50%) translateY(12px) rotate(-45deg);
+		transform: translateX(-50%) rotate(-45deg);
+		-webkit-transform: translateX(-50%) rotate(-45deg);
 	}
 }
 

@@ -12,11 +12,6 @@ html, body {
 	padding: 0;
 }
 
-body {
-	overflow: auto;
-	perspective: 1px;
-}
-
 h1, h2, h3, h4 {
 	font-family: 'Roboto', Helvetica, arial, sans-serif;
 	font-weight: 400;

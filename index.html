@@ -87,7 +87,7 @@
 		
 </div>
 
-<div align="center" id="footer" class="retracted">
+<div align="center" id="footer">
 	<div class="icon-bar" id="socialBar">
 		<a href="mailto:sahasatvik@gmail.com">                        <i class="icon icons-gmail">          </i ></a>
 		<a href="https://www.quora.com/profile/Satvik-Saha">          <i class="icon icons-quora">          </i ></a>
@@ -106,34 +106,6 @@
 	var fractal = document.getElementById('fractalCanvas');
 	var scrollArrow = document.getElementById('scrollToContent');
 	var refreshFractalButton = document.getElementById('refreshFractal');
-
-	var chromeFooter = function() {
-		if (window.innerHeight >= 480) {
-			footer.style.position = 'sticky';
-		} else {
-			footer.style.position = 'relative';
-		}
-	};
-	
-	if (!!window.chrome) {
-		chromeFooter();
-		document.getElementById('content').style.paddingBottom = 16;
-		window.onresize = chromeFooter;
-	}
-
-	window.onscroll = function(evt) {
-		if (window.scrollY <= footer.offsetHeight / 2) {
-			footer.classList.add('retracted');
-		} else {
-			footer.classList.remove('retracted');
-		}
-		
-		if ((window.innerHeight + window.scrollY + 16) >= document.body.offsetHeight) {
-			footer.classList.add('no-shadow');
-		} else {
-			footer.classList.remove('no-shadow');
-		}
-	};
 
 	quoteBox.onmouseup = function() {
 		showQuote(-1, quotes);

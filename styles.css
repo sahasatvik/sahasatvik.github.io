@@ -318,11 +318,11 @@ a:hover {
 .quora {
 	background: #aa2200;
 }
-.stack-overflow {
-	background: #f48024;
-}
 .lastfm {
 	background: #D51007;
+}
+.lichess {
+	background: #000000;
 }
 
 @media (max-width: 600px) {

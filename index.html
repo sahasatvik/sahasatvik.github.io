@@ -1,11 +1,14 @@
 <html>
 
+<head>
+
 <meta charset="utf-8">
 <meta name="author" content="Satvik Saha">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="A collection of curiosities and projects I care about.">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <script src="init.js"></script>
 
 <title>Satvik Saha</title>
@@ -32,13 +35,15 @@
 <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png" />
 
+</head>
+
 <body>
 
 <div id="fractal">
 	<canvas id="fractalCanvas"></canvas>
 	<div id="canvasText">Hi! I'm Satvi<span id="p12">k</span></div>
 	<a id="scrollToContent"></a>
-	<a id="refreshFractal"></a>
+	<a id="refreshFractal" class="ripple-effect ripple-blue"></a>
 </div>
 
 <div align="center" id="header">
@@ -87,16 +92,13 @@
 		
 </div>
 
-<div align="center" id="footer">
-	<div class="icon-bar" id="socialBar">
-		<a href="mailto:sahasatvik@gmail.com">                        <i class="icon icons-gmail">          </i ></a>
-		<a href="https://www.quora.com/profile/Satvik-Saha">          <i class="icon icons-quora">          </i ></a>
-		<a href="https://medium.com/@sahasatvik">                     <i class="icon icons-medium">         </i ></a>
-		<a href="https://github.com/sahasatvik/" id="gitBox">         <i class="icon icons-github">         </i ></a>
-		<a href="http://stackoverflow.com/users/5589030/satvik-saha"> <i class="icon icons-stackoverflow"> </i ></a>
-		<a href="https://en.lichess.org/@/sahasatvik">                <i class="icon icons-lichess">        </i ></a>
-		<a href="mailto:sahasatvik@outlook.com">                      <i class="icon icons-outlook">        </i ></a>
-	</div>
+<div id="socialbar">
+	<a href="https://github.com/sahasatvik/" target="_blank" class="github"><i class="fab fa-github"></i></a><!--
+	--><a href="mailto:sahasatvik@gmail.com" target="_blank" class="google"><i class="fab fa-google"></i></a><!--
+	--><a href="https://www.reddit.com/user/sahasatvik/" target="_blank" class="reddit"><i class="fab fa-reddit"></i></a><!--
+	--><a href="https://www.quora.com/profile/satvik-saha" target="_blank" class="quora"> <i class="fab fa-quora"></i></a><!--
+	--><a href="https://stackoverflow.com/users/5589030/satvik-saha" target="_blank" class="stack-overflow"> <i class="fab fa-stack-overflow"></i></a><!--
+	--><a href="https://www.last.fm/user/sahasatvik" target="_blank" class="lastfm"><i class="fab fa-lastfm"></i></a>
 </div>
 
 <script type="text/javascript" charset="utf-8">

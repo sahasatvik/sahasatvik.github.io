@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url(fonts/icons.css);
 
 * {
 	margin: 0;
@@ -9,6 +8,8 @@
 html, body {
 	background-color: #FFFFFF;
 	font-size: 16px;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -48,7 +49,8 @@ a:hover {
 #canvasText {
 	z-index: 10;
 	position: absolute;
-	width: 100%;
+	width: 80%;
+	left: 10%;
 	top: 50%;
 	line-height: 64px;
 	text-align: center;
@@ -82,17 +84,17 @@ a:hover {
 	right: 16px;
 	width: 24px;
 	height: 24px;
+	background: #FFFFFF;
 	transform: translateX(-50%) translateY(50%);
 	-webkit-transform: translateX(-50%) translateY(50%);
-	border: 2px solid #FFFFFF;
-	border-radius: 50%;
-	transition: all 1s ease-out;
-	-webkit-transition: all 1s ease-out;
+	transition: all 200ms ease;
+	-webkit-transition: all 200ms ease;
 }
-
+#refreshFractal.ripple-effect .ripple {
+	background-color: #2010ee;
+}
 #refreshFractal:hover {
-	transform: translateX(-50%) translateY(50%) scale(1.2);
-	-webkit-transform: translateX(-50%) translateY(50%) scale(1.2);
+	top: 14px;
 }
 
 @keyframes scroll {
@@ -208,6 +210,7 @@ a:hover {
 }
 .card ul {
 	list-style: none;
+	padding: 0;
 }
 
 .ripple-effect {
@@ -265,68 +268,62 @@ a:hover {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 48px;
+	height: 0px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
 	z-index: 100;
 }
 
-.icon-bar {
-	position: absolute;
-	height: 48px;
-}
-
 #socialBar {
-	left: 10vw;
-	width: 80vw;
-}
-
-.icon-bar a {
-	display: inline-block;
-	width: 56px;
-	height: 48px;
-	align-content: center;
-	vertical-align: middle;
-	text-decoration: none;
-}
-
-.icon {
-	position: relative;
-	display: inline-block;
-	width: 100%;
+	z-index: 100;
+	position: fixed;
 	top: 50%;
+	left: 0;
+	
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	vertical-align: middle;
-	
-	color: #5B5B5B;
-	font-size: 32px;
-	opacity: 0.5;
-	
-	transition: color 0.8s ease-out, opacity 0.5s ease-out;
-	-webkit-transition: color 0.8s ease-out, opacity 0.5s ease-out;
 }
 
-.icon:hover {
-	opacity: 1.0;
+#socialBar a {
+	position: relative;
+	display: block;
+	padding: 16px;
+	font-size: 24px;
+	text-align: center;
+
+	-webkit-transition: all 0.3 ease-in;
+	transition: all 0.3 ease-in;
 }
 
-#gitBox {
-	width: 70px;
-}
-.icons-github {
-	opacity: 1.0;
-	font-size: 44px;
+#socialBar a:hover {
+	-webkit-transform: translateX(10px);	
+	transform: translateX(10px);	
 }
 
-.icons-github:hover {         color: #000000 !important;}
-.icons-quora:hover {          color: #a82400 !important;}
-.icons-outlook:hover {        color: #00a1f1 !important;}
-.icons-medium:hover {         color: #02b875 !important;}
-.icons-gmail:hover {          color: #ea4335 !important;}
-.icons-stackoverflow:hover {  color: #f48024 !important;}
-.icons-lichess:hover {        color: #000000 !important;}
-
+#socialBar a i {
+	color: #FFFFFF;
+}
+.github {
+	color: #FFFFFF;
+	background: #000000;
+}
+.google {
+	background: #4285f4;
+}
+.reddit {
+	background: #ff4500;
+}
+.quora {
+	background: #aa2200;
+}
+.stack-overflow {
+	background: #f48024;
+}
+.lastfm {
+	background: #D51007;
+}
 
 @media (max-width: 600px) {
 	#content {
@@ -335,25 +332,25 @@ a:hover {
 		margin-right: 2%;
 		margin-bottom: 0;
 	}
-	#footer {
-		height: 8vw;
-		padding-top: 8px;
-		padding-bottom: 8px;
+
+	#socialBar {
+		position: relative;
+		margin-top: 32px;
+		margin-bottom: 0px;
+		top: 0;
+		display: block;
+		text-align: center;
 	}
-	.icon-bar {
-		height: 8vw;
-		top: 2wv;
+
+	#socialBar a {
+		display: inline-block;
+		margin: 0;
+		max-width: 5%;
 	}
-	.icon-bar a, #gitBox {
-		height: 8vw;
-		width: 9vw;
-	}
-	.icon {
-		font-size: 5vw;
-		padding: 0.5vw;
-	}
-	.icons-github {        
-		font-size: 7vw;
+
+	#socialBar a:hover {
+		-webkit-transform: translateY(-10px);	
+		transform: translateY(-10px);	
 	}
 }
 

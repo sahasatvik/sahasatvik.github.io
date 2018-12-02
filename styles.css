@@ -140,8 +140,9 @@ a:hover {
 }
 
 #content {
+	position: absolute;
 	width: 80%;
-	height: 100%;
+	min-height: 100%;
 	margin-left: 10%;
 	margin-right: 10%;
 	padding-top: 10px;
@@ -323,6 +324,7 @@ a:hover {
 
 @media (max-width: 600px) {
 	#content {
+		position: relative;
 		width: 96%;
 		margin-left: 2%;
 		margin-right: 2%;

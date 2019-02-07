@@ -189,6 +189,26 @@ var quotes = [
     {
         text: "People think computers will keep them from making mistakes. They're wrong. With computers you make mistakes faster.",
         author: "Adam Osborne"
+    },
+    {
+        text: "In programming the hard part isn’t solving problems, but deciding what problems to solve.",
+        author: "Paul Graham"
+    },
+    {
+        text: "Meaning lies as much<br>in the mind of the reader<br>as in the Haiku.",
+        author: "Douglas Hofstadter"
+    },
+    {
+        text: "Please, Oh please, publish me in your collection of self-referential sentences!",
+        author: "Douglas Hofstadter"
+    },
+    {
+        text: "A good way to have good ideas is by being unoriginal.",
+        author: "Bram Cohen"
+    },
+    {
+        text: "Code never lies, comments sometimes do.",
+        author: "Ron Jeffries"
     }
 ]
 

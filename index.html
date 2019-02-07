@@ -1,264 +1,84 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Satvik Saha">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Satvik Saha</title>
 
-<meta charset="utf-8">
-<meta name="author" content="Satvik Saha">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="description" content="A collection of curiosities and projects I care about.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="init.js"></script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-<script src="init.js"></script>
-
-<title>Satvik Saha</title>
-
-<!--Icons-->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" />
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" />
-<link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png" />
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" />
-<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" />
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" />
-<link rel="icon" type="image/png" href="images/icons/favicon-196x196.png" sizes="196x196" />
-<link rel="icon" type="image/png" href="images/icons/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="images/icons/favicon-128.png" sizes="128x128" />
-<meta name="application-name" content="Satvik Saha"/>
-<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png" />
-<meta name="msapplication-square70x70logo" content="images/icons/mstile-70x70.png" />
-<meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png" />
-<meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png" />
-<meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png" />
-
+    <!--Icons-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/icons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/icons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Satvik Saha"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="images/icons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="images/icons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="images/icons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="images/icons/mstile-310x310.png" />
 </head>
-
 <body>
-
-<div id="fractal">
-	<canvas id="fractalCanvas"></canvas>
-	<div id="canvasText">Hi! I'm Satvi<span id="p12">k</span></div>
-
-	<a id="scrollToContent"></a>
-	<a id="refreshFractal" class="ripple-effect ripple-blue"></a>
-</div>
-
-<div id="content">
-
-	<div align="center" id="header">
-		<div class="logo ripple-effect" id="cubeLogo">
-			<img id="mainCube" src="images/cube.svg" alt="Cube"></img>
-		</div>
-		<img class="name" id="mainTitle" src="images/main-title.svg" alt="Satvik Saha"></img>
-
-	</div>
-
-	<div class="content-text" id="notes">
-		<div class="card card-row pressable" id="quote" align="center">
-			<div id="qtext"></div>
-			<div id="qauthor"></div>
-		</div>
-		<script type="text/javascript">
-			showQuote();
-		</script>
-		
-		<div class="card ripple-effect" id="mathematics">
-			<h2>Mathematics</h2>
-			<ul>
-				<li><a href="math/differentiation.html">      Differentiation       </a ></li>
-				<li><a href="math/integration.html">          Integration           </a ></li>
-				<li><a href="math/complex.html">              Complex Numbers       </a ></li>
-				<li><a href="math/complex.pdf">               Complex Identities    </a ></li>
-				<li><a href="math/olympiadInequalities.pdf">  Olympiad Inequalities </a ></li>
-				<li><a href="math/summation.pdf">             Summation Identities  </a ></li>
-				<li><a href="math/telescoping.pdf">           Telescoping Sums      </a ></li>
-			</ul>
-		</div>
-		<div class="card ripple-effect" id="physics">
-			<h2>Physics</h2>
-			<ul>
-				<li><a href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a ></li>
-				<li><a href="physics/aircraftTarget.pdf">  Aiming a Projectile at an Aircraft </a ></li>
-				<li><a href="physics/flashlight.pdf">      Flashlight Tracking Aircraft       </a ></li>
-				<li><a href="physics/sliding.pdf">         Sliding down Chords of a Circle    </a ></li>
-				<li><a href="physics/projectile.pdf">      The Range of a Projectile          </a ></li>
-				<li><a href="physics/variableForce.pdf">   Variable Force on a Moving Body    </a ></li>
-				<li><a href="physics/ladderSlip.pdf">      Ladder in Equilibrium              </a ></li>
-			</ul>
-		</div>
-	</div>
-		
-</div>
-
-<div id="socialBar">
-	<a href="https://github.com/sahasatvik/" target="_blank" class="github" title="GitHub"><i class="fab fa-github"></i></a><!--
-	--><a href="mailto:sahasatvik@gmail.com" target="_blank" class="google" title="Gmail"><i class="fab fa-google"></i></a><!--
-	--><a href="https://www.reddit.com/user/sahasatvik/" target="_blank" class="reddit" title="Reddit"><i class="fab fa-reddit"></i></a><!--
-	--><a href="https://www.quora.com/profile/satvik-saha" target="_blank" class="quora" title="Quora"> <i class="fab fa-quora"></i></a><!--
-	--><a href="https://www.last.fm/user/sahasatvik" target="_blank" class="lastfm" title="last.fm"><i class="fab fa-lastfm"></i></a><!--
-	--><a href="https://lichess.org/@/sahasatvik" target="_blank" class="lichess" title="lichess"><i class="fas fa-chess"></i></a>
-</div>
-
-<script type="text/javascript" charset="utf-8">
-	"use strict";
-	var quoteBox = document.getElementById('quote');
-	var fractal = document.getElementById('fractalCanvas');
-	var socialBar = document.getElementById('socialBar');
-	var scrollArrow = document.getElementById('scrollToContent');
-	var refreshFractalButton = document.getElementById('refreshFractal');
-
-	quoteBox.onmouseup = function() {
+    <div class="global-container">
+        <div id="name">Satvik Saha</div>
+        <div id="name-padding"></div>
+        <div class="card-container">
+            <div id="quote-card" class="card card-row pressable" onmouseup="showQuote(-1, quotes)">
+                <div id="quote-text"></div>
+                <div id="quote-author"></div>
+            </div>
+            <div id="mathematics" class="card">
+                <div class="card-title">Mathematics</div> 
+                <div class="card-inner-container">
+                    <a href="math/differentiation.html">      Differentiation       </a>
+                    <a href="math/integration.html">          Integration           </a>
+                    <a href="math/complex.html">              Complex Numbers       </a>
+                    <a href="math/complex.pdf">               Complex Identities    </a>
+                    <a href="math/olympiadInequalities.pdf">  Olympiad Inequalities </a>
+                    <a href="math/summation.pdf">             Summation Identities  </a>
+                    <a href="math/telescoping.pdf">           Telescoping Sums      </a>
+                </div>
+            </div>
+            <div id="physics" class="card">
+                <div class="card-title">Physics</div> 
+                <div class="card-inner-container">
+                    <a href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a>
+                    <a href="physics/aircraftTarget.pdf">  Aiming a Projectile at an Aircraft </a>
+                    <a href="physics/flashlight.pdf">      Flashlight Tracking Aircraft       </a>
+                    <a href="physics/sliding.pdf">         Sliding down Chords of a Circle    </a>
+                    <a href="physics/projectile.pdf">      The Range of a Projectile          </a>
+                    <a href="physics/variableForce.pdf">   Variable Force on a Moving Body    </a>
+                    <a href="physics/ladderSlip.pdf">      Ladder in Equilibrium              </a>
+                </div>
+            </div>
+        </div>
+        <div id="contacts">
+            <div class="card-inner-container">
+                <a href="https://github.com/sahasatvik" target="_blank">github</a>
+                <a href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
+                <a href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
+                <a href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
+                <a href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
+                <a href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf-8">
 		showQuote(-1, quotes);
-	};
-
-	var rippleEffect = (function() {
-		function rippleEffect(event) {
-			var time = 1500;
-			var self = this;
-			var rect = self.getBoundingClientRect();
-			var x    = event.clientX - rect.left;
-			var y    = event.clientY - rect.top;
-			var circle = document.createElement("div");
-
-			circle.style.top = y + 'px';
-			circle.style.left = x + 'px';
-			circle.style.pointerEvents = 'none';
-			circle.className = 'ripple animate';
-			self.appendChild(circle);
-			
-			setTimeout(function() {
-				self.removeChild(circle);
-			}, time);
-		}
-
-		var targets = document.getElementsByClassName('ripple-effect');
-		var l = targets.length;
-		var i;
-
-		for (i = 0; i < l; i++) {
-			targets[i].addEventListener('mousedown', rippleEffect, false);
-		}
-	}());
-
-	var scrollTo = function scrollTo(element, to, duration) {
-		if (duration <= 0) return;
-		var difference = to - element.scrollTop;
-		var perTick = difference / duration * 10;
-
-		setTimeout(function() {
-			element.scrollTop = element.scrollTop + perTick;
-			if (element.scrollTop === to) return;
-			scrollTo(element, to, duration - 10);
-		}, 10);
-	};
-		
-	scrollArrow.onmousedown = function() {
-		scrollTo(document.body, fractal.offsetTop + fractal.offsetHeight, 200);
-	};
-	
-	var getRandomValue = (n) => Math.floor(Math.random() * n);
-	var getRandomSign  = ()  => Math.pow(-1, Math.round(Math.random()));
-	var getRandomSeed  = ()  => [getRandomSign() * Math.random(), getRandomSign() * Math.random()];
-
-	var julia = {
-		c           :	[-0.4473013137484204, 0.5850310203269729],
-		radius      :   null,
-		scale       :	null,
-		maxIter     :	200,
-		width       :	null,
-		height      :	null,
-		canvas      :	null,
-		canvasCTX   :	null,
-		imageData   :	null,
-		xOffset     :	null,
-		yOffset     :	null,
-		colors      :	[],
-		f           :	(z, c) => [(z[0]*z[0] - z[1]*z[1] + c[0]), (2 * z[0]*z[1] + c[1])],
-		abs         :	(z) => Math.sqrt(z[0]*z[0] + z[1]*z[1]),
-		convert     :	function (x, y) {
-					var a = this.scale * (x - this.xOffset);
-					var b = this.scale * (this.yOffset - y);
-					return [a, b];
-				},
-		countIter   :	function (z) {
-					var i;
-					for (i = 0; i < this.maxIter; i++) {
-						z = this.f(z, this.c);
-						if (this.abs(z) > this.radius) {
-							return i;
-						}
-					}
-					return this.maxIter;
-				},
-		initVars    :	function (c) {
-					if (typeof c !== 'undefined') this.c = c;
-
-					this.radius = (1 + Math.sqrt(1+4*this.abs(this.c))) / 2;
-					this.scale  = 2 * this.radius / Math.min(this.width, this.height);
-				},
-		initColors  :	function () {
-					for (var i = 1; i <= this.maxIter; i++) {
-						this.colors[i] = Math.round((Math.log(i)/Math.log(this.maxIter)) * 255);
-					}
-				},
-		initCanvas  :	function () {
-					this.width = window.innerWidth;
-					this.height = window.innerHeight;
-					this.xOffset = this.width / 2;
-					this.yOffset = this.height / 2;
-					
-					this.canvas = document.getElementById('fractalCanvas');
-					this.canvas.setAttribute('width', this.width);
-					this.canvas.setAttribute('height', this.height);
-					this.canvasCTX = this.canvas.getContext('2d');
-				},
-		clearCanvas :	function () {
-					this.canvasCTX.clearRect(0, 0, this.width, this.height);
-					this.imageData = this.canvasCTX.createImageData(this.width, this.height);
-				}
-	};
-
-	var drawJulia = function (c) {
-		julia.initVars(c);
-		julia.clearCanvas();
-
-		var x, y, i;
-		for (x = 0; x <= julia.xOffset; x++) {
-			for (y = 0; y <= julia.height; y++) {
-				i = julia.countIter(julia.convert(x, y));
-				if (i > 0) {
-					setPixel(julia.imageData, x, y, julia.colors[i]);
-					setPixel(julia.imageData, julia.width - x, julia.height - y, julia.colors[i]);
-				}
-			}
-		}
-		julia.canvasCTX.putImageData(julia.imageData, 0, 0);
-	}
-	
-	var index;
-	var setPixel = function (id, x, y, b) {
-		index = (x + y * id.width) << 2;
-		id.data[index + 2] = b;
-		id.data[index + 3] = 255;
-	};
-
-	var seed;
-	window.onload = function() {
-		julia.initCanvas();
-		julia.initColors();
-		seed = getRandomSeed();
-		drawJulia(seed);
-	};
-
-	refreshFractalButton.onmousedown = function () {
-		seed = getRandomSeed();
-		drawJulia(seed);
-	};
-</script>
-
+    </script>
 </body>
 </html>

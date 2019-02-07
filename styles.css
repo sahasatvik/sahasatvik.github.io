@@ -1,359 +1,126 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,500');
 
 * {
-	margin: 0;
-	padding: 0;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto Mono", monospace;
 }
 
-html, body {
-	background-color: #FFFFFF;
-	font-size: 16px;
-	margin: 0;
-	padding: 0;
+body {
+    background-color: #272727;
 }
 
-h1, h2, h3, h4 {
-	font-family: 'Roboto', Helvetica, arial, sans-serif;
-	font-weight: 400;
+a {
+    text-decoration: none;
+    color: #afafaf;
+    display: block;
+    margin: .5em 0em;
 }
 
-a {	
-	color: rgba(0, 0, 0, 0.7);
-	text-decoration: none;
-	transition: all 0.2s ease;
-	-webkit-transition: all 0.3s ease;
-}
 a:hover {
-	color: rgba(30, 110, 220, 0.9);
+    color: #ffffff;
 }
 
-#fractal {
-	position: relative;
-	height: 100%;
-	width: 100%;
+.global-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#fractalCanvas {
-	height: 100%;
-	width: 100%;
-	left: 0;
-	position: absolute;
-	background: black;
-}
-
-#canvasText {
-	z-index: 10;
-	position: absolute;
-	width: 80%;
-	left: 10%;
-	top: 50%;
-	line-height: 64px;
-	text-align: center;
-	font-family: monospace;
-	font-size: 64px;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	color: #FFFFFF;
-}
-
-#scrollToContent {
-	z-index: 10;
-	cursor: pointer;
-	position: absolute;
-	bottom: 42px;
-	left: 50%;
-	width: 32px;
-	height: 32px;
-	transform: translateX(-50%) rotate(-45deg);
-	-webkit-transform: translateX(-50%) rotate(-45deg);
-	border-left: 2px solid #FFFFFF;
-	border-bottom: 2px solid #FFFFFF;
-	animation: scroll 3s infinite;
-}
-
-#refreshFractal {
-	z-index: 10;
-	cursor: pointer;
-	position: absolute;
-	top: 16px;
-	right: 16px;
-	width: 24px;
-	height: 24px;
-	background: #FFFFFF;
-	transform: translateX(-50%) translateY(50%);
-	-webkit-transform: translateX(-50%) translateY(50%);
-	transition: all 200ms ease;
-	-webkit-transition: all 200ms ease;
-}
-#refreshFractal.ripple-effect .ripple {
-	background-color: #2010ee;
-}
-#refreshFractal:hover {
-	top: 14px;
-}
-
-@keyframes scroll {
-	0% {
-		transform: translateX(-50%) rotate(-45deg);
-		-webkit-transform: translateX(-50%) rotate(-45deg);
-	}
-	45% {
-		transform: translateX(-50%) translateY(-3px) rotate(-45deg);
-		-webkit-transform: translateX(-50%) translateY(-3px) rotate(-45deg);
-	}
-	55% {
-		transform: translateX(-50%) translateY(6px) rotate(-45deg);
-		-webkit-transform: translateX(-50%) translateY(6px) rotate(-45deg);
-	}
-	100% {
-		transform: translateX(-50%) rotate(-45deg);
-		-webkit-transform: translateX(-50%) rotate(-45deg);
-	}
-}
-
-.logo {
-	display: block;
-	opacity: 0.9;
-	height: 200px;
-	width: 200px;
-	border-radius: 50%;
-	margin-top: 36px;
-	margin-bottom: 18px;
-}
-
-#mainCube {
-	height: 200px;
-	width: 200px;
-	transition: opacity 0.5s ease-out, transform 1s ease-out;
-	-webkit-transition: opacity 0.5 ease-out, transform 1s ease-out;
-}
-
-#mainCube:hover {
-	opacity: 1.0;
-	transform: scale(1.05, 1.05);
-}
-
-#mainTitle {
-	display: block;
-	height: 32px;
-	width: 70%;
-}
-
-#content {
-	position: absolute;
-	width: 80%;
-	min-height: 100%;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	transition: all 0.5s ease-out;
-	-webkit-transition: all 0.5s ease-out;
-}
-
-.content-text {
-	font-family: 'Roboto', arial, sans-serif; 
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 1.6;
-}
-
-#notes {
-	align-content: center;
-	justify-content: center;
-	display: flex;
-	flex-wrap: wrap;
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    height: auto;
 }
 
 .card {
-	flex-grow: 1;
-	flex-shrink: 1;
-	float: center;
-	display: inline-block;
-	position: relative;
-	justify-content: left;
-	
-	padding: 24px;
-	margin: 12px;
-	
-	background: #FFFFFF;
-	border-radius: 2px;
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-	-webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-	z-index: 3;
-}
-
-.card, .card.pressable:active {
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.card:hover {
-	box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
-	-webkit-box-shadow: 0 12px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22);
+    flex: 1 1;
+    background-color: #272727;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #9f9f9f;
+    padding: 1em;
+    margin: .5em .5em;
 }
 
 .card-row {
-	flex: 0 1 100%;
+    flex: 0 1 100%;
 }
 
-.card h2 {
-	font-size: 24px;
-	font-weight: 300;
-	margin-bottom: 4px;
-}
-.card h3 {
-	font-weight: 400;
-}
-.card ul {
-	list-style: none;
-	padding: 0;
+.card:hover {
+    background-color: #242424;
+    border-color: #ffffff;
 }
 
-.ripple-effect {
-	position: relative;
-	overflow: hidden;
+.card.pressable:active {
+    border-color: #9f9f9f;
 }
 
-.ripple {
-	position: absolute;
-	width: 500px;
-	height: 500px;
-	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.1);
-	opacity: 0;
-	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	z-index: 5;
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0em 0em .35em 0em;
 }
 
-.logo.ripple-effect .ripple {
-	background-color: rgba(255, 255, 255, 0.3);
+.card-inner-container {
+    font-size: 0.8rem;
+    font-weight: 400;
+    overflow-y: scroll;
+    vertical-align: top;
 }
 
-.ripple.animate {
-	animation: ripple 1.5s;
+#name {
+    font-size: 4rem;
+    font-weight: 200;
+    color: #ffffff;
+    margin: 1.5em 0em 1em 0em;
 }
 
-@keyframes ripple {
-	from {	
-		width: 10px;
-		height: 10px;
-		opacity: 1;
-	}
+#quote-card {
+    text-align: center;
 }
 
-#quote {
-	font-family: monospace;
-	font-size: 14px;
-	font-kerning: auto;
-	line-height: 18px;
-	
-	padding: 16px;
+#quote-card > * {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #afafaf; 
+    margin: .5em 0em;
 }
 
-#qauthor {
-	font-weight: bold;
-	margin-top: 6px;
+#quote-author {
+    color: #ffffff; 
 }
 
-#footer {
-	position: relative;
-	background-color: #FFFFFF;
-	display: inline-block;
-
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	overflow: hidden;
-	z-index: 100;
+#contacts {
+    width: 60%;
+    height: auto;
+    text-align: center;
+    margin: 1em 0em;
 }
 
-#socialBar {
-	z-index: 100;
-	position: fixed;
-	top: 50%;
-	left: 0;
-	
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+#contacts a {
+    font-weight: 100;
+    display: inline-block;
+    margin: 0em .5em;
 }
 
-#socialBar a {
-	position: relative;
-	display: block;
-	padding: 16px;
-	font-size: 24px;
-	text-align: center;
-
-	-webkit-transition: all 0.3 ease-in;
-	transition: all 0.3 ease-in;
+@media only screen and (max-width: 600px) {
+    .card-container {
+        width: 80%;
+    }
+    #name {
+        font-size: 3rem;
+        margin: 1em 0em .5em 0em;
+    }
+    #contacts {
+        width: 80%;
+    }
 }
 
-#socialBar a:hover {
-	-webkit-transform: translateX(10px);	
-	transform: translateX(10px);	
-}
-
-#socialBar a i {
-	color: #FFFFFF;
-}
-.github {
-	color: #FFFFFF;
-	background: #000000;
-}
-.google {
-	background: #4285f4;
-}
-.reddit {
-	background: #ff4500;
-}
-.quora {
-	background: #aa2200;
-}
-.lastfm {
-	background: #D51007;
-}
-.lichess {
-	background: #000000;
-}
-
-@media (max-width: 600px) {
-	#content {
-		position: relative;
-		width: 96%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-bottom: 0;
-	}
-
-	#socialBar {
-		position: relative;
-		margin-top: 32px;
-		margin-bottom: 0px;
-		top: 0;
-		display: block;
-		text-align: center;
-	}
-
-	#socialBar a {
-		display: inline-block;
-		margin: 0;
-		max-width: 5%;
-	}
-
-	#socialBar a:hover {
-		-webkit-transform: translateY(-10px);	
-		transform: translateY(-10px);	
-	}
-}
-
-@media (max-height: 480px) {
-	#content {
-		margin-bottom: 0;
-	}
-}

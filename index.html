@@ -12,20 +12,23 @@
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
     
+    <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
     <script src="init.js"></script>
 
 </head>
 <body>
-    <div class="global-container">
+    <div id="global-container">
         <div id="name">Satvik Saha</div>
         <div id="name-padding"></div>
-        <div class="card-container">
-            <div id="quote-card" class="card card-row pressable" onmouseup="showQuote(-1, quotes)">
-                <div id="quote-text"></div>
-                <div id="quote-author"></div>
+        <div id="note-card-container" class="card-container">
+            <div id="quote-card" class="card card-dark card-row pressable" onmouseup="showQuote(-1, quotes)">
+                <div class="card-inner-container">
+                    <div id="quote-text"></div>
+                    <div id="quote-author"></div>
+                </div>
             </div>
-            <div id="mathematics" class="card">
+            <div id="mathematics" class="card card-dark">
                 <div class="card-title">Mathematics</div> 
                 <div class="card-inner-container">
                     <a href="math/differentiation.html">      Differentiation       </a>
@@ -37,7 +40,7 @@
                     <a href="math/telescoping.pdf">           Telescoping Sums      </a>
                 </div>
             </div>
-            <div id="physics" class="card">
+            <div id="physics" class="card card-dark">
                 <div class="card-title">Physics</div> 
                 <div class="card-inner-container">
                     <a href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a>
@@ -51,14 +54,12 @@
             </div>
         </div>
         <div id="contacts">
-            <div class="card-inner-container">
-                <a href="https://github.com/sahasatvik" target="_blank">github</a>
-                <a href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
-                <a href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
-                <a href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
-                <a href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
-                <a href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
-            </div>
+            <a href="https://github.com/sahasatvik" target="_blank">github</a>
+            <a href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
+            <a href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
+            <a href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
+            <a href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
+            <a href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
         </div>
     </div>
     <script type="text/javascript" charset="utf-8">

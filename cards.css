@@ -34,7 +34,7 @@
 
 .card > .card-title {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 400;
     color: #000000;
     margin: 0em 0em .35em 0em;
 }
@@ -46,7 +46,7 @@
 
 .card > .card-inner-container > * {
     font-size: .8rem;
-    font-weight: 400;
+    font-weight: 300;
     color: #7f7f7f;
     display: block;
     margin: .5em 0em;

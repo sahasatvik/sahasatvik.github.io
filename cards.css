@@ -71,10 +71,6 @@
     border-color: #7f7f7f;
 }
 
-.card.card-dark > .card-inner-container {
-    color: #afafaf;
-}
-
 .card.card-dark > .card-title {
     color: #ffffff;
 }

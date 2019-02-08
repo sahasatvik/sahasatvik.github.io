@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500');
 
 * {
     padding: 0px;
@@ -49,7 +49,7 @@ a {
     width: 90%;
     height: auto;
     font-size: 4rem;
-    font-weight: 200;
+    font-weight: 300;
     color: #ffffff;
     background-color: #272727;
     border: solid 0px #272727;

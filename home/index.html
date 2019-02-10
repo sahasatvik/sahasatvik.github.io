@@ -70,8 +70,10 @@
         
         // Define search patterns
         var searchPatterns = [
-            { pattern:  /^[:;]/i,
+            { pattern:  /^:/i,
               link:     (val) => 'http://' + val.substring(1)},
+            { pattern:  /^;/i,
+              link:     (val) => 'https://' + val.substring(1)},
             { pattern:  /^r\/.+/i,
               link:     (val) => 'https://reddit.com/' + val},
             { pattern:  /^r(\/)?$/i,

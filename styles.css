@@ -35,11 +35,18 @@ a:hover {
     height: auto;
 }
 
-#name {
-    font-size: 4rem;
-    font-weight: 200;
+#logo-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: 300;
     color: #ffffff;
-    margin: 1.5em 0em 1em 0em;
+    margin: 1.5em 0em .5em 0em;
+}
+
+#logo {
+    width: auto;
+    height: 6rem;
 }
 
 #quote-author {
@@ -64,8 +71,8 @@ a:hover {
     #note-card-container {
         width: 80%;
     }
-    #name {
-        font-size: 3rem;
+    #logo-container {
+        font-size: 2rem;
         margin: 1em 0em .5em 0em;
     }
     #contacts {

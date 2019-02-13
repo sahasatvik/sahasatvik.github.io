@@ -32,7 +32,10 @@
                 <div id="quote-author" class="card-title"></div>
             </div>
             <div id="mathematics" class="card card-dark">
-                <div class="card-title">Mathematics</div> 
+                <div class="card-title">
+                    Mathematics
+                    <i class="card-icon material-icons">notes</i>
+                </div> 
                 <div class="card-inner-container">
                     <a href="math/differentiation.html">      Differentiation       </a>
                     <a href="math/integration.html">          Integration           </a>
@@ -44,7 +47,10 @@
                 </div>
             </div>
             <div id="physics" class="card card-dark">
-                <div class="card-title">Physics</div> 
+                <div class="card-title">
+                    Physics
+                    <i class="card-icon material-icons">notes</i>
+                </div> 
                 <div class="card-inner-container">
                     <a href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a>
                     <a href="physics/aircraftTarget.pdf">  Aiming a Projectile at an Aircraft </a>
@@ -56,7 +62,9 @@
                 </div>
             </div>
             <div id="now-playing-card" class="card card-dark card-row" style="display: none">
-                <div class="card-title"><i class="material-icons">music_note</i></div>
+                <div class="card-title">
+                    <i class="card-icon material-icons">music_note</i>
+                </div>
                 <div class="card-inner-container">
                     <div id="now-playing-album"></div>
                     <a id="now-playing" target="_blank"></a>
@@ -136,6 +144,8 @@
                         document.getElementById('now-playing-album').innerHTML = album;
                         document.getElementById('now-playing').innerHTML = artist + ' - ' + track;
                         document.getElementById('now-playing').href = url;
+                    } else {
+                        document.getElementById('now-playing-card').style.display = 'none';
                     }
                 }
             );

@@ -135,7 +135,8 @@
         function updateNowPlaying () {
             getJSON(lastfmURL,
                 function(err, data) {
-                    if (data['recenttracks']['track'][0]['@attr']['nowplaying'] === 'true') {
+                    if (('@attr' in data['recenttracks']['track']['0'])
+                      && (data['recenttracks']['track'][0]['@attr']['nowplaying'] === 'true')) {
                         var album  = data['recenttracks']['track'][0]['album']['#text'];
                         var artist = data['recenttracks']['track'][0]['artist']['#text'];
                         var track  = data['recenttracks']['track'][0]['name'];
@@ -151,7 +152,7 @@
             );
         }
         updateNowPlaying();
-        setInterval(updateNowPlaying, 1000);
+        setInterval(updateNowPlaying, 5000);
     </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" > 
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
     <script src="init.js"></script>
@@ -52,6 +53,13 @@
                     <a href="physics/projectile.pdf">      The Range of a Projectile          </a>
                     <a href="physics/variableForce.pdf">   Variable Force on a Moving Body    </a>
                     <a href="physics/ladderSlip.pdf">      Ladder in Equilibrium              </a>
+                </div>
+            </div>
+            <div id="now-playing-card" class="card card-dark card-row" style="display: none">
+                <div class="card-title"><i class="material-icons">music_note</i></div>
+                <div class="card-inner-container">
+                    <div id="now-playing-album"></div>
+                    <a id="now-playing" target="_blank"></a>
                 </div>
             </div>
             <div id="contacts" class="card card-dark card-row">
@@ -98,6 +106,42 @@
         }
         refreshTheme();
         showQuote(-1, quotes);
+        
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+        
+        var lastfmURL = 
+            'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sahasatvik&api_key=3193e14c84770e38d316f60f08134807&limit=1&format=json';
+        function updateNowPlaying () {
+            getJSON(lastfmURL,
+                function(err, data) {
+                    if (data['recenttracks']['track'][0]['@attr']['nowplaying'] === 'true') {
+                        var album  = data['recenttracks']['track'][0]['album']['#text'];
+                        var artist = data['recenttracks']['track'][0]['artist']['#text'];
+                        var track  = data['recenttracks']['track'][0]['name'];
+                        var url    = data['recenttracks']['track'][0]['url'];
+                        document.getElementById('now-playing-card').style.display = 'block';
+                        document.getElementById('now-playing-album').innerHTML = album;
+                        document.getElementById('now-playing').innerHTML = artist + ' - ' + track;
+                        document.getElementById('now-playing').href = url;
+                    }
+                }
+            );
+        }
+        updateNowPlaying();
+        setInterval(updateNowPlaying, 1000);
     </script>
 </body>
 </html>

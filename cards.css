@@ -39,6 +39,14 @@
     margin: 0em 0em .35em 0em;
 }
 
+.card > .card-title > .card-icon {
+    float: right;
+}
+
+.card.card-row > .card-title > .card-icon {
+    float: inherit;
+}
+
 .card > .card-inner-container {
     overflow-y: scroll;
     vertical-align: top;

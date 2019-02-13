@@ -41,6 +41,7 @@
 
 .card > .card-title > .card-icon {
     float: right;
+    font-size: 1.4rem;
 }
 
 .card.card-row > .card-title > .card-icon {

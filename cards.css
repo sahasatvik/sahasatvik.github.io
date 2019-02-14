@@ -48,11 +48,6 @@
     float: inherit;
 }
 
-.card > .card-inner-container {
-    overflow-y: scroll;
-    vertical-align: top;
-}
-
 .card > .card-inner-container > * {
     font-size: .8rem;
     font-weight: 300;

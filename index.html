@@ -83,6 +83,8 @@
         </div>
     </div>
     <script type="text/javascript" charset="utf-8">
+        showQuote(-1, quotes);
+        
         var x = document.getElementsByClassName("card");
         var light = JSON.parse(localStorage.getItem("light"));
         if (light == null) {light = false;}
@@ -112,8 +114,6 @@
             theme();
             localStorage.setItem("light", JSON.stringify(light));
         }
-        refreshTheme();
-        showQuote(-1, quotes);
         
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();
@@ -151,8 +151,11 @@
                 }
             );
         }
+        
         updateNowPlaying();
         setInterval(updateNowPlaying, 10000);
+        
+        refreshTheme();
     </script>
 </body>
 </html>

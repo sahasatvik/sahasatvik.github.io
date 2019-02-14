@@ -61,6 +61,10 @@ a {
     font-size: .8rem;    
 }
 
+#now-playing-title, #now-playing-album, #now-playing {
+    margin: 0em;
+}
+
 #contacts {
     border: none;
     background-color: rgba(0, 0, 0, 0);

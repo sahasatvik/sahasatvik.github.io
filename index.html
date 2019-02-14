@@ -118,7 +118,9 @@
         function refreshTheme() {
             theme = light? lightTheme : darkTheme;
             theme();
-            localStorage.setItem("light", JSON.stringify(light));
+            try {
+                localStorage.setItem("light", JSON.stringify(light));
+            } catch (err) {}
         }
         
         var getJSON = function(url, callback) {

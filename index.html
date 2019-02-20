@@ -27,9 +27,29 @@
         <div id="main-card-container" class="card-container">
             <div id="quote-card" class="card card-dark card-row pressable" onmouseup="showQuote(-1, quotes)">
                 <div class="card-inner-container">
-                    <div id="quote-text"></div>
+                    <div class="card-item" id="quote-text"></div>
                 </div>
                 <div id="quote-author" class="card-title"></div>
+            </div>
+            <div id="wallpapers" class="card card-dark">
+                <div class="card-title">
+                    Wallpapers
+                    <i class="card-icon material-icons" title="Notes">wallpaper</i>
+                </div>
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        <a class="card-item" href="images/bach.png" target="_blank">JS Bach</a>
+                        <a class="card-item" href="images/bach.svg" target="_blank">(svg)</a>
+                    </div>
+                    <div class="card-item">
+                        <a class="card-item" href="images/board.png" target="_blank">Chessboard</a>
+                        <a class="card-item" href="images/board.svg" target="_blank">(svg)</a>
+                    </div>
+                    <div class="card-item">
+                        <a href="images/one_ring.png" target="_blank">One Ring</a>
+                        <a href="images/one_ring.svg" target="_blank">(svg)</a>
+                    </div>
+                </div>
             </div>
             <div id="mathematics" class="card card-dark">
                 <div class="card-title">
@@ -37,13 +57,13 @@
                     <i class="card-icon material-icons" title="Notes">notes</i>
                 </div> 
                 <div class="card-inner-container">
-                    <a href="math/differentiation.html">      Differentiation       </a>
-                    <a href="math/integration.html">          Integration           </a>
-                    <a href="math/complex.html">              Complex Numbers       </a>
-                    <a href="math/complex.pdf">               Complex Identities    </a>
-                    <a href="math/olympiadInequalities.pdf">  Olympiad Inequalities </a>
-                    <a href="math/summation.pdf">             Summation Identities  </a>
-                    <a href="math/telescoping.pdf">           Telescoping Sums      </a>
+                    <a class="card-item" href="math/differentiation.html">      Differentiation       </a>
+                    <a class="card-item" href="math/integration.html">          Integration           </a>
+                    <a class="card-item" href="math/complex.html">              Complex Numbers       </a>
+                    <a class="card-item" href="math/complex.pdf">               Complex Identities    </a>
+                    <a class="card-item" href="math/olympiadInequalities.pdf">  Olympiad Inequalities </a>
+                    <a class="card-item" href="math/summation.pdf">             Summation Identities  </a>
+                    <a class="card-item" href="math/telescoping.pdf">           Telescoping Sums      </a>
                 </div>
             </div>
             <div id="physics" class="card card-dark">
@@ -52,13 +72,13 @@
                     <i class="card-icon material-icons" title="Notes">notes</i>
                 </div> 
                 <div class="card-inner-container">
-                    <a href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a>
-                    <a href="physics/aircraftTarget.pdf">  Aiming a Projectile at an Aircraft </a>
-                    <a href="physics/flashlight.pdf">      Flashlight Tracking Aircraft       </a>
-                    <a href="physics/sliding.pdf">         Sliding down Chords of a Circle    </a>
-                    <a href="physics/projectile.pdf">      The Range of a Projectile          </a>
-                    <a href="physics/variableForce.pdf">   Variable Force on a Moving Body    </a>
-                    <a href="physics/ladderSlip.pdf">      Ladder in Equilibrium              </a>
+                    <a class="card-item" href="physics/pendulum.html">       The Motion of a Simple Pendulum    </a>
+                    <a class="card-item" href="physics/aircraftTarget.pdf">  Aiming a Projectile at an Aircraft </a>
+                    <a class="card-item" href="physics/flashlight.pdf">      Flashlight Tracking Aircraft       </a>
+                    <a class="card-item" href="physics/sliding.pdf">         Sliding down Chords of a Circle    </a>
+                    <a class="card-item" href="physics/projectile.pdf">      The Range of a Projectile          </a>
+                    <a class="card-item" href="physics/variableForce.pdf">   Variable Force on a Moving Body    </a>
+                    <a class="card-item" href="physics/ladderSlip.pdf">      Ladder in Equilibrium              </a>
                 </div>
             </div>
             <div id="now-playing-card" class="card card-dark card-row" style="display: none">
@@ -66,18 +86,18 @@
                     <i class="card-icon material-icons" title="Now Playing">audiotrack</i>
                 </div>
                 <div class="card-inner-container">
-                    <div id="now-playing-album"></div>
-                    <a id="now-playing" target="_blank"></a>
+                    <div class="card-item" id="now-playing-album"></div>
+                    <a class="card-item" id="now-playing" target="_blank"></a>
                 </div>
             </div>
             <div id="contacts" class="card card-dark card-row">
                 <div class="card-inner-container">
-                    <a href="https://github.com/sahasatvik" target="_blank">github</a>
-                    <a href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
-                    <a href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
-                    <a href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
-                    <a href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
-                    <a href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
+                    <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
+                    <a class="card-item" href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
+                    <a class="card-item" href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
+                    <a class="card-item" href="https://lichess.org/@/sahasatvik" target="_blank">lichess</a>
+                    <a class="card-item" href="https://quora.com/profile/satvik-saha" target="_blank">quora</a>
+                    <a class="card-item" href="https://reddit.com/user/sahasatvik" target="_blank">reddit</a>
                 </div>
             </div>
         </div>

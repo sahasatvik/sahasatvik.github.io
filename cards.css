@@ -48,7 +48,7 @@
     float: inherit;
 }
 
-.card > .card-inner-container > * {
+.card > .card-inner-container > .card-item {
     font-size: .8rem;
     font-weight: 300;
     color: #7f7f7f;
@@ -56,7 +56,11 @@
     margin: .5em 0em;
 }
 
-.card > .card-inner-container > a:hover {
+.card > .card-inner-container a {
+    color: #7f7f7f;
+}
+
+.card > .card-inner-container a:hover {
     color: #000000;
 }
 
@@ -79,11 +83,15 @@
     color: #ffffff;
 }
 
-.card.card-dark > .card-inner-container > * {
+.card.card-dark > .card-inner-container > .card-item {
     color: #afafaf;
 }
 
-.card.card-dark > .card-inner-container > a:hover {
+.card.card-dark > .card-inner-container a {
+    color: #afafaf;
+}
+
+.card.card-dark > .card-inner-container a:hover {
     color: #ffffff;
 }
 

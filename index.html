@@ -38,12 +38,12 @@
                 </div>
                 <div class="card-inner-container">
                     <div class="card-item">
-                        <a class="card-item" href="images/bach.png" target="_blank">JS Bach</a>
-                        <a class="card-item" href="images/bach.svg" target="_blank">(svg)</a>
+                        <a href="images/bach.png" target="_blank">JS Bach</a>
+                        <a href="images/bach.svg" target="_blank">(svg)</a>
                     </div>
                     <div class="card-item">
-                        <a class="card-item" href="images/board.png" target="_blank">Chessboard</a>
-                        <a class="card-item" href="images/board.svg" target="_blank">(svg)</a>
+                        <a href="images/board.png" target="_blank">Chessboard</a>
+                        <a href="images/board.svg" target="_blank">(svg)</a>
                     </div>
                     <div class="card-item">
                         <a href="images/one_ring.png" target="_blank">One Ring</a>
@@ -87,7 +87,10 @@
                 </div>
                 <div class="card-inner-container">
                     <div class="card-item" id="now-playing-album"></div>
-                    <a class="card-item" id="now-playing" target="_blank"></a>
+                    <div class="card-item" id="now-playing">
+                        <a class="card-item" id="now-playing-artist" target="_blank"></a> - 
+                        <a class="card-item" id="now-playing-track" target="_blank"></a>
+                    </div>
                 </div>
             </div>
             <div id="contacts" class="card card-dark card-row">
@@ -175,8 +178,10 @@
                         var url    = data['recenttracks']['track'][0]['url'];
                         document.getElementById('now-playing-card').style.display = 'block';
                         document.getElementById('now-playing-album').innerHTML = album;
-                        document.getElementById('now-playing').innerHTML = artist + ' - ' + track;
-                        document.getElementById('now-playing').href = url;
+                        document.getElementById('now-playing-artist').innerHTML = artist;
+                        document.getElementById('now-playing-track').innerHTML = track;
+                        document.getElementById('now-playing-artist').href = encodeURI('https://www.last.fm/music/' + artist);
+                        document.getElementById('now-playing-track').href = url;
                     } else {
                         document.getElementById('now-playing-card').style.display = 'none';
                     }

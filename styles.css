@@ -57,6 +57,25 @@ a {
     filter: invert(0%);
 }
 
+#links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#links a {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #81a2be;
+    margin: 0em .5em;
+}
+
+#links a:hover {
+    color: #b294bb;
+}
+
 #quote-author {
     font-size: .8rem;    
 }

@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
     <script src="init.js"></script>
-
 </head>
 <body>
     <div id="global-container">
@@ -34,6 +33,21 @@
                     <div class="card-item" id="quote-text"></div>
                 </div>
                 <div id="quote-author" class="card-title"></div>
+            </div>
+            <div id="superpermutation" class="card card-dark">
+                <a href="https://soundcloud.com/sahasatvik/5906n7" target="_blank">
+                    <img id="soundcloud-img" src="5906.svg" alt="5906">
+                </a>
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        Inspired by <a href="https://youtu.be/_tpNuulTeSQ" target="_blank">Matt Parker's video</a>,
+                        I created an audio track to play the superpermutation for n = 7, length 5906.
+                    </div>
+                </div>
+                <div id="superpermutation-links">
+                    <a id="soundcloud-link" class="card-item" href="https://soundcloud.com/sahasatvik/5906n7" target="_blank">soundcloud</a>
+                    <a id="gist-link" class="card-item" href="https://gist.github.com/sahasatvik/48b6593522a13940f023b11acad0c30e" target="_blank">code</a>
+                </div>
             </div>
             <div id="mathematics" class="card card-dark">
                 <div class="card-title">
@@ -104,6 +118,7 @@
         
         function lightTheme() {
             document.getElementById("logo").classList.add("inverted");
+            document.getElementById("soundcloud-img").classList.add("inverted");
             for (var i = 0; i < x.length; i++) {
                 x[i].classList.remove("card-dark");
             }
@@ -112,6 +127,7 @@
         }
         function darkTheme() {
             document.getElementById("logo").classList.remove("inverted");
+            document.getElementById("soundcloud-img").classList.remove("inverted");
             for (var i = 0; i < x.length; i++) {
                 x[i].classList.add("card-dark");
             }
@@ -129,6 +145,9 @@
                 localStorage.setItem("light", JSON.stringify(light));
             } catch (err) {}
         }
+        
+        var ck = document.getElementsByClassName("cookiePolicy");
+        ck.body.style.background ="rgba(0, 0, 0, 0)";
         
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();

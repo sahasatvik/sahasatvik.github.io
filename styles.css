@@ -84,6 +84,37 @@ a {
     margin: 0em;
 }
 
+#superpermutation {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20%;
+    position: relative;
+}
+
+#superpermutation .card-inner-container {
+    flex: 1 1 auto;
+}
+
+#soundcloud-img {
+    display: inline-block;
+    width: 100%;
+    margin: -25% 0;
+}
+#soundcloud-img.inverted {
+    filter: invert(70%);
+}
+
+#superpermutation-links a {
+    display: block;
+    text-align: right;
+    font-size: .8rem;
+    color: #81a2be;
+}
+
+#superpermutation-links a:hover {
+    color: #b294bb;
+}
+
 #contacts {
     border: none;
     background-color: rgba(0, 0, 0, 0);

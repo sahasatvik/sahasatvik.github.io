@@ -93,6 +93,7 @@ a {
 
 #superpermutation .card-inner-container {
     flex: 1 1 auto;
+    z-index: 10;
 }
 
 #soundcloud-img {
@@ -100,6 +101,7 @@ a {
     width: 100%;
     margin: -25% 0;
 }
+
 #soundcloud-img.inverted {
     filter: invert(70%);
 }

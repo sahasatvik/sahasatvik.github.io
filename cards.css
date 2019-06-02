@@ -47,6 +47,7 @@
 
 .card.card-row > .card-title > .card-icon {
     float: inherit;
+    margin-left: 0;
 }
 
 .card > .card-inner-container > .card-item {

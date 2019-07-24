@@ -84,10 +84,22 @@ a {
     margin: 0em;
 }
 
+#aboutme {
+    flex: 1 1 20%;
+}
+
+#books {
+    flex: 1 1 20%;
+}
+
+#books li:before {
+    content: '-';
+}
+
 #superpermutation {
     display: flex;
     flex-direction: column;
-    flex: 1 1 20%;
+    flex: 1 1 10%;
     position: relative;
 }
 

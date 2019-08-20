@@ -144,6 +144,9 @@ a {
     #main-card-container {
         width: 80%;
     }
+    #aboutme, #books, #superpermutation {
+        flex: 1 1 auto;
+    }
     #logo-container {
         font-size: 2rem;
         margin: 1em 0em .5em 0em;

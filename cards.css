@@ -97,3 +97,8 @@
     color: #ffffff;
 }
 
+/* Borderless cards */
+.card.borderless {
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}

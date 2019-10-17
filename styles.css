@@ -100,6 +100,10 @@ a {
     background: rgba(0, 255, 0, 0.3);
 }
 
+#typingtest {
+    background: rgba(0, 0, 255, 0.3);
+}
+
 #superpermutation {
     display: flex;
     flex-direction: column;

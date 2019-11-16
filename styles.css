@@ -150,7 +150,7 @@ a {
 
 #contacts a {
     display: inline-block;
-    margin: 0em .5em;
+    margin: 0em .5em 1em .5em;
 }
 
 @media only screen and (max-width: 600px) {

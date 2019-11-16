@@ -20,7 +20,7 @@ var quotes = [
     },
     {
         text: "In order to understand recursion, one must first understand recursion.",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "Perl – The only language that looks the same before and after RSA encryption.",
@@ -28,7 +28,7 @@ var quotes = [
     },
     {
         text: "Pro·gram·mer - An organism capable of converting caffeine into code.",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "For every complex problem there is an answer that is clear, simple, and wrong.",
@@ -48,7 +48,7 @@ var quotes = [
     },
     {
         text: "There is no place like ~",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "Simplicity is prerequisite for reliability.",
@@ -100,7 +100,7 @@ var quotes = [
     },
     {
         text: "Be nice or I'll replace you with a very small shell script.",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "Those who don't understand Unix are condemned to reinvent it, poorly.",
@@ -108,7 +108,7 @@ var quotes = [
     },
     {
         text: "Unix is user-friendly. It's just picky about who its friends are.",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "If you have any trouble sounding condescending, find a UNIX user to show you how it's done.",
@@ -116,7 +116,7 @@ var quotes = [
     },
     {
         text: "/* You are not expected to understand this. */",
-        author: "Anonymous"
+        author: ""
     },
     {
         text: "When in doubt, use brute force.",
@@ -209,6 +209,42 @@ var quotes = [
     {
         text: "Code never lies, comments sometimes do.",
         author: "Ron Jeffries"
+    },
+    {
+        text: "A topologist is a person who doesn't know the difference between a coffee cup and a doughnut.",
+        author: ""
+    },
+    {
+        text: "Geometry is an art of making right conclusions from badly drawn pictures.",
+        author: "Niels Henrik Abel"
+    },
+    {
+        text: "The Axiom of Choice is obviously true, the Well-ordering theorem obviously false, and who can tell about Zorn’s lemma ?",
+        author: "Jerry Bona"
+    },
+    {
+        text: "Groups, as men, will be known by their actions.",
+        author: "Guillermo Moreno"
+    },
+    {
+        text: "If I have not seen as far as others, it is because there were giants standing on my shoulders.",
+        author: "Hal Abelson"
+    },
+    {
+        text: "If I have seen farther than others, it is because I have stood on the shoulders of giants.",
+        author: "Isaac Newton"
+    },
+    {
+        text: "Mathematics requires a small dose, not of genius, but of an imaginative freedom which, in a larger dose, would be insanity.",
+        author: "Angus K. Rodgers"
+    },
+    {
+        text: "The shortest path between two truths in the real domain passes through the complex domain.",
+        author: "Jacques Hadamard"
+    },
+    {
+        text: "The price of metaphor is eternal vigilance.",
+        author: "Norbert Wiener"
     }
 ]
 

@@ -148,7 +148,7 @@ var quotes = [
     },
     {
         text: "Beauty is the first test: there is no permanent place in the world for ugly mathematics.",
-        author: "G H Hardy"
+        author: "G. H. Hardy"
     },
     {
         text: "The traditional mathematician recognizes and appreciates mathematical elegance when he sees it. If it is clumsy, it is not mathematics.",
@@ -245,6 +245,26 @@ var quotes = [
     {
         text: "The price of metaphor is eternal vigilance.",
         author: "Norbert Wiener"
+    },
+    {
+        text: "When you see a good move, look for a better one.",
+        author: "Emanuel Lasker"
+    },
+    {
+        text: "It (proof by contradiction) is a far finer gambit than any chess gambit: a chess player may offer the sacrifice of a pawn or even a piece, but a mathematician offers the game.",
+        author: "G. H Hardy"
+    },
+    {
+        text: "You cannot play at chess if you are kind-hearted.",
+        author: "French proverb"
+    },
+    {
+        text: "The hardest game to win is a won game.",
+        author: "Emanuel Lasker"
+    },
+    {
+        text: "There is nothing more deceptive than an obvious fact.",
+        author: "A. C. Doyle"
     }
 ]
 

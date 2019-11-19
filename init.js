@@ -252,7 +252,7 @@ var quotes = [
     },
     {
         text: "It (proof by contradiction) is a far finer gambit than any chess gambit: a chess player may offer the sacrifice of a pawn or even a piece, but a mathematician offers the game.",
-        author: "G. H Hardy"
+        author: "G. H. Hardy"
     },
     {
         text: "You cannot play at chess if you are kind-hearted.",

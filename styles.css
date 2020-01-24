@@ -85,27 +85,33 @@ a {
     margin: 0em;
 }
 
-#aboutme {
-    flex: 1 1 20%;
-}
-
 #books {
-    flex: 1 1 20%;
+    flex: 1 1 30%;
 }
 
 #books li:before {
     content: '-';
 }
 
+#fibonacci_lucas {
+    flex: 1 1 40%;
+}
+
+#fibonacci_lucas-img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
 #superpermutation {
     display: flex;
     flex-direction: column;
-    flex: 1 1 10%;
+    flex: 1 1 40%;
     position: relative;
 }
 
 #superpermutation .card-inner-container {
-    flex: 1 1 auto;
+    flex: 1 1 10%;
     z-index: 10;
 }
 

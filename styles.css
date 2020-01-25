@@ -12,6 +12,7 @@ body {
 
 a {
     text-decoration: none;
+    font-weight: 400;
 }
 
 .card {
@@ -130,10 +131,19 @@ a {
     filter: invert(70%);
 }
 
+#superpermutation-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
 #superpermutation-links a {
-    display: block;
-    text-align: right;
+    display: inline-block;
+    text-align: center;
     font-size: .8rem;
+    margin: 0em 1em;
     color: #81a2be;
 }
 

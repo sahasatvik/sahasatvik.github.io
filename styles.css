@@ -105,7 +105,7 @@ a {
 }
 
 #fibonacci-img.inverted {
-    filter: invert(100%);
+    filter: invert(70%);
 }
 
 #superpermutation {
@@ -135,7 +135,7 @@ a {
     filter: invert(70%);
 }
 
-#superpermutation-links {
+#superpermutation-links, #fibonacci-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -143,7 +143,7 @@ a {
     flex-direction: row;
 }
 
-#superpermutation-links a {
+#superpermutation-links a, #fibonacci-links a {
     display: inline-block;
     text-align: center;
     font-size: .8rem;
@@ -151,7 +151,7 @@ a {
     color: #81a2be;
 }
 
-#superpermutation-links a:hover {
+#superpermutation-links a:hover, #fibonacci-links a:hover {
     color: #b294bb;
 }
 

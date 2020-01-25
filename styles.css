@@ -94,14 +94,18 @@ a {
     content: '-';
 }
 
-#fibonacci_lucas {
+#fibonacci {
     flex: 1 1 40%;
 }
 
-#fibonacci_lucas-img {
+#fibonacci-img {
     display: inline-block;
     width: 100%;
     height: auto;
+}
+
+#fibonacci-img.inverted {
+    filter: invert(100%);
 }
 
 #superpermutation {

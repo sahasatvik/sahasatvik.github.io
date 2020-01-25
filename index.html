@@ -58,13 +58,12 @@
                     </div>
                 </div>
             </div>
-            <div id="fibonacci_lucas" class="card card-dark">
-                <img id="fibonacci_lucas-img" src="fibonacci_lucas_spiral_alpha.gif" alt="">
+            <div id="fibonacci" class="card card-dark">
+                <img id="fibonacci-img" src="fibonacci_spiral_alpha.gif" alt="">
                 <div class="card-inner-container">
                     <div class="card-item">
-                        A polar plot of the <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonacci</a> and 
-                        <a href="https://en.wikipedia.org/wiki/Lucas_number" target="_blank">Lucas</a> sequences (red and blue), in the forms
-                        (F<sub>n</sub>, F<sub>n</sub>) and (L<sub>n</sub>, L<sub>n</sub>).
+                        A polar plot of the <a href="https://en.wikipedia.org/wiki/Fibonacci_number" target="_blank">Fibonacci</a>
+                        sequence in the form (F<sub>n</sub>, F<sub>n</sub>), zoomed out by a factor of 2<sup>32</sup>.
                     </div>
                 </div>
             </div>
@@ -164,6 +163,7 @@
         function lightTheme() {
             document.getElementById("logo").classList.add("inverted");
             document.getElementById("soundcloud-img").classList.add("inverted");
+            document.getElementById("fibonacci-img").classList.add("inverted");
             for (var i = 0; i < x.length; i++) {
                 x[i].classList.remove("card-dark");
             }
@@ -173,6 +173,7 @@
         function darkTheme() {
             document.getElementById("logo").classList.remove("inverted");
             document.getElementById("soundcloud-img").classList.remove("inverted");
+            document.getElementById("fibonacci-img").classList.remove("inverted");
             for (var i = 0; i < x.length; i++) {
                 x[i].classList.add("card-dark");
             }

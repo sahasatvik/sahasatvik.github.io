@@ -1,7 +1,8 @@
 .card-container {
-    display: flex;
+    display: grid;
     justify-content: center;
-    flex-wrap: wrap;
+    align-content: center;
+    grid-template-columns: repeat(12, 1fr);
     width: auto;
     height: auto;
 }
@@ -9,7 +10,8 @@
 /* Light cards */
 
 .card {
-    flex: 1 1 auto;
+    grid-column: span 4;
+    grid-row: auto;
     background-color: #ffffff;
     border-style: solid;
     border-width: 1px;
@@ -20,7 +22,7 @@
 }
 
 .card-row {
-    flex: 0 1 100%;
+    grid-column: span 12;
     text-align: center;
 }
 

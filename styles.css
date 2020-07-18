@@ -168,12 +168,6 @@ a {
     color: #b294bb;
 }
 
-#contacts {
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 0;
-}
-
 #contacts a {
     display: inline-block;
     margin: 0em .5em 1em .5em;

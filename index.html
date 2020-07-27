@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
     <script src="init.js"></script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
 <body>
     <div id="global-container">
@@ -56,6 +59,26 @@
                     <div class="card-item">
                         I'm also an amateur chess player, speedcuber and violinist.
                     </div>
+                </div>
+            </div>
+            <div id="kbonacci" class="card card-dark">
+                <div class="card-title">On k-bonacci numbers</div>
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        In this article, we derive a particularly elegant Binet-like formula for generalized k-step Fibonacci numbers.
+                    </div>
+                    <div id="kbonacci-formula" class="card-item">
+                        $$ F^{(k)}_n \;=\; \sum_{i = 1}^k \left(\prod_{j\neq i}\frac{1}{(\alpha_i - \alpha_j)}\right)\alpha_i^n,$$
+                        where \(\alpha_i\) are the roots of \(p(x) = x^k - x^{k-1} - x^{k-2} - \dots - 1\).
+                    </div>
+                    <div id="kbonacci-ratio-formula" class="card-item">
+                        The ratio of successive terms in such a sequence converges to the k-bonacci constant.
+                        $$ \lim_{n \to \infty} \frac{F^{(k)}_{n + 1}}{F^{(k)}_n} \;=\; \alpha_k, $$
+                        where \(\alpha_k\) is the dominant root of \(p(x)\).
+                    </div>
+                </div>
+                <div id="kbonacci-links">
+                    <a id="kbonacci-link" class="card-item" href="https://sahasatvik.github.io/kbonacci" target="_blank">read more</a>
                 </div>
             </div>
             <div id="fibonacci" class="card card-dark">

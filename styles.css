@@ -133,6 +133,11 @@ a {
     z-index: 10;
 }
 
+#kbonacci {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
 #soundcloud-img-container {
     overflow: hidden;
 }
@@ -148,7 +153,7 @@ a {
     filter: invert(70%);
 }
 
-#superpermutation-links, #fibonacci-links {
+#superpermutation-links, #fibonacci-links, #kbonacci-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -156,7 +161,7 @@ a {
     flex-direction: row;
 }
 
-#superpermutation-links a, #fibonacci-links a {
+#superpermutation-links a, #fibonacci-links a, #kbonacci-links a {
     display: inline-block;
     text-align: center;
     font-size: .8rem;
@@ -164,7 +169,7 @@ a {
     color: #81a2be;
 }
 
-#superpermutation-links a:hover, #fibonacci-links a:hover {
+#superpermutation-links a:hover, #fibonacci-links a:hover, #kbonacci-links a:hover {
     color: #b294bb;
 }
 
@@ -177,7 +182,7 @@ a {
     #main-card-container {
         width: 80%;
     }
-    #aboutme, #books, #superpermutation, #fibonacci {
+    #aboutme, #books, #superpermutation, #fibonacci, #kbonacci {
         grid-column: span 12 !important;
         grid-row: auto !important;
     }

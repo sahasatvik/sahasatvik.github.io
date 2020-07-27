@@ -24,6 +24,7 @@
             <img id="logo" src="https://sahasatvik.github.io/logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
             <div id="kbonacci" class="title-text">K-bonacci</div>
             <div id="kbonacci" class="title-text">Numbers</div>
+            <div id="date">27 July, 2020</div>
         </div>
         <div id="main-card-container" class="card-container">
             <div id="kbonacci-card" class="card borderless card-dark">
@@ -119,8 +120,8 @@
                         <b>Theorem 1:</b> If \(\alpha_1, \alpha_2, \dots, \alpha_k\) are roots of \(p(x) = x^k - x^{k-1} - x^{k-2} - \dots - 1\), then
                         $$ F^{(k)}_n \;=\; \sum_{i = 1}^k \left(\prod_{\substack{j = 1 \\ j\neq i}}^{k}\frac{1}{(\alpha_i - \alpha_j)}\right)\alpha_i^n.$$
                     </div>
-                    <div class="card-item proof">
-                        We expand \(x^{n+1} = g(x)\), where \(g(x)\) is a polynomial of degree \(k-1\). By Lemma 4, \(g(0) = F^{(k)}_n\).
+                    <div class="card-item proof"> For \(x^k = x^{k-1} + x^{k-2} + \dots + 1\),
+                        we expand \(x^{n+1} = g(x)\), where \(g(x)\) is a polynomial of degree \(k-1\). By Lemma 4, \(g(0) = F^{(k)}_n\).
                         Also, \(g(\alpha_i) = \alpha_i^{n+1}\) for each of the \(k\) roots \(\alpha_i\) of \(p(x)\). This is enough to fully
                         determine the coefficients of \(g(x)\), which we construct as follows.
                         $$ g(x) \;=\; \sum_{i = 1}^k \left(\prod_{\substack{j = 1 \\ j\neq i}}^{k}\frac{(x - \alpha_j)}{(\alpha_i - \alpha_j)}\right)\alpha_i^{n+1} \;=\; \sum_{i = 1}^k h_i(x) \alpha_i^{n+1}.$$
@@ -207,6 +208,7 @@
             for (var i = 0; i < y.length; i++) {
                 y[i].style.color = "#1d1f21";
             }
+            document.getElementById("date").style.color = "#1d1f21"
         }
         function darkTheme() {
             document.getElementById("logo").classList.remove("inverted");
@@ -217,6 +219,7 @@
             for (var i = 0; i < y.length; i++) {
                 y[i].style.color = "#ffffff";
             }
+            document.getElementById("date").style.color = "#ffffff"
         }
         function toggleTheme() {
             light = !light;

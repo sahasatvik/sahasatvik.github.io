@@ -65,9 +65,11 @@
                 <div class="card-title">On k-bonacci numbers</div>
                 <div class="card-inner-container">
                     <div class="card-item">
-                        In this article, we derive a particularly elegant Binet-like formula for generalized k-step Fibonacci numbers.
+                        A natural generalization of the Fibonacci sequence is to investigate the recurrence relation
+                        $$ F^{(k)}_n \;=\; F^{(k)}_{n-1} \;+\; F^{(k)}_{n-2} \;+\; \dots \;+\; F^{(k)}_{n-k}. $$
                     </div>
                     <div id="kbonacci-formula" class="card-item">
+                        In this article, we derive a particularly elegant Binet-like formula for generalized k-step Fibonacci numbers.
                         $$ F^{(k)}_n \;=\; \sum_{i = 1}^k \left(\prod_{j\neq i}\frac{1}{(\alpha_i - \alpha_j)}\right)\alpha_i^n,$$
                         where \(\alpha_i\) are the roots of \(p(x) = x^k - x^{k-1} - x^{k-2} - \dots - 1\).
                     </div>

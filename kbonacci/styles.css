@@ -63,7 +63,7 @@ a {
 }
 
 .proof::before {
-    content: 'Proof :';
+    content: 'Proof:';
     font-style: italic;
 }
 .proof::after {

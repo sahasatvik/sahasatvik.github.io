@@ -72,6 +72,27 @@
     color: #000000;
 }
 
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 1em 0;
+}
+
+.card-links a {
+    display: inline-block;
+    text-align: center;
+    font-size: .8rem;
+    margin: 0em 1em;
+    color: #81a2be;
+}
+
+.card-links a:hover {
+    color: #b294bb;
+}
+
 /* Dark variants of cards */
 
 .card.card-dark {

@@ -129,8 +129,6 @@ a {
 }
 
 #superpermutation .card-inner-container {
-    flex: 1 1 10%;
-    z-index: 10;
 }
 
 #kbonacci {
@@ -153,32 +151,12 @@ a {
     filter: invert(70%);
 }
 
-#superpermutation-links, #fibonacci-links, #kbonacci-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
-#superpermutation-links a, #fibonacci-links a, #kbonacci-links a {
-    display: inline-block;
-    text-align: center;
-    font-size: .8rem;
-    margin: 0em 1em;
-    color: #81a2be;
-}
-
-#superpermutation-links a:hover, #fibonacci-links a:hover, #kbonacci-links a:hover {
-    color: #b294bb;
-}
-
 #contacts a {
     display: inline-block;
     margin: 0em .5em 1em .5em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #main-card-container {
         width: 80%;
     }

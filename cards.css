@@ -42,7 +42,7 @@
     font-size: 1.1rem;
     font-weight: 400;
     color: #000000;
-    margin: 0em 0em .35em 0em;
+    margin: 0em 0em .5em 0em;
 }
 
 .card > .card-title > .card-icon {
@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    padding: 1em 0;
+    margin: .8em 0;
 }
 
 .card-links a {

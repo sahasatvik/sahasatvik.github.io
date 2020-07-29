@@ -10,7 +10,11 @@
 /* Light cards */
 
 .card {
-    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    grid-column: auto;
     grid-row: auto;
     background-color: #ffffff;
     border-style: solid;
@@ -22,7 +26,7 @@
 }
 
 .card-row {
-    grid-column: span 12;
+    grid-column: 1 / -1;
     text-align: center;
 }
 

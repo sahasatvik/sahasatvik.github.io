@@ -118,12 +118,6 @@ a {
     filter: invert(70%);
 }
 
-#superpermutation {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
 #soundcloud-img-container {
     overflow: hidden;
 }

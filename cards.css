@@ -63,13 +63,13 @@
 .card > .card-inner-container > .card-item {
     font-size: .8rem;
     font-weight: 300;
-    color: #7f7f7f;
+    color: #333333;
     display: block;
     margin: .5em 0em;
 }
 
 .card > .card-inner-container a {
-    color: #7f7f7f;
+    color: #333333;
 }
 
 .card > .card-inner-container a:hover {

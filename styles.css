@@ -128,9 +128,6 @@ a {
     position: relative;
 }
 
-#superpermutation .card-inner-container {
-}
-
 #kbonacci {
     grid-column: span 6;
     grid-row: span 2;

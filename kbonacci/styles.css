@@ -6,7 +6,10 @@
     font-family: "Roboto Mono", monospace;
 }
 
-body {
+body.light-theme {
+    background-color: #f2f2f2;
+}
+body.dark-theme {
     background-color: #1d1f21;
 }
 
@@ -26,6 +29,13 @@ a {
 #date {
     padding-top: 16px;
     font-size: 1em;
+}
+
+.light-theme #date {
+    color: #1d1f21;
+}
+.dark-theme #date {
+    color: #ffffff;
 }
 
 #main-card-container {
@@ -50,14 +60,6 @@ a {
     padding-bottom: 2em !important;
 }
 
-.card > .card-inner-container > .card-item, .card a {
-    color: #333333 !important;
-}
-
-.card.card-dark > .card-inner-container > .card-item, .card.card-dark a {
-    color: #cccccc !important;
-}
-
 .lemma, .theorem {
     font-style: italic;
 }
@@ -75,6 +77,12 @@ a {
     font-family: 'Josefin Sans', monospace;
     font-weight: 300;
     font-size: 3.5rem;
+}
+
+.light-theme #kbonacci {
+    color: #1d1f21;
+}
+.dark-theme #kbonacci {
     color: #ffffff;
 }
 
@@ -93,11 +101,11 @@ a {
     margin-bottom: .5em;
 }
 
-#logo.inverted, #logo:hover {
+.light-theme #logo, #logo:hover {
     filter: invert(100%);
 }
 
-#logo.inverted:hover {
+.light-theme #logo:hover {
     filter: invert(0%);
 }
 

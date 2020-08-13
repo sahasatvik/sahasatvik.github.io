@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Satvik Saha">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief tour of generalized k-step fibonacci numbers">
     
     <title>K-bonacci Numbers</title>
 
@@ -18,7 +19,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 </head>
-<body>
+<body class="dark-theme">
     <div id="global-container">
         <div id="logo-container">
             <img id="logo" src="https://sahasatvik.github.io/logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
@@ -30,7 +31,7 @@
             </div>
         </div>
         <div id="main-card-container" class="card-container">
-            <div id="kbonacci-card" class="card borderless card-dark">
+            <div id="kbonacci-card" class="card borderless">
                 <div class="card-inner-container">
                     <div class="card-item">
                         The Fibonacci sequence \( \{F_n\}_{n = 0}^\infty \) is a well known and widely studied sequence, defined by the recurrence
@@ -190,9 +191,6 @@
         </div>
     </div>
     <script type="text/javascript" charset="utf-8">
-        
-        var x = document.getElementsByClassName("card");
-        var y = document.getElementsByClassName("title-text");
         var light;
         
         try {
@@ -203,26 +201,12 @@
         }
         
         function lightTheme() {
-            document.getElementById("logo").classList.add("inverted");
-            for (var i = 0; i < x.length; i++) {
-                x[i].classList.remove("card-dark");
-            }
-            document.body.style.backgroundColor = "#f2f2f2";
-            for (var i = 0; i < y.length; i++) {
-                y[i].style.color = "#1d1f21";
-            }
-            document.getElementById("date").style.color = "#1d1f21"
+            document.body.classList.remove("dark-theme");
+            document.body.classList.add("light-theme");
         }
         function darkTheme() {
-            document.getElementById("logo").classList.remove("inverted");
-            for (var i = 0; i < x.length; i++) {
-                x[i].classList.add("card-dark");
-            }
-            document.body.style.backgroundColor = "#1d1f21";
-            for (var i = 0; i < y.length; i++) {
-                y[i].style.color = "#ffffff";
-            }
-            document.getElementById("date").style.color = "#ffffff"
+            document.body.classList.remove("light-theme");
+            document.body.classList.add("dark-theme");
         }
         function toggleTheme() {
             light = !light;

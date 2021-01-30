@@ -22,13 +22,23 @@
     </script>
 </head>
 <body class="dark-theme">
+    <nav class="hidden noselect">
+        <div id="nav-name" onmouseup="scrollToTop()">Satvik Saha</div>
+        <a href="https://sahasatvik.github.io/cv.pdf" target="_blank">cv</a>
+        <a href="https://sahasatvik.github.io/assignments" target="_blank">notes &amp; assignments</a>
+        <a href="https://sahasatvik.github.io/dotfiles" target="_blank">dotfiles</a>
+        <div class="theme-toggles">
+            <div id="nav-theme-light" class="material-icons" onmouseup="toggleTheme()">dark_mode</div>
+            <div id="nav-theme-dark" class="material-icons" onmouseup="toggleTheme()">light_mode</div>
+        </div>
+    </nav>
     <div id="global-container">
         <div id="logo-container">
-            <img id="logo" src="logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
+            <img id="logo" class="noselect" src="logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
             <div id="name">Satvik Saha</div>
             <div id="links">
-                <a class="card-item" href="https://sahasatvik.github.io/assignments" target="_blank">assignments</a>
                 <a class="card-item" href="https://sahasatvik.github.io/cv.pdf" target="_blank">cv</a>
+                <a class="card-item" href="https://sahasatvik.github.io/assignments" target="_blank">notes</a>
                 <a class="card-item" href="https://sahasatvik.github.io/dotfiles" target="_blank">dotfiles</a>
             </div>
             <div id="links">
@@ -209,6 +219,29 @@
                 localStorage.setItem("light", JSON.stringify(light));
             } catch (err) {}
         }
+
+        function scrollToTop() {
+            const c = document.documentElement.scrollTop || document.body.scrollTop;
+            if (c > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, c - c / 8);
+            }
+        }
+
+        const logo_container = document.querySelector("#logo-container");
+        const nav = document.querySelector("nav");
+
+        observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    nav.classList.add("hidden")
+                } else {
+                    nav.classList.remove("hidden");
+                }
+            });
+        });
+
+        observer.observe(logo_container);
         
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();

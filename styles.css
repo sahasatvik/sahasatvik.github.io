@@ -63,6 +63,7 @@ nav a {
     font-size: 1rem;
     color: #81a2be;
     margin: 0em 1em;
+    cursor: pointer;
 }
 nav a:hover {
     color: #b294bb;
@@ -75,6 +76,11 @@ nav a:hover {
     margin: 0 auto 0 0.5em;
     transform: translateY(0.08em);
     cursor: pointer;
+}
+#nav-name span {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    opacity: 0.6;
 }
 
 .theme-toggles {

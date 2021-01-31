@@ -206,7 +206,7 @@ nav a:hover {
     content: '-';
 }
 
-#fibonacci-img {
+#fibonacci-img, #minesweeper-img, #soundcloud-img {
     display: inline-block;
     width: 100%;
     height: auto;
@@ -216,14 +216,15 @@ nav a:hover {
     filter: invert(70%);
 }
 
+.light-theme #minesweeper-img {
+    filter: brightness(1.3);
+}
+
 #soundcloud-img-container {
     overflow: hidden;
 }
 
 #soundcloud-img {
-    display: inline-block;
-    width: 100%;
-    height: auto;
     margin: -25% 0;
 }
 
@@ -243,7 +244,7 @@ nav a:hover {
     #main-card-container {
         width: 80%;
     }
-    #aboutme, #books, #superpermutation, #fibonacci, #kbonacci {
+    #main-card-container .card {
         grid-column: span 12 !important;
         grid-row: auto !important;
     }

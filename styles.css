@@ -205,10 +205,14 @@ nav a:hover {
     content: '-';
 }
 
-#conway-img, #fibonacci-img, #minesweeper-img, #soundcloud-img {
+#welearnbot-img, #conway-img, #fibonacci-img, #minesweeper-img, #soundcloud-img {
     display: inline-block;
     width: 100%;
     height: auto;
+}
+
+#welearnbot-img {
+    border-radius: 5px;
 }
 
 #conway-img {

@@ -215,6 +215,10 @@ nav a:hover {
     border-radius: 5px;
 }
 
+.light-theme #welearnbot-img {
+    filter: invert(100%) brightness(1.15);
+}
+
 #conway-img {
     width: 75%;
     transform: scale(0.8);

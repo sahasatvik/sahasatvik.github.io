@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:ital,wght@0,300;0,300;1,400|Josefin+Sans:300');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Fira+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Roboto+Mono:wght@400&display=swap');
 
 * {
     padding: 0px;
     margin: 0px;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Sans", "Roboto Mono", monospace;
 }
 
 body.light-theme {
-    background-color: #f2f2f2;
+    background-color: #f8f8f8;
 }
 body.dark-theme {
     background-color: #1d1f21;
@@ -119,6 +119,7 @@ a {
 
 #links a {
     display: inline-block;
+    font-family: "Roboto Mono", monospace;
     font-size: 1rem;
     font-weight: 400;
     color: #81a2be;

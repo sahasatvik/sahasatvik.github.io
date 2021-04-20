@@ -104,18 +104,22 @@
                     </div>
                     <div class="card-item lemma">
                         <b>Lemma 4:</b> If \(p(x) = 0\), then for integers \(n \geq k\),
-                        $$ x^n \;=\; F^{(k)}_n x^{k-1} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-2} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-3} \;+\; \dots \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x \;+\; F^{(k)}_{n-1}. $$
+                        $$ \begin{align}x^n \;&=\; F^{(k)}_n x^{k-1} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-2} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-3} \;+\; \dots \\ 
+                        &\quad\;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x \;+\; F^{(k)}_{n-1}. \end{align}$$
                         Specifically, the constant coefficient in the polynomial expansion of \(x^n\) is \(F^{(k)}_{n-1}\).
                     </div>
                     <div class="card-item proof">
                         We show this by induction. For \(n = k\), only the \(F^{(k)}_{k-1} = F^{(k)}_k = 1\) terms survive,
                         so \(x^k \;=\; x^{k-1} + x^{k-2} + \dots + 1\), which is clearly true from \(p(x) = 0\). Let the given formula hold 
                         for some \(n \geq k\). Then,
-                        $$ x^{n+1} \;=\; x \cdot x^n
-                            \;=\; F^{(k)}_n x^{k} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-1} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-2} \;+\; \dots \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x^2 \;+\; F^{(k)}_{n-1}x 
-                        $$
+                        $$ \begin{align} x^{n+1} \;&=\; x \cdot x^n \\
+                            \;&=\; F^{(k)}_n x^{k} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-1} \;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-2} \;+\; \dots \\ 
+                            &\quad\;+\; \left(F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x^2 \;+\; F^{(k)}_{n-1}x 
+                        \end{align} $$
                         Expanding \(x^k = x^{k-1} + x^{k-2} + \dots + 1\),
-                        $$ x^{n+1} \;=\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-1} \;+\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-2} \;+\; \dots \;+\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x^2 \;+\; \left(F^{(k)}_n + F^{(k)}_{n-1}\right)x \;+\; F^{(k)}_{n}. $$
+                        $$ \begin{align}x^{n+1} \;&=\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+1}\right)x^{k-1} \;+\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2} + \dots + F^{(k)}_{n-k+2}\right)x^{k-2} \;+\; \dots \\
+                            &\quad\;+\; \left(F^{(k)}_n + F^{(k)}_{n-1} + F^{(k)}_{n-2}\right)x^2 \;+\; \left(F^{(k)}_n + F^{(k)}_{n-1}\right)x \;+\; F^{(k)}_{n}. 
+                        \end{align}$$
                         The first coefficient collapses to \(F^{(k)}_{n + 1}\) by our recurrence rule.
                         By induction on \(n\), this proves the required formula.
                     </div>

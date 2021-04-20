@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Fira+Sans:wght@300;400&family=Roboto+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Fira+Sans:ital,wght@0,300;0,400;1,300&family=Fira+Mono:wght@400&display=swap');
 
 * {
     padding: 0px;
     margin: 0px;
-    font-family: "Fira Sans", "Roboto Mono", monospace;
+    font-family: "Fira Sans", "Fira Mono", monospace;
 }
 
 body.light-theme {
@@ -31,7 +31,7 @@ a {
 }
 
 .card-links a {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
 }
 
 nav {
@@ -63,7 +63,7 @@ nav.hidden {
 
 nav a {
     position: relative;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
     font-size: 1rem;
     color: #81a2be;
     margin: 0em 1em;
@@ -82,7 +82,7 @@ nav a:hover {
     cursor: pointer;
 }
 #nav-name span {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Fira Mono', monospace;
     font-size: 1rem;
     opacity: 0.6;
 }
@@ -175,7 +175,7 @@ nav a:hover {
 
 #links a {
     display: inline-block;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
     font-size: 1rem;
     font-weight: 400;
     color: #81a2be;
@@ -187,7 +187,7 @@ nav a:hover {
 }
 
 #quote-text {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
     font-size: 0.9rem;
 }
 #quote-author {
@@ -264,7 +264,7 @@ nav a:hover {
 }
 
 #contacts a {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
     display: inline-block;
     margin: 0em .5em 1em .5em;
 }

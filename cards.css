@@ -16,7 +16,7 @@
     position: relative;
     grid-column: auto;
     grid-row: auto;
-    background-color: #ffffff;
+    background-color: #fefefe;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
@@ -43,7 +43,7 @@
 }
 
 .card > .card-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: #000000;
     margin: 0em 0em .5em 0em;
@@ -61,8 +61,9 @@
 }
 
 .card > .card-inner-container > .card-item {
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 300;
+    line-height: 1.4rem;
     color: #333333;
     display: block;
     margin: .5em 0em;
@@ -88,7 +89,7 @@
 .card-links a {
     display: inline-block;
     text-align: center;
-    font-size: .9rem;
+    font-size: 1rem;
     margin: 0em 1em;
     color: #81a2be;
 }
@@ -121,7 +122,7 @@
 }
 
 .dark-theme .card > .card-inner-container a {
-    color: #afafaf;
+    color: #dfdfdf;
 }
 
 .dark-theme .card > .card-inner-container a:hover {

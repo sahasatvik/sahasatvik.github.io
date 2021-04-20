@@ -30,6 +30,10 @@ a {
     transition: .2s ease box-shadow;
 }
 
+.card .card-inner-container {
+    overflow: scroll;
+}
+
 .card-links a {
     font-family: "Fira Mono", monospace;
 }

@@ -215,6 +215,23 @@
                     </li>
                 </ul>
             </div>
+            <div id="lichess-playing-card" class="card card-row" style="display: none">
+                <a id="lichess-playing-title" class="card-title" href="https://en.lichess.org/@/sahasatvik/" target="_blank">
+                    <i class="card-icon material-icons" title="Playing at lichess.org">stop_circle</i> sahasatvik
+                    <i class="card-icon material-icons dummy">stop_circle</i>
+                </a>
+                <div class="card-inner-container">
+                    <div class="card-item">
+                        Currently online at <a href="https://lichess.org" target="_blank">lichess.org</a>.
+                        Watch my most recent game at <a href="https://lichess.org/@/sahasatvik/tv" target="_blank">sahasatvik/tv</a>.
+                    </div>
+                    <div class="card-item" id="lichess-stats">
+                        <a href="https://lichess.org/@/sahasatvik/perf/rapid" target="_blank" class="lichess-rating" id="lichess-rapid">Rapid: 1600</a> 
+                        <a href="https://lichess.org/@/sahasatvik/perf/blitz" target="_blank" class="lichess-rating" id="lichess-blitz">Blitz: 1500</a> 
+                        <a href="https://lichess.org/@/sahasatvik/perf/bullet" target="_blank" class="lichess-rating" id="lichess-bullet">Bullet: 1400</a>
+                    </div>
+                </div>
+            </div>
             <div id="now-playing-card" class="card card-row" style="display: none">
                 <div id="now-playing-title" class="card-title">
                     <i class="card-icon material-icons" title="Now Playing">audiotrack</i>
@@ -336,10 +353,46 @@
                 }
             );
         }
+
+        var lichessURL = "https://lichess.org/api/user/sahasatvik";
+        function updateLichess () {
+            getJSON(lichessURL,
+                function(err, data) {
+                    if (err) {
+                        document.getElementById('lichess-playing-card').style.display = 'none';
+                        return;
+                    }
+                    if (data['online'] === true) {
+                        document.getElementById('lichess-playing-card').style.display = 'block';
+                        document.getElementById('lichess-rapid').innerHTML = "Rapid: " + data['perfs']['rapid']['rating'];
+                        document.getElementById('lichess-blitz').innerHTML = "Blitz: " + data['perfs']['blitz']['rating'];
+                        document.getElementById('lichess-bullet').innerHTML = "Bullet: " + data['perfs']['bullet']['rating'];
+                        
+                        var rapidProg = data['perfs']['rapid']['prog'];
+                        var blitzProg = data['perfs']['blitz']['prog'];
+                        var bulletProg = data['perfs']['bullet']['prog'];
+                        function progString(prog) {
+                            if (prog >= 0) {
+                                return "<span class='prog-up'>" + " &#8593;" + prog + "</span>";
+                            } else {
+                                return "<span class='prog-down'>" + " &#8595;" + (-prog) + "</span>";
+                            }
+                        }
+                        document.getElementById('lichess-rapid').innerHTML += progString(rapidProg); 
+                        document.getElementById('lichess-blitz').innerHTML += progString(blitzProg); 
+                        document.getElementById('lichess-bullet').innerHTML += progString(bulletProg); 
+                    } else {
+                        document.getElementById('lichess-playing-card').style.display = 'none';
+                    }
+                }
+            );
+        }
         
         updateNowPlaying();
         setInterval(updateNowPlaying, 10000);
         
+        updateLichess();
+        setInterval(updateLichess, 20000);
         refreshTheme();
     </script>
 </body>

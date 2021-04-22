@@ -198,8 +198,37 @@ nav a:hover {
     font-size: 1rem;
 }
 
-#now-playing-title, #now-playing-album, #now-playing {
-    margin: 0em;
+#now-playing-title {
+    margin: 0;
+}
+#now-playing-album, #now-playing {
+    margin: 0.2em 0;
+}
+
+#lichess-playing-title {
+    margin: 0.2em 0;
+}
+#lichess-playing-title .card-icon {
+    color: #b5bd68;
+    transform: translateY(0.15em) scale(0.8);
+}
+#lichess-playing-title .card-icon.dummy {
+    opacity: 0;
+}
+#lichess-playing-card .card-item {
+    margin: 0.2em 0;
+}
+#lichess-playing-card .lichess-rating {
+    margin: 0.1em 2em;
+    display: inline-block;
+}
+#lichess-playing-card .lichess-rating .prog-up {
+    color: #b5bd68;
+    filter: brightness(0.9);
+}
+#lichess-playing-card .lichess-rating .prog-down {
+    color: #cc6666;
+    filter: brightness(0.9);
 }
 
 .col-6 {
@@ -289,6 +318,10 @@ nav a:hover {
     }
     #logo-container {
         margin: 1em 0em .5em 0em;
+    }
+    #lichess-playing-card .lichess-rating {
+        margin: 0.5em 0;
+        display: block;
     }
 }
 

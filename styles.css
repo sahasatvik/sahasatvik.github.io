@@ -307,7 +307,7 @@ nav a:hover {
         display: none;
     }
     #main-card-container {
-        width: 80%;
+        width: 90%;
     }
     #main-card-container .card {
         grid-column: span 12 !important;

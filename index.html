@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta information -->
     <meta charset="UTF-8">
     <meta name="author" content="Satvik Saha">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,25 @@
     
     <title>Satvik Saha</title>
 
+    <!-- Set the favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
     
+    <!-- Google icon fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" > 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Scripts for quotes and MathJax -->
     <script src="init.js"></script>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 </head>
 <body class="dark-theme">
+    <!-- Navigation bar -->
     <nav class="hidden noselect">
         <div id="nav-name" onmouseup="scrollToTop()">sahasatvik<span>.me</span></div>
         <a href="https://sahasatvik.github.io/cv.pdf" target="_blank">cv</a>
@@ -34,6 +40,7 @@
         </div>
     </nav>
     <div id="global-container">
+        <!-- Title, navigation links -->
         <div id="logo-container">
             <img id="logo" class="noselect" src="logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
             <div id="name">Satvik Saha</div>
@@ -47,12 +54,14 @@
             </div>
         </div>
         <div id="main-card-container" class="card-container">
+            <!-- Quotes display -->
             <div id="quote-card" class="card card-row pressable" onmouseup="showQuote(-1, quotes)">
                 <div class="card-inner-container">
                     <div class="card-item" id="quote-text"></div>
                 </div>
                 <div id="quote-author" class="card-title"></div>
             </div>
+            <!-- Main content cards start here -->
             <div id="aboutme" class="card borderless col-6 row-1">
                 <div class="card-title">
                     Hey there!
@@ -215,6 +224,7 @@
                     </li>
                 </ul>
             </div>
+            <!-- Lichess information card, with live ratings -->
             <div id="lichess-playing-card" class="card card-row" style="display: none">
                 <a id="lichess-playing-title" class="card-title" href="https://en.lichess.org/@/sahasatvik/" target="_blank">
                     <i class="card-icon material-icons" title="Playing at lichess.org">stop_circle</i> sahasatvik
@@ -232,6 +242,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Now playing card, with currently playing track from last.fm -->
             <div id="now-playing-card" class="card card-row" style="display: none">
                 <div id="now-playing-title" class="card-title">
                     <i class="card-icon material-icons" title="Now Playing">audiotrack</i>
@@ -244,6 +255,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Contact information links -->
             <div id="contacts" class="card card-row borderless"> 
                 <div class="card-inner-container">
                     <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
@@ -257,10 +269,17 @@
         </div>
     </div>
     <script type="text/javascript" charset="utf-8">
-        showQuote(-1, quotes);
+        // Extract quote number from url hash
+        // https://sahasatvik.github.io/#42 will display Quote #42
+        var qNumber = -1;
+        if (window.location.hash) {
+            n = parseInt(window.location.hash.substring(1));
+            qNumber = Number.isFinite(n)? n : -1;
+        }
+        showQuote(qNumber, quotes);
         
+        // Get stored theme info
         var light;
-        
         try {
             light = JSON.parse(localStorage.getItem("light"));
             if (light == null) {light = false;}
@@ -268,6 +287,7 @@
             light = false;
         }
         
+        // Switch themes by setting the appropriate class on the body
         function lightTheme() {
             document.body.classList.remove("dark-theme");
             document.body.classList.add("light-theme");
@@ -288,6 +308,7 @@
             } catch (err) {}
         }
 
+        // Scroll to the top of the page, animated
         function scrollToTop() {
             const c = document.documentElement.scrollTop || document.body.scrollTop;
             if (c > 0) {
@@ -296,6 +317,7 @@
             }
         }
 
+        // Show the nav only when scrolled past the logo container
         const logo_container = document.querySelector("#logo-container");
         const nav = document.querySelector("nav");
 
@@ -310,7 +332,8 @@
         });
 
         observer.observe(logo_container);
-        
+
+        // Parse a REST API response as JSON
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
@@ -325,7 +348,8 @@
             };
             xhr.send();
         };
-        
+
+        // Display the currently playing track from last.fm
         var lastfmURL = 
             'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sahasatvik&api_key=3193e14c84770e38d316f60f08134807&limit=1&format=json';
         function updateNowPlaying () {
@@ -354,6 +378,7 @@
             );
         }
 
+        // Display the lichess rating card if currently online
         var lichessURL = "https://lichess.org/api/user/sahasatvik";
         function updateLichess () {
             getJSON(lichessURL,
@@ -387,12 +412,16 @@
                 }
             );
         }
-        
+
+        // Update last.fm info every 10 seconds
         updateNowPlaying();
         setInterval(updateNowPlaying, 10000);
-        
+
+        // Update lichess info every 20 seconds
         updateLichess();
         setInterval(updateLichess, 20000);
+
+        // Refresh the theme
         refreshTheme();
     </script>
 </body>

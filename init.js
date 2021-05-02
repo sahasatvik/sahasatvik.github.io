@@ -273,10 +273,11 @@ var quotes = [
 ]
 
 function showQuote(quoteNumber, listOfQuotes) {
-    var i = (typeof(quoteNumber) == 'undefined' || quoteNumber < 0)? Math.floor(Math.random() * quotes.length) : quoteNumber;
     var q = (typeof(listOfQuotes) == 'undefined')? quotes : listOfQuotes;
+    var i = (typeof(quoteNumber) == 'undefined' || quoteNumber < 0 || quoteNumber >= q.length)? Math.floor(Math.random() * q.length) : quoteNumber;
     var quote = q[i];
     var text = '"' + quote.text + '"';
+    document.getElementById("quote-card").setAttribute("title", "Quote #" + i);
     document.getElementById("quote-author").innerHTML = quote.author;
     
     for (i = 1; i <= text.length; i++) {

@@ -265,6 +265,10 @@ var quotes = [
     {
         text: "There is nothing more deceptive than an obvious fact.",
         author: "A. C. Doyle"
+    },
+    {
+        text: "HTML and regex go together like love, marriage, and ritual infanticide.",
+        author: "bobince"
     }
 ]
 

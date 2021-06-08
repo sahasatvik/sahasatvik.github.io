@@ -32,6 +32,10 @@ a {
 
 .card .card-inner-container {
     overflow: scroll;
+    scrollbar-width: none;
+}
+.card .card-inner-container::-webkit-scrollbar {
+    display: none;
 }
 
 .card-links a {

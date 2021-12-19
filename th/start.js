@@ -1,2 +1,2 @@
-var firstpage = "https://sahasatvik.github.io/assignments/";
-var starttext = "START!";
+var firstpage = "#";
+var starttext = "COMING SOON!";

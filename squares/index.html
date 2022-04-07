@@ -219,18 +219,26 @@
             return { init, animate };
         };
 
-        const runSquareAnimation = (finalSide) => {
-            const cellSizes = {
-                cellSide    :  40,
-                cellBorder  :   2,
-                cellGap     :   2,
+        const calcCellSizes = (finalSide, minimum) => {
+            const padding = (canvas.offsetWidth > (canvas.offsetHeight - 32))? 128 : 32;
+            const space = Math.min(canvas.offsetWidth, canvas.offsetHeight) - padding;
+            const side = Math.min(space / (finalSide + 1), minimum) - 6;
+            const border = (side < 20)? 1 : 2;
+            const gap = (side < 20)? 1 : 2;
+            return {
+                cellSide   : side,
+                cellBorder : border,
+                cellGap    : gap,
             };
+        };
+
+        const runSquareAnimation = (finalSide) => {
+            const cellSizes = calcCellSizes(finalSide, 40);
             const totalSide = (cellSizes.cellSide + 2 * cellSizes.cellBorder + cellSizes.cellGap) * (finalSide + 1);
             const topLeft = {
                 x: canvas.offsetWidth / 2 - totalSide / 2,
                 y: canvas.offsetHeight / 2 - totalSide / 2,
             };
-            
 
             const square = animateSquare(cellSizes, finalSide, topLeft, canvas);
 

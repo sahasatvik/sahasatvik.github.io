@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Squares modulo 4</title>
+    </head>
+    <body>
+        <div id="canvas">
+        </div>
+        <div id="controls">
+            <div class="button" id="minusTwo" onclick="minusTwo()">-</div>
+            <div class="display" id="finalSide"></div>
+            <div class="button" id="plusTwo" onclick="plusTwo()">+</div>
+            <div class="button" id="replay" onclick="replay()">R</div>
+        </div>
+    </body>
+    <style type="text/css" media="all">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        .cell, .block {
+            transition: 250ms opacity ease-in, 500ms left ease, 500ms top ease;
+        }
+
+        #controls {
+            position: absolute;
+            display: inline-block;
+            bottom: 16px;
+            left: 50vw;
+            transform: translateX(-50%);
+        }
+        #controls .button {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            padding: 4px;
+            font-size: 24px;
+            font-family: monospace;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        #controls #minusTwo {
+            background: red;
+            color: white;
+        }
+
+        #controls #plusTwo {
+            background: blue;
+            color: white;
+        }
+        
+        #controls #replay {
+            background: green;
+            color: white;
+        }
+        
+        #controls .display {
+            display: inline-block;
+            min-width: 24px;
+            height: 24px;
+            padding: 4px;
+            font-size: 24px;
+            font-family: monospace;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        const canvas = document.getElementById("canvas");
+        var finalSide = 5;
+
+        const setPosition = (x, y, thing) => {
+            thing.style.left = x + "px";
+            thing.style.top = y + "px";
+        };
+
+        const setOpacity = (opacity, thing) => {
+            thing.style.opacity = opacity;
+        };
+        
+        const animateSquare = (cellSizes, finalSide, topLeft) => {
+            const { cellSide, cellBorder, cellGap } = cellSizes;
+            const totalCellSize = cellSide + 2 * cellBorder + cellGap;
+            const blockSides = {
+                a: (finalSide - 1) / 2,
+                b: (finalSide + 1) / 2,
+            };
+            
+            const blockSize = (m) => {
+                return totalCellSize * m;
+            };
+            
+            const createCell = (x, y, color) => {
+                var cell = document.createElement("div");
+                cell.classList.add("cell");
+                cell.style.background = color;
+                cell.style.position = "absolute";
+                cell.style.display = "inline-block";
+                cell.style.width = cellSide + "px";
+                cell.style.height = cellSide + "px";
+                cell.style.left = x + "px";
+                cell.style.top = y + "px";
+                cell.style.border = cellBorder + "px black solid";
+
+                return cell;
+            };
+
+            const createBlock = (x, y, m, n, color) => {
+                var block = document.createElement("div");
+                block.classList.add("block");
+                block.style.position = "relative";
+                block.display = "inline-block";
+                block.style.left = x + "px";
+                block.style.top = y + "px";
+
+                block.cells = [];
+                for (i = 0; i < m; i++) {
+                    for (j = 0; j < n; j++) {
+                        var cell = createCell(j * totalCellSize, i * totalCellSize, color);
+                        block.cells.push(cell)
+                        block.appendChild(cell);
+                    }
+                }
+
+                block.cell = (i, j) => {
+                    return block.cells[i * n + j];
+                };
+
+                return block;
+            };
+
+            const blocks = {
+                redBlock    : createBlock(topLeft.x + blockSize(blockSides.b), topLeft.y + blockSize(blockSides.b), blockSides.b, blockSides.a, "red"),
+                blueBlock   : createBlock(topLeft.x, topLeft.y + blockSize(blockSides.b), blockSides.a, blockSides.b, "blue"),
+                orangeBlock : createBlock(topLeft.x + blockSize(1), topLeft.y, blockSides.b, blockSides.a, "orange"),
+                greenBlock  : createBlock(topLeft.x + blockSize(blockSides.b), topLeft.y + blockSize(1), blockSides.a, blockSides.b, "green"),
+                centerBlock : createBlock(topLeft.x + blockSize(finalSide / 2), topLeft.y + blockSize(finalSide / 2), 1, 1, "gray"),
+                forEach     : function(f) {
+                                    f(this.redBlock);
+                                    f(this.blueBlock);
+                                    f(this.orangeBlock);
+                                    f(this.greenBlock);
+                                    f(this.centerBlock);
+                              },
+            }
+            
+            const initWindmill = (blocks) => {
+                blocks.forEach((block) => {
+                    block.windmillCells = [];   
+                });
+                for (i = 0; i < blockSides.a; i++) {
+                    blocks.redBlock.windmillCells.push([blockSides.a, i]);
+                    blocks.greenBlock.windmillCells.push([i, blockSides.a]);
+                    blocks.orangeBlock.windmillCells.push([0, i]);
+                    blocks.blueBlock.windmillCells.push([i, 0]);
+                }
+            };
+        
+            const setCellOpacity = (opacity, i, j, block) => {
+                setOpacity(opacity, block.cell(i, j));
+            };
+            
+            const setWindmillOpacities = (opacity, blocks) => {
+                blocks.forEach((block) => {
+                    block.windmillCells.forEach((coord) => {
+                        setCellOpacity(opacity, coord[0], coord[1], block);
+                    });
+                });
+            };
+
+            const init = (canvas) => {
+                initWindmill(blocks);
+                setWindmillOpacities(0, blocks);
+                setOpacity(0, blocks.centerBlock);
+                blocks.forEach((block) => {
+                    canvas.appendChild(block);
+                });
+            }
+
+            const animate = {
+                extend : () => {
+                    setWindmillOpacities(1, blocks);
+                },
+                shuffle : () => {
+                    setPosition(topLeft.x + blockSize(0.5), topLeft.y + blockSize(0.5), blocks.redBlock);
+                    setPosition(topLeft.x + blockSize(0.5 + blockSides.b), topLeft.y + blockSize(0.5 + blockSides.a), blocks.orangeBlock);
+                    setPosition(topLeft.x + blockSize(0.5 + blockSides.a), topLeft.y + blockSize(0.5), blocks.blueBlock);
+                    setPosition(topLeft.x + blockSize(0.5), topLeft.y + blockSize(0.5 + blockSides.b), blocks.greenBlock);
+                },
+                centerAppear : () => {
+                    setOpacity(1, blocks.centerBlock);
+                },
+            };
+            
+            return { init, animate };
+        };
+
+        const runSquareAnimation = (finalSide) => {
+            const cellSizes = {
+                cellSide    :  40,
+                cellBorder  :   2,
+                cellGap     :   2,
+            };
+            const totalSide = (cellSizes.cellSide + 2 * cellSizes.cellBorder + cellSizes.cellGap) * (finalSide + 1);
+            const topLeft = {
+                x: canvas.offsetWidth / 2 - totalSide / 2,
+                y: canvas.offsetHeight / 2 - totalSide / 2,
+            };
+            
+
+            const square = animateSquare(cellSizes, finalSide, topLeft, canvas);
+
+            canvas.innerHTML = "";
+            square.init(canvas);
+            setTimeout(square.animate.extend, 2000);
+            setTimeout(square.animate.shuffle, 4000);
+            setTimeout(square.animate.centerAppear, 6000);
+        };
+
+        const sideDisplay = document.getElementById("finalSide");
+        sideDisplay.innerHTML = finalSide;
+
+        const plusTwo = () => {
+            finalSide += 2;
+            sideDisplay.innerHTML = finalSide;
+            runSquareAnimation(finalSide);
+        };
+        
+        const minusTwo = () => {
+            if (finalSide <= 3) {
+                return;
+            }
+            finalSide -= 2;
+            sideDisplay.innerHTML = finalSide;
+            runSquareAnimation(finalSide);
+        };
+        
+        const replay = () => {
+            sideDisplay.innerHTML = finalSide;
+            runSquareAnimation(finalSide);
+        };
+
+        runSquareAnimation(finalSide);
+    </script>
+</html>

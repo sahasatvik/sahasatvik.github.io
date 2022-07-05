@@ -255,10 +255,32 @@ nav a:hover {
     content: '-';
 }
 
-#welearnbot-img, #conway-img, #fibonacci-img, #minesweeper-img, #soundcloud-img {
+#csokoban-img,
+#csnake-img,
+#welearnbot-img,
+#conway-img,
+#fibonacci-img,
+#minesweeper-img,
+#soundcloud-img {
     display: inline-block;
     width: 100%;
     height: auto;
+}
+
+#csokoban-img {
+    transform: scale(0.8);
+}
+
+.light-theme #csokoban-img {
+    filter: invert(100%) brightness(1.15);
+}
+
+#csnake-img {
+    transform: scale(0.8);
+}
+
+.light-theme #csnake-img {
+    filter: invert(100%) brightness(1.15);
 }
 
 #welearnbot-img {

@@ -9,10 +9,10 @@
         <div id="canvas">
         </div>
         <div id="controls">
-            <div class="button" id="minusTwo" onclick="minusTwo()">-</div>
+            <div class="button" id="minusTwo" onclick="play(-2)">-</div>
             <div class="display" id="finalSide"></div>
-            <div class="button" id="plusTwo" onclick="plusTwo()">+</div>
-            <div class="button" id="replay" onclick="replay()">R</div>
+            <div class="button" id="plusTwo" onclick="play(2)">+</div>
+            <div class="button" id="replay" onclick="play(0)">R</div>
         </div>
         <div id="credit">
             Visualization by Sayan Dutta.
@@ -110,9 +110,7 @@
                 b: (finalSide + 1) / 2,
             };
             
-            const blockSize = (m) => {
-                return totalCellSize * m;
-            };
+            const blockSize = (m) => totalCellSize * m;
             
             const createCell = (x, y, color) => {
                 var cell = document.createElement("div");
@@ -250,28 +248,16 @@
         };
 
         const sideDisplay = document.getElementById("finalSide");
-        sideDisplay.innerHTML = finalSide;
 
-        const plusTwo = () => {
-            finalSide += 2;
-            sideDisplay.innerHTML = finalSide;
-            runSquareAnimation(finalSide);
-        };
-        
-        const minusTwo = () => {
-            if (finalSide <= 3) {
+        const play = (delta) => {
+            if ((delta < 0 && finalSide <= 3) || (delta % 2) == 1) {
                 return;
             }
-            finalSide -= 2;
-            sideDisplay.innerHTML = finalSide;
-            runSquareAnimation(finalSide);
-        };
-        
-        const replay = () => {
+            finalSide += delta;
             sideDisplay.innerHTML = finalSide;
             runSquareAnimation(finalSide);
         };
 
-        runSquareAnimation(finalSide);
+        play(0);
     </script>
 </html>

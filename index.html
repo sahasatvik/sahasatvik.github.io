@@ -6,7 +6,7 @@
     <meta name="author" content="Satvik Saha">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="I'm an undergraduate at IISER Kolkata, an amateur programmer, chess player, and violinist.">
-    
+
     <title>Satvik Saha</title>
 
     <!-- Set the favicon -->
@@ -14,9 +14,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href="icons/site.webmanifest">
-    
+
     <!-- Google icon fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" > 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
     <!-- Stylesheets -->
     <link rel="stylesheet" href="cards.css">
     <link rel="stylesheet" href="styles.css">
@@ -66,7 +66,7 @@
             <div id="aboutme" class="card borderless col-6 row-1">
                 <div class="card-title">
                     Hey there!
-                </div> 
+                </div>
                 <div class="card-inner-container">
                     <div class="card-item">
                         I'm an undergraduate at <a href="https://www.iiserkol.ac.in/web/en/" target="_blank">IISER Kolkata</a>,
@@ -210,7 +210,7 @@
                     </div>
                     <div class="card-item">
                         A superpermutation is a string formed from a set of n symbols,
-                        such that every one of the n! permutations of those symbols appears at least once as a contiguous block of n characters 
+                        such that every one of the n! permutations of those symbols appears at least once as a contiguous block of n characters
                         in the string.
                     </div>
                     <div class="card-item">
@@ -231,7 +231,7 @@
                 <ul class="card-inner-container">
                     <li class="card-item">
                         The Little Prince,
-                        <i>Antoine de Saint-Exupéry</i>    
+                        <i>Antoine de Saint-Exupéry</i>
                     </li>
                     <li class="card-item">
                         The Hitchhiker's Guide to the Galaxy,
@@ -244,6 +244,10 @@
                     <li class="card-item">
                         His Dark Materials,
                         <i>Philip Pullman</i>
+                    </li>
+                    <li class="card-item">
+                        The Mysterious Island
+                        <i>Jules Verne</i>
                     </li>
                     <li class="card-item">
                         A Short History of Nearly Everything,
@@ -267,8 +271,8 @@
                         Watch my most recent game at <a href="https://lichess.org/@/sahasatvik/tv" target="_blank">sahasatvik/tv</a>.
                     </div>
                     <div class="card-item" id="lichess-stats">
-                        <a href="https://lichess.org/@/sahasatvik/perf/rapid" target="_blank" class="lichess-rating" id="lichess-rapid">Rapid: 1600</a> 
-                        <a href="https://lichess.org/@/sahasatvik/perf/blitz" target="_blank" class="lichess-rating" id="lichess-blitz">Blitz: 1500</a> 
+                        <a href="https://lichess.org/@/sahasatvik/perf/rapid" target="_blank" class="lichess-rating" id="lichess-rapid">Rapid: 1600</a>
+                        <a href="https://lichess.org/@/sahasatvik/perf/blitz" target="_blank" class="lichess-rating" id="lichess-blitz">Blitz: 1500</a>
                         <a href="https://lichess.org/@/sahasatvik/perf/bullet" target="_blank" class="lichess-rating" id="lichess-bullet">Bullet: 1400</a>
                     </div>
                 </div>
@@ -281,13 +285,13 @@
                 <div class="card-inner-container">
                     <div class="card-item" id="now-playing-album"></div>
                     <div class="card-item" id="now-playing">
-                        <a class="card-item" id="now-playing-artist" target="_blank"></a> - 
+                        <a class="card-item" id="now-playing-artist" target="_blank"></a> -
                         <a class="card-item" id="now-playing-track" target="_blank"></a>
                     </div>
                 </div>
             </div>
             <!-- Contact information links -->
-            <div id="contacts" class="card card-row borderless"> 
+            <div id="contacts" class="card card-row borderless">
                 <div class="card-inner-container">
                     <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
                     <a class="card-item" href="mailto:sahasatvik@gmail.com" target="_blank">gmail</a>
@@ -308,7 +312,7 @@
             qNumber = Number.isFinite(n)? n : -1;
         }
         showQuote(qNumber, quotes);
-        
+
         // Get stored theme info
         var light;
         try {
@@ -317,7 +321,7 @@
         } catch (err) {
             light = false;
         }
-        
+
         // Switch themes by setting the appropriate class on the body
         function lightTheme() {
             document.body.classList.remove("dark-theme");
@@ -381,7 +385,7 @@
         };
 
         // Display the currently playing track from last.fm
-        var lastfmURL = 
+        var lastfmURL =
             'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sahasatvik&api_key=3193e14c84770e38d316f60f08134807&limit=1&format=json';
         function updateNowPlaying () {
             getJSON(lastfmURL,
@@ -423,7 +427,7 @@
                         document.getElementById('lichess-rapid').innerHTML = "Rapid: " + data['perfs']['rapid']['rating'];
                         document.getElementById('lichess-blitz').innerHTML = "Blitz: " + data['perfs']['blitz']['rating'];
                         document.getElementById('lichess-bullet').innerHTML = "Bullet: " + data['perfs']['bullet']['rating'];
-                        
+
                         var rapidProg = data['perfs']['rapid']['prog'];
                         var blitzProg = data['perfs']['blitz']['prog'];
                         var bulletProg = data['perfs']['bullet']['prog'];
@@ -434,9 +438,9 @@
                                 return "<span class='prog-down'>" + " &#8595;" + (-prog) + "</span>";
                             }
                         }
-                        document.getElementById('lichess-rapid').innerHTML += progString(rapidProg); 
-                        document.getElementById('lichess-blitz').innerHTML += progString(blitzProg); 
-                        document.getElementById('lichess-bullet').innerHTML += progString(bulletProg); 
+                        document.getElementById('lichess-rapid').innerHTML += progString(rapidProg);
+                        document.getElementById('lichess-blitz').innerHTML += progString(blitzProg);
+                        document.getElementById('lichess-bullet').innerHTML += progString(bulletProg);
                     } else {
                         document.getElementById('lichess-playing-card').style.display = 'none';
                     }

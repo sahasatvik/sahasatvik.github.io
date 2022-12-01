@@ -414,33 +414,42 @@
         }
 
         // Display the lichess rating card if currently online
-        var lichessURL = "https://lichess.org/api/user/sahasatvik";
+        var lichessStatusURL = "https://lichess.org/api/users/status?ids=sahasatvik";
+        var lichessDataURL = "https://lichess.org/api/user/sahasatvik";
         function updateLichess () {
-            getJSON(lichessURL,
+            getJSON(lichessStatusURL,
                 function(err, data) {
                     if (err) {
                         document.getElementById('lichess-playing-card').style.display = 'none';
                         return;
                     }
-                    if (data['online'] === true) {
-                        document.getElementById('lichess-playing-card').style.display = 'block';
-                        document.getElementById('lichess-rapid').innerHTML = "Rapid: " + data['perfs']['rapid']['rating'];
-                        document.getElementById('lichess-blitz').innerHTML = "Blitz: " + data['perfs']['blitz']['rating'];
-                        document.getElementById('lichess-bullet').innerHTML = "Bullet: " + data['perfs']['bullet']['rating'];
+                    if (data[0]['online'] === true) {
+                        getJSON(lichessDataURL,
+                            function(err, data) {
+                                if (err) {
+                                    document.getElementById('lichess-playing-card').style.display = 'none';
+                                    return;
+                                }
+                                document.getElementById('lichess-playing-card').style.display = 'block';
+                                document.getElementById('lichess-rapid').innerHTML = "Rapid: " + data['perfs']['rapid']['rating'];
+                                document.getElementById('lichess-blitz').innerHTML = "Blitz: " + data['perfs']['blitz']['rating'];
+                                document.getElementById('lichess-bullet').innerHTML = "Bullet: " + data['perfs']['bullet']['rating'];
 
-                        var rapidProg = data['perfs']['rapid']['prog'];
-                        var blitzProg = data['perfs']['blitz']['prog'];
-                        var bulletProg = data['perfs']['bullet']['prog'];
-                        function progString(prog) {
-                            if (prog >= 0) {
-                                return "<span class='prog-up'>" + " &#8593;" + prog + "</span>";
-                            } else {
-                                return "<span class='prog-down'>" + " &#8595;" + (-prog) + "</span>";
+                                var rapidProg = data['perfs']['rapid']['prog'];
+                                var blitzProg = data['perfs']['blitz']['prog'];
+                                var bulletProg = data['perfs']['bullet']['prog'];
+                                function progString(prog) {
+                                    if (prog >= 0) {
+                                        return "<span class='prog-up'>" + " &#8593;" + prog + "</span>";
+                                    } else {
+                                        return "<span class='prog-down'>" + " &#8595;" + (-prog) + "</span>";
+                                    }
+                                }
+                                document.getElementById('lichess-rapid').innerHTML += progString(rapidProg);
+                                document.getElementById('lichess-blitz').innerHTML += progString(blitzProg);
+                                document.getElementById('lichess-bullet').innerHTML += progString(bulletProg);
                             }
-                        }
-                        document.getElementById('lichess-rapid').innerHTML += progString(rapidProg);
-                        document.getElementById('lichess-blitz').innerHTML += progString(blitzProg);
-                        document.getElementById('lichess-bullet').innerHTML += progString(bulletProg);
+                        );
                     } else {
                         document.getElementById('lichess-playing-card').style.display = 'none';
                     }

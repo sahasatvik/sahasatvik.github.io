@@ -255,6 +255,7 @@ nav a:hover {
     content: '-';
 }
 
+#typst-theorems-img,
 #csokoban-img,
 #csnake-img,
 #welearnbot-img,
@@ -265,6 +266,10 @@ nav a:hover {
     display: inline-block;
     width: 100%;
     height: auto;
+}
+
+.dark-theme #typst-theorems-img {
+    filter: invert(90%) brightness(1.20);
 }
 
 #csokoban-img {

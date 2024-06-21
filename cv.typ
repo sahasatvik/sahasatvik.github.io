@@ -3,11 +3,14 @@
   title: "Curriculum Vitae",
   name: "Satvik Saha",
   affiliation: [
-    Department of Mathematics and Statistics,\
-    Indian Institute of Science Education and Research, Kolkata.
+    // Department of Mathematics and Statistics,\
+    // Indian Institute of Science Education and Research, Kolkata.
+    Department of Statistics,\
+    Columbia University, New York.
   ],
   links: (
-    "sahasatvik@gmail.com": "mailto:sahasatvik@gmail.com",
+    "satvik.saha@columbia.edu": "mailto:satvik.saha@columbia.edu",
+    // "sahasatvik@gmail.com": "mailto:sahasatvik@gmail.com",
     "sahasatvik.github.io": "https://sahasatvik.github.io"
   )
 )
@@ -16,23 +19,27 @@
 
 = Education
 
-#cvitem("August 2019", "July 2024")[
-  *BS-MS*, _Indian Institute of Science Education and Research, Kolkata_\
-  Current CGPA -- 9.67/10
+#cvitem("August 2019", "June 2024")[
+  *BS-MS in Mathematics*, _Indian Institute of Science Education and Research, Kolkata_\
+  CGPA -- 9.7/10, ranked 1#super[st] in the Department of Mathematics and Statistics.\
+  Teaching Assistant for Mathematics I, Statistics I.
 
-  *Relevant courses*:
-    Probability I-II,
-    Statistics I-II,
-    Statistical Inference,
-    Nonparametric Statistics,
-    Multivariate Statistics,
-    Linear Models,
-    Numerical Analysis,
-    Machine Learning and Network Analysis,
-    Algebraic Topology.
+  // *Relevant courses*:
+  //   Probability I-II,
+  //   Statistics I-II,
+  //   Statistical Inference,
+  //   Nonparametric Statistics,
+  //   Multivariate Statistics,
+  //   Bayesian Analysis,
+  //   Linear Models,
+  //   Numerical Analysis,
+  //   Machine Learning and Network Analysis,
+  //   Algebraic Topology.
 
-  *Teaching experience*: Teaching Assistant for Mathematics I, Statistics I.
+  // *Teaching experience*: Teaching Assistant for Mathematics I, Statistics I.
 ]
+
+#v(0.2em)
 
 #cvitem("2019")[
   *ISC*, _Delhi Public School, Megacity, Kolkata_\
@@ -48,29 +55,36 @@
 = Research Interests
 
 #cvitem[
-  Data Depth Statistics,
+  Optimal Transport,
   Nonparametric Statistics,
-  Computational Statistics,
-  Machine Learning.
+  Data Depth Statistics.
+  // Computational Statistics,
+  // Machine Learning.
 ]
 
 
 = Awards and Achievements
 
-#cvitem("2023")[
-  Scored 117/120 in the TOEFL iBT Test.
+#cvitem("2024")[
+  Awarded the Director's Gold Medal for securing the highest CGPA in the
+  Department of Mathematics and Statistics.
 ]
-#v(-0.5em)
+#v(-0.3em)
+// #cvitem("2023")[
+//   Scored 117/120 in the TOEFL iBT Test.
+// ]
+// #v(-0.3em)
 #cvitem("2023")[
   Awarded the _MITACS Globalink Research Internship_ (GRI) scholarship.
 ]
-#v(-0.5em)
-#cvitem("2022")[
-  Scored 338/340 in the GRE General Test.
-]
-#v(-0.5em)
+#v(-0.3em)
+// #cvitem("2022")[
+//   Scored 338/340 in the GRE General Test.
+// ]
+// #v(-0.3em)
 #cvitem("2017")[
-  Awarded the _Kishore Vaigyanik Protsahan Yojana_ (KVPY) scholarship, with rank 649 (SA).
+  Awarded the _Kishore Vaigyanik Protsahan Yojana_ (KVPY) scholarship, with
+  rank 649 (SA).
 ]
 
 
@@ -81,22 +95,27 @@
   Annual Meeting_ at the University of New Brunswick, Fredericton.
 ]
 #cvitem("2017")[
-  Attended the _National Science (Vijyoshi) Camp_ at IISc Bangalore, as a KVPY fellow.
+  Attended the _National Science (Vijyoshi) Camp_ at IISc Bangalore, as a KVPY
+  fellow.
 ]
 
 
 #pagebreak()
 = Projects
 
-#cvitem("August 2023", "present")[
-  *Data Depth Statistics (MS Thesis)*\
+#cvitem("August 2023", "May 2024")[
+  *Statistical Depths for Multivariate and Functional Data with Applications* _(MS Thesis)_\
   *Supervisor*: Dr. Anirvan Chakraborty, IISER Kolkata
 
   #set text(11pt)
-  Studying the role of statistical depth functions in exploratory data
-  analysis, multivariate inference, classification and clustering, outlier
-  detection, regression, etc.
-  Focus on high dimensional and functional data.
+  Studied the construction of numerous depth functions on finite-dimensional
+  as well as function spaces, along with their properties.
+  Examined applications in exploratory data analysis, testing, classification,
+  clustering, and outlier detection tasks.
+  Briefly focused on the concept of local depth, and used this to propose a
+  new kernel based regression procedure.
+  (#link("https://raw.githubusercontent.com/sahasatvik/ms-thesis/master/thesis.pdf")[thesis],
+  #link("https://raw.githubusercontent.com/sahasatvik/ms-thesis/master/presentation.pdf")[presentation])
 ]
 
 #cvitem("May 2023", "July 2023")[
@@ -161,26 +180,25 @@
 ]
 
 
+#pagebreak()
 = Publications
 
 #cvitem("2024")[
   Saha, S., Gupta, S., Dutta, S., Chatterjee, S.
   "Characterising Solutions of Anomalous Cancellation."
   _Resonance_, *29*, 51--68.
-  #smallcaps[doi]:
-  #link("https://doi.org/10.1007/s12045-024-1737-2")[`10.1007/s12045-024-1737-2`]
+  #link("https://doi.org/10.1007/s12045-024-1737-2")[`doi:10.1007/s12045-024-1737-2`]
 ]
 
 #cvitem("2020")[
   Upadhyay, R.K., Chatterjee, S., Saha, S., Azad, R.K.
   "Age-group-targeted testing for COVID-19 as a new prevention strategy."
   _Nonlinear Dynamics_, *101*, 1921--1932.
-  #smallcaps[doi]:
-  #link("https://doi.org/10.1007/s11071-020-05879-x")[`10.1007/s11071-020-05879-x`]
+  #link("https://doi.org/10.1007/s11071-020-05879-x")[`doi:10.1007/s11071-020-05879-x`]
 ]
 
 
-= Software skills
+= Software Skills
 
 #cvitem("Languages")[
   Proficient in C, Python, R, #smallcaps[matlab]\
@@ -198,7 +216,7 @@
 ]
 
 
-= Student interests
+= Student Interests
 
 #cvitem("Chess")[
   Played for the IISER Kolkata Chess Team in the _Inter IISER Sports Meet_
@@ -208,7 +226,7 @@
 #cvitem("Coding")[
   Contributed to writing and maintaining the
   #link("https://github.com/ParthBibekar/Welearn-bot")[welearn-bot] project, a
-  command line interface for my institute’s learning platform.
+  command line interface for IISER Kolkata's learning platform.
 
   Designed and wrote the
   #link("https://www.iiserkol.ac.in/~maths.club/")[website] of Identity, the
@@ -225,6 +243,6 @@
   coordinated events and competitions, designed problems, contributed articles
   and blog posts.
 
-  Part of the winning team in the Mathematics Treasure Hunt, 2020 organized by
-  IISER Pune.
+  Part of the winning team in the Mathematics Treasure Hunt, 2020, organized
+  by IISER Pune.
 ]

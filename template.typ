@@ -5,7 +5,7 @@
 #let conf(title: "", name: "", affiliation: "", links: (), doc) = {
 
   set document(title: title, author: name)
-  set page(paper: "a4", numbering: "1", margin: (bottom: 0.6in))
+  set page(paper: "a4", numbering: "1", margin: (bottom: 1.0in))
   set text(12pt)
   set par(justify: true)
 

@@ -114,8 +114,8 @@
   clustering, and outlier detection tasks.
   Briefly focused on the concept of local depth, and used this to propose a
   new kernel based regression procedure.
-  (#link("https://raw.githubusercontent.com/sahasatvik/ms-thesis/master/thesis.pdf")[thesis],
-  #link("https://raw.githubusercontent.com/sahasatvik/ms-thesis/master/presentation.pdf")[presentation])
+  (#link("https://sahasatvik.github.io/assignments/MS/thesis.pdf")[thesis],
+  #link("https://sahasatvik.github.io/assignments/MS/presentation_final.pdf")[presentation])
 ]
 
 #cvitem("May 2023", "July 2023")[

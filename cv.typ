@@ -20,7 +20,7 @@
 = Education
 
 #cvitem("August 2019", "June 2024")[
-  *BS-MS in Mathematics*, _Indian Institute of Science Education and Research, Kolkata_\
+  *BS-MS in Mathematical Sciences*, _Indian Institute of Science Education and Research, Kolkata_\
   CGPA -- 9.7/10, ranked 1#super[st] in the Department of Mathematics and Statistics.\
   Teaching Assistant for Mathematics I, Statistics I.
 

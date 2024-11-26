@@ -3,8 +3,6 @@
   title: "Curriculum Vitae",
   name: "Satvik Saha",
   affiliation: [
-    // Department of Mathematics and Statistics,\
-    // Indian Institute of Science Education and Research, Kolkata.
     Department of Statistics,\
     Columbia University, New York.
   ],
@@ -16,8 +14,14 @@
 )
 
 
-
 = Education
+
+#cvitem("September 2024", "present")[
+  *PhD in Statistics*, _Columbia University in the City of New York, New York_\
+  Teaching Assistant for Introduction to Statistics.
+]
+
+#v(0.2em)
 
 #cvitem("August 2019", "June 2024")[
   *BS-MS in Mathematical Sciences*, _Indian Institute of Science Education and Research, Kolkata_\

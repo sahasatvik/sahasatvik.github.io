@@ -18,7 +18,7 @@
 
 #cvitem("September 2024", "present")[
   *PhD in Statistics*, _Columbia University in the City of New York, New York_\
-  Teaching Assistant for Introduction to Statistics.
+  Teaching Assistant for Introduction to Statistics, Bayesian Statistics.
 ]
 
 #v(0.2em)

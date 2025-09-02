@@ -3,7 +3,7 @@
   title: "Curriculum Vitae",
   name: "Satvik Saha",
   affiliation: [
-    Department of Statistics,\
+    Department of Statistics\
     Columbia University, New York.
   ],
   links: (
@@ -18,7 +18,7 @@
 
 #cvitem("September 2024", "present")[
   *PhD in Statistics*, _Columbia University in the City of New York, New York_\
-  Teaching Assistant for Introduction to Statistics, Bayesian Statistics.
+  Teaching Assistant for Introduction to Statistics, Bayesian Statistics, Probability Theory I.
 ]
 
 #v(0.2em)
@@ -59,8 +59,9 @@
 = Research Interests
 
 #cvitem[
+  Variational Inference,
   Optimal Transport,
-  Nonparametric Statistics,
+  // Nonparametric Statistics,
   Data Depth Statistics.
   // Computational Statistics,
   // Machine Learning.

@@ -74,7 +74,7 @@
     --small-size: 15px;
     --aside-size: 16px;
     --aside-line-height: 1.5;
-    --meta-size: 15px;
+    --meta-size: 16px;
     --meta-style: italic;
     --code-scale: 0.8em;
 
@@ -111,11 +111,11 @@
     --sidebar-width-compact: 180px;
     --column-gap-compact: 44px;
     --page-side-stacked: 30px;
-    --page-side-mobile: 23px;
+    --page-side-mobile: 24px;
 
     /* Layout — shared rhythm (entry rules follow preview spacing by default) */
     --paragraph-space: 18px;
-    --entry-space: 25px;
+    --entry-space: 24px;
     --entry-rule-space: var(--preview-gap);
     --entry-detail-space: 8px;
 

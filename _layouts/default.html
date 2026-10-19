@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="{{ site.title | escape }}">
+  <meta name="description" content="{{ page.description | default: page.summary | default: site.description | strip_html | escape }}">
+  {% assign page_title = page.title %}
+  {% unless page.section == 'home' %}
+    {% assign page_section = site.data.structure.sections[page.section] %}
+    {% assign section_title = page_section.title | default: page_section.label %}
+    {% assign page_title = page_title | default: section_title %}
+  {% endunless %}
+  <title>{% if page_title %}{{ page_title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  {% include icons.html %}
+  {% if page.math %}<link rel="stylesheet" href="{{ '/assets/vendor/katex/katex.min.css' | relative_url }}">{% endif %}
+  {% include styles.html %}
+  {% if page.math %}
+  <script defer src="{{ '/assets/vendor/katex/katex.min.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/vendor/katex/contrib/auto-render.min.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/js/math.js' | relative_url }}"></script>
+  {% endif %}
+  {% include external-links.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    {% include header.html %}
+    <main id="main">{{ content }}</main>
+    {% include footer.html %}
+  </div>
+</body>
+</html>

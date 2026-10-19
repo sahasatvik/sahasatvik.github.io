@@ -1,0 +1,141 @@
+/*
+ * Appearance controls.
+ *
+ * 1. Colors: the complete first-party palette and semantic color choices.
+ * 2. Typography: font families, type scales, and statement emphasis.
+ * 3. Layout: reading width, sidebar columns, gutters, and shared rhythm.
+ * 4. Media: preview and gallery sizes.
+ * 5. Print: type size; print colors are grouped with the palette above.
+ *
+ * Selector rules, breakpoints, interaction geometry, and local spacing live in
+ * site.css. Font files and @font-face declarations live in fonts.css; vendor
+ * KaTeX styles stay separate.
+ * Use var(--name) to make a choice follow another control.
+ */
+:root {
+    /* 1. Colors — base palette */
+    --paper: #fcfaf9;
+    --ink: #2b302c;
+    --muted: #687068;
+    --link: #436354;
+    --rule: #dcded3;
+    --sage: #eef1e7;
+    --ochre: #e7d8ae;
+
+    /* Colors — links, navigation, focus, media, and highlights */
+    --link-hover: var(--ink);
+    --link-underline: #aebbae;
+    --link-underline-hover: var(--ink);
+    --nav-active-color: var(--link);
+    --focus-color: var(--link);
+    --preview-background: #f4f2f1;
+    --preview-hover-rule: #aab5a4;
+    --highlight-background: color-mix(in srgb, var(--ochre) 55%, var(--paper));
+    --gallery-backdrop: rgba(43, 48, 44, 0.55);
+
+    /* Colors — mathematical statements (background / text / left rule) */
+    --lemma-bg: var(--sage);
+    --lemma-ink: var(--ink);
+    --lemma-rule: #9aab91;
+    --theorem-bg: #eef0f5;
+    --theorem-ink: var(--ink);
+    --theorem-rule: #9aa9b6;
+    --corollary-bg: #f5efdf;
+    --corollary-ink: var(--ink);
+    --corollary-rule: #c0ac76;
+    --definition-bg: #f5eeed;
+    --definition-ink: var(--ink);
+    --definition-rule: #bc9b94;
+
+    /* Colors — print */
+    --print-paper: white;
+    --print-ink: black;
+    --print-muted: #444;
+    --print-preview-rule: #ccc;
+
+    /* 2. Typography — families, body, and headings */
+    --serif: "Sorts Mill Goudy", serif;
+    --serif-numerals: oldstyle-nums;
+    --mono: "Source Code Pro", monospace;
+    --body-size: 19px;
+    --body-size-mobile: 18px;
+    --body-line-height: 1.6;
+    --heading-font: var(--serif);
+    --heading-weight: 400;
+    --heading-line-height: 1.2;
+    --heading-1-style: italic;
+    --heading-2-style: italic;
+    --heading-3-style: normal;
+    --heading-1-size: clamp(40px, 4.6vw, 58px);
+    --heading-2-size: 29px;
+    --heading-2-size-mobile: 27px;
+    --heading-3-size: 21px;
+    --lead-size: 22px;
+    --small-size: 15px;
+    --aside-size: 16px;
+    --aside-line-height: 1.5;
+    --meta-size: 15px;
+    --meta-style: italic;
+    --code-scale: 0.8em;
+
+    /* Typography — detail-page titles and metadata */
+    --page-title-size: clamp(36px, 4vw, 48px);
+    --page-subtitle-style: normal;
+    --page-subtitle-size: 22px;
+    --page-subtitle-size-mobile: 21px;
+    --page-meta-size: 16px;
+
+    /* Typography — navigation and quotations */
+    --nav-font: var(--serif);
+    --nav-size: 18px;
+    --nav-size-mobile: 17px;
+    --nav-style: normal;
+    --nav-weight: 400;
+    --nav-emphasis-weight: 700;
+    --quote-size: 20px;
+    --quote-mono-size: 17px;
+
+    /* Typography — mathematics and statement body styles */
+    /* Native MathML only; visible KaTeX uses bundled fonts and --math-scale. */
+    --math-font: "STIX Two Math", "Cambria Math", "Latin Modern Math", math;
+    --math-scale: 1em;
+    --lemma-body-style: italic;
+    --theorem-body-style: italic;
+    --corollary-body-style: italic;
+    --definition-body-style: normal;
+
+    /* 3. Layout — reading measure, sidebars, and responsive gutters */
+    --text-width: 650px;
+    --sidebar-width: 205px;
+    --column-gap: 72px;
+    --sidebar-width-compact: 180px;
+    --column-gap-compact: 44px;
+    --page-side-stacked: 30px;
+    --page-side-mobile: 23px;
+
+    /* Layout — shared rhythm (entry rules follow preview spacing by default) */
+    --paragraph-space: 18px;
+    --entry-space: 25px;
+    --entry-rule-space: var(--preview-gap);
+    --entry-detail-space: 8px;
+
+    /* 4. Media — project previews and gallery images */
+    --preview-width: 160px;
+    --preview-gap: 26px;
+    --entry-link-size: 16px;
+    --gallery-image-height: 320px;
+    --gallery-image-height-stacked: 240px;
+    --gallery-image-height-mobile: 280px;
+
+    /* 5. Print — type size */
+    --print-body-size: 12pt;
+}
+
+/* Apply the print palette centrally; components use these same semantic colors. */
+@media print {
+    :root {
+        --paper: var(--print-paper);
+        --ink: var(--print-ink);
+        --muted: var(--print-muted);
+    }
+}

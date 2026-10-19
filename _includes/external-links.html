@@ -1,0 +1,3 @@
+{% unless site.data.settings.links.external_new_tab == false %}
+<script defer src="{{ '/assets/js/external-links.js' | relative_url }}" data-site-url="{{ site.url | escape }}"></script>
+{% endunless %}

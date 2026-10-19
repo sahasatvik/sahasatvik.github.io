@@ -1,0 +1,4 @@
+{%- assign content_kind = page.kind | default: "" | strip -%}
+{%- if content_kind != "" -%}
+<p class="eyebrow">{{ content_kind | escape }}</p>
+{%- endif -%}

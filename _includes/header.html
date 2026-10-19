@@ -1,0 +1,8 @@
+<header class="site-header">
+  <nav class="site-nav" aria-label="Main navigation">
+    {% for section_key in site.data.structure.navigation %}
+    {% assign link = site.data.structure.sections[section_key] %}
+    <a href="{% include url.html url=link.url %}" data-label="{{ link.label | escape }}"{% if page.section == section_key %} aria-current="page"{% endif %}><span>{{ link.label | escape }}</span></a>
+    {% endfor %}
+  </nav>
+</header>

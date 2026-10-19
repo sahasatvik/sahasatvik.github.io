@@ -1,0 +1,18 @@
+{%- capture target -%}{% include url.html url=page.redirect_to %}{%- endcapture -%}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ page.redirect_to | absolute_url | escape }}">
+  <meta http-equiv="refresh" content="0; url={{ target | escape }}">
+  <title>Redirecting</title>
+  {% include icons.html %}
+  {% include styles.html %}
+  {% include external-links.html %}
+</head>
+<body>
+  <p>Redirecting to <a href="{{ target | escape }}">{{ target | escape }}</a>.</p>
+</body>
+</html>

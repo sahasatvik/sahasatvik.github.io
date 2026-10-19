@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% assign section = site.data.structure.sections[page.section] %}
+{% assign heading_id = page.section | append: '-title' %}
+<header class="page-header">
+  <h1 id="{{ heading_id | escape }}">{{ page.title | default: section.title | default: section.label | escape }}</h1>
+  <div class="prose">{{ content }}</div>
+</header>
+<section class="page-grid" aria-labelledby="{{ heading_id | escape }}">
+  <div>
+    {% case page.section %}
+    {% when 'writing' %}
+      {% assign articles = site.articles | sort: "date" | reverse %}
+      {% for article in articles %}{% include article-entry.html article=article %}{% endfor %}
+    {% when 'projects' %}
+      {% assign projects = site.projects | sort: "order" | reverse %}
+      {% for project in projects %}{% include project-entry.html project=project %}{% endfor %}
+    {% endcase %}
+    {% if section.extra_links %}<div class="entry-links">{% for link in section.extra_links %}{% include link.html link=link %}{% endfor %}</div>{% endif %}
+  </div>
+  {% include sidebar.html sidebar=section.sidebar %}
+</section>

@@ -1,0 +1,74 @@
+---
+layout: default
+---
+{% assign home_section = site.data.structure.sections.home %}
+{% assign writing_section = site.data.structure.sections.writing %}
+{% assign projects_section = site.data.structure.sections.projects %}
+<section class="intro page-grid" aria-labelledby="name">
+  <div class="biography">
+    <h1 id="name">{{ site.title | escape }}</h1>
+    {{ content }}
+  </div>
+  <aside class="sidebar">
+    <span class="small-rule" aria-hidden="true"></span>
+    <h2 class="aside-heading">{{ home_section.contact_heading | escape }}</h2>
+    <ul>
+      {% assign home_contacts = site.data.contacts | where: "home", true %}
+      {% for link in home_contacts %}
+        <li>{% include link.html link=link label=link.home_label %}</li>
+      {% endfor %}
+    </ul>
+  </aside>
+</section>
+
+{% include quote.html %}
+
+<section class="content-section page-grid" id="writing" aria-labelledby="writing-title">
+  <div>
+    <div class="section-heading">
+      <h2 id="writing-title">{{ writing_section.title | default: writing_section.label | escape }}</h2>
+      <a class="index-link" href="{% include url.html url=writing_section.url %}">All {{ writing_section.label | downcase | escape }} <span class="text-symbol" aria-hidden="true">›</span></a>
+    </div>
+    {% assign articles = site.articles | where: "featured", true | sort: "date" | reverse %}
+    {% for article in articles %}
+      {% include article-entry.html article=article %}
+    {% endfor %}
+  </div>
+  {% include sidebar.html sidebar=writing_section.sidebar %}
+</section>
+
+<section class="content-section page-grid" id="projects" aria-labelledby="projects-title">
+  <div>
+    <div class="section-heading">
+      <h2 id="projects-title">{{ projects_section.title | default: projects_section.label | escape }}</h2>
+      <a class="index-link" href="{% include url.html url=projects_section.url %}">All {{ projects_section.label | downcase | escape }} <span class="text-symbol" aria-hidden="true">›</span></a>
+    </div>
+    {% assign projects = site.projects | where: "featured", true | sort: "order" | reverse %}
+    {% for project in projects %}
+      {% include project-entry.html project=project %}
+    {% endfor %}
+  </div>
+  {% include sidebar.html sidebar=projects_section.sidebar %}
+</section>
+
+<section class="content-section page-grid" id="reading" aria-labelledby="reading-title">
+  <div>
+    <h2 id="reading-title">{{ home_section.reading.title | escape }}</h2>
+    <ul class="reading-list reading-list--bibliography">
+      {% for book in site.data.books %}
+        <li>
+          <cite>
+          {% if book.url %}
+            <a href="{% include url.html url=book.url %}">{{ book.title | escape }}</a>
+          {% else %}
+            {{ book.title | escape }}
+          {% endif %}
+          </cite>
+          <span class="author"><span class="author-separator" aria-hidden="true">— </span><span class="sr-only">by </span>
+          {{ book.author | escape }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% include sidebar.html sidebar=home_section.reading.sidebar %}
+</section>

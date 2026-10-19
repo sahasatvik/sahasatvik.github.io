@@ -1,0 +1,72 @@
+title: "Satvik Saha"
+description: "Mathematical notes, programming projects, and other interests."
+url: "https://sahasatvik.github.io"
+baseurl: ""
+timezone: "America/New_York"
+
+markdown: "kramdown"
+kramdown:
+  input: "GFM"
+  hard_wrap: false
+  # Emit TeX delimiters for local KaTeX rendering; this does not load MathJax.
+  math_engine: "mathjax"
+  auto_ids: true
+  # Keep generated heading IDs distinct from statement/proof wrapper anchors.
+  auto_id_prefix: "heading-"
+  smart_quotes:
+    - "apos"
+    - "apos"
+    - "quot"
+    - "quot"
+
+collections:
+  articles:
+    output: true
+    permalink: "/writing/:name/"
+  projects:
+    output: true
+    permalink: "/projects/:name/"
+  courses:
+    output: true
+    permalink: "/notes/:name/"
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
+      section: "writing"
+      math: true
+      featured: false
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+      section: "projects"
+      featured: false
+      excerpt_separator: "\n\n"
+  - scope:
+      path: ""
+      type: "galleries"
+    values:
+      layout: "gallery"
+      section: "projects"
+  - scope:
+      path: ""
+      type: "courses"
+    values:
+      layout: "course"
+      section: "notes"
+
+exclude:
+  - "README.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "vendor"
+  - ".bundle"
+  - "scripts"
+  - "examples"
+
+strict_front_matter: true

@@ -1,0 +1,5 @@
+{%- assign category_values = include.item.categories | default: include.item.category | compact -%}
+{%- for category in category_values -%}
+  {%- unless forloop.first -%}{% include meta-separator.html %}{%- endunless -%}
+  {{- category | escape -}}
+{%- endfor -%}

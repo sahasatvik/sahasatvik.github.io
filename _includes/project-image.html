@@ -1,0 +1,18 @@
+{% assign image = include.project.image %}
+{% if image.src %}
+{% assign image_destination = include.project.url %}
+{% assign image_action = "Read" %}
+{% if include.large %}
+  {% assign primary_link = include.project.links | where: "primary", true | first %}
+  {% assign primary_link = primary_link | default: include.project.links.first %}
+  {% assign image_destination = primary_link.url %}
+  {% assign image_action = primary_link.label | default: "Open" %}
+{% endif %}
+<figure class="project-figure{% if include.large %} project-figure-large{% endif %}">
+  {% if image_destination %}<a class="project-preview" href="{% include url.html url=image_destination %}" aria-label="{{ image_action | escape }}: {{ include.project.title | escape }}">{% else %}<div class="project-preview">{% endif %}
+    <img src="{% include url.html url=image.src %}"
+      {% if image.filter %}class="preview-filtered" style="--preview-filter: {{ image.filter | escape }};"{% endif %}
+      {% if image.width and image.height %}width="{{ image.width }}" height="{{ image.height }}"{% endif %} loading="{% if include.large %}eager{% else %}lazy{% endif %}" alt="{{ image.alt | escape }}">
+  {% if image_destination %}</a>{% else %}</div>{% endif %}
+</figure>
+{% endif %}

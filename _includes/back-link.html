@@ -1,0 +1,4 @@
+{% assign back_link = site.data.structure.sections[page.section] %}
+{% if back_link %}
+<p class="back-link"><a href="{% include url.html url=back_link.url %}"><span class="text-symbol" aria-hidden="true">‹</span> Back to {{ back_link.label | downcase | escape }}</a></p>
+{% endif %}

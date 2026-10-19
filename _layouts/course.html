@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign institution = site.data.notes.institutions | where: "id", page.institution | first %}
+<header class="page-header page-grid">
+  <div>
+    {% include eyebrow.html %}
+    <h1>{{ page.title | escape }}</h1>
+    <p class="subtitle">{{ institution.name | escape }}</p>
+    <p class="page-meta">{{ page.term | escape }}</p>
+  </div>
+</header>
+<article class="content-body prose">
+  {{ content }}
+  {% for group in page.resources %}
+  <section class="resource-group"><h2>{{ group.title | escape }}</h2><ul class="resource-links">
+    {% for link in group.links %}<li>{% include link.html link=link %}<span class="resource-file">{{ link.url | split: "/" | last | url_decode | escape }}</span></li>{% endfor %}
+  </ul></section>
+  {% endfor %}
+</article>
+{% include back-link.html %}

@@ -1,0 +1,19 @@
+{% assign quote_settings = site.data.settings.quotes %}
+{% if quote_settings.enabled and site.data.quotes.size > 0 %}
+{% assign fallback_index = quote_settings.fallback_index | default: 0 %}
+{% assign fallback = site.data.quotes[fallback_index] | default: site.data.quotes.first %}
+<section class="quote-section" aria-label="A random quotation">
+  <figure id="quote" class="quotation{% if fallback.font == 'monospace' %} is-monospace{% endif %}" title="Quote #{{ fallback_index }}"
+    data-animate="{% if quote_settings.animate == false %}false{% else %}true{% endif %}"
+    data-character-ms="{{ quote_settings.character_ms | default: 24 }}"
+    data-max-animation-ms="{{ quote_settings.max_animation_ms | default: 3500 }}"
+    data-cursor="{% if quote_settings.cursor == false %}false{% else %}true{% endif %}">
+    <blockquote><p id="quote-text">{{ fallback.text | escape }}</p></blockquote>
+    <figcaption id="quote-author"{% if fallback.author == "" %} hidden{% endif %}>{{ fallback.author | escape }}</figcaption>
+  </figure>
+  <span class="sr-only" id="quote-help"></span>
+  <span class="sr-only" id="quote-announcement" aria-live="polite" aria-atomic="true"></span>
+  <script type="application/json" id="quote-data">{{ site.data.quotes | jsonify | replace: '<', '\u003c' }}</script>
+</section>
+<script defer src="{{ '/assets/js/quotes.js' | relative_url }}"></script>
+{% endif %}

@@ -1,0 +1,16 @@
+<article class="entry{% if include.project.image.src %} project-entry{% endif %}" id="{{ include.project.slug }}">
+  <div class="entry-body">
+    <h3><a href="{{ include.project.url | relative_url }}">{{ include.project.title | escape }}</a></h3>
+    {{ include.project.excerpt }}
+  </div>
+  {% include project-image.html project=include.project %}
+  {% capture category_text %}{% include categories.html item=include.project %}{% endcapture %}
+  {% assign category_text = category_text | strip %}
+  {% assign action_count = include.project.links | size %}
+  {% if category_text != "" or action_count > 0 %}
+  <div class="entry-footer">
+    {% if category_text != "" %}<p class="entry-meta">{{ category_text }}</p>{% endif %}
+    {% if action_count > 0 %}<div class="entry-links">{% for link in include.project.links %}{% include link.html link=link %}{% endfor %}</div>{% endif %}
+  </div>
+  {% endif %}
+</article>

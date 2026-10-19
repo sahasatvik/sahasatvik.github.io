@@ -1,0 +1,6 @@
+{% if include.sidebar %}
+<aside class="sidebar">
+  <h2 class="aside-heading">{{ include.sidebar.title | escape }}</h2>
+  {{ include.sidebar.text | render_markdown }}
+</aside>
+{% endif %}

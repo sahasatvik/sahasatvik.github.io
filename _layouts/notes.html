@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{% assign section = site.data.structure.sections[page.section] %}
+<header class="page-header page-grid">
+  <div>
+    <h1>{{ page.title | default: section.title | default: section.label | escape }}</h1>
+    <div class="prose">{{ content }}</div>
+  </div>
+  <aside class="sidebar">
+    <span class="small-rule" aria-hidden="true"></span>
+    <h2 class="aside-heading">Browse</h2>
+    <ul>
+    {% for institution in site.data.notes.institutions %}
+      <li><a href="#{{ institution.id }}">{{ institution.name | escape }}</a></li>
+    {% endfor %}
+    </ul>
+  </aside>
+</header>
+
+<section class="page-grid">
+<div class="content-body">
+  <div class="notes-search" hidden data-notes-search>
+    <label for="course-search">Find a course or topic</label>
+    <input type="search" id="course-search" placeholder="e.g. analysis, algebra, probability" autocomplete="off">
+    <p class="search-status" aria-live="polite" data-search-status></p>
+  </div>
+  {% for institution in site.data.notes.institutions %}
+  <section class="notes-institution" id="{{ institution.id }}" data-institution>
+    <h2>{{ institution.name | escape }}</h2>
+    {% assign institution_courses = site.courses | where: "institution", institution.id %}
+    {% assign discovered_terms = institution_courses | map: "term" | uniq %}
+    {% assign terms = institution.terms | default: discovered_terms | concat: discovered_terms | uniq %}
+    {% for term in terms %}
+    {% assign term_courses = institution_courses | where: "term", term | sort: "order" %}
+    {% if term_courses.size > 0 %}
+    <details class="notes-term" data-term{% if forloop.first %} open{% endif %}>
+      <summary>{{ term | escape }} <span>{{ term_courses.size }} {% if term_courses.size == 1 %}course{% else %}courses{% endif %}</span></summary>
+      {% for course in term_courses %}
+      <article class="course-entry" data-course data-search="{{ course.title | escape }} {{ course.term | escape }} {{ institution.name | escape }} {% for group in course.resources %}{{ group.title | escape }} {% endfor %}">
+        <h3><a href="{{ course.url | relative_url }}">{{ course.title | escape }}</a></h3>
+        <div class="resource-summary">{% for group in course.resources %}{{ group.title | escape }}{% unless forloop.last %}{% include meta-separator.html %}{% endunless %}{% endfor %}</div>
+      </article>
+      {% endfor %}
+    </details>
+    {% endif %}
+    {% endfor %}
+  </section>
+  {% endfor %}
+  <p hidden data-empty-search>No matching courses. Try a course code or a broader topic.</p>
+</div>
+</section>
+
+<script defer src="{{ '/assets/js/notes.js' | relative_url }}"></script>

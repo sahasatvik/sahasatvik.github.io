@@ -1,0 +1,7 @@
+<footer class="site-footer">
+  <p class="footer-copyright">&copy; {{ site.time | date: "%Y" }} {{ site.title | escape }}</p>
+  <nav class="footer-links" aria-label="Contact and profiles">
+    {% assign contacts = site.data.contacts | where: "footer", true %}
+    {% for link in contacts %}{% include link.html link=link %}{% endfor %}
+  </nav>
+</footer>

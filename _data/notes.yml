@@ -1,0 +1,20 @@
+institutions:
+  - id: "columbia"
+    name: "Columbia University"
+    terms:
+      - "Year III, Fall"
+      - "Year I, Spring"
+  - id: "iiser"
+    name: "Indian Institute of Science Education and Research, Kolkata"
+    terms:
+      - "Year V, Spring"
+      - "Year V, Autumn"
+      - "Year IV, Spring"
+      - "Year IV, Autumn"
+      - "Year III, Spring"
+      - "Year III, Autumn"
+      - "Year II, Summer"
+      - "Year II, Spring"
+      - "Year II, Autumn"
+      - "Year I, Spring"
+      - "Year I, Autumn"

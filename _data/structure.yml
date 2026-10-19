@@ -1,0 +1,52 @@
+# Navigation order references the section records below.
+navigation: [home, writing, notes, projects, cv]
+
+sections:
+  home:
+    label: "Home"
+    url: "/"
+    contact_heading: "Elsewhere"
+    reading:
+      title: "My Bookshelf"
+      sidebar:
+        title: "Other Diversions"
+        text: |-
+          I enjoy [experiments with paper]({{ '/origami/' | relative_url }}) too!
+
+          How about a nice game of [chess](https://lichess.org/@/sahasatvik)?
+
+  writing:
+    label: "Writing"
+    title: "Writing"
+    url: "/writing/"
+    sidebar:
+      title: "From my Studies"
+      text: |-
+        A collection of
+        [course notes and exercises]({{ site.data.structure.sections.notes.url | relative_url }}).
+
+  notes:
+    label: "Notes"
+    title: "Notes & Coursework"
+    url: "/notes/"
+
+  projects:
+    label: "Projects"
+    title: "Projects & Experiments"
+    url: "/projects/"
+    sidebar:
+      title: "Tools"
+      text: |-
+        I mostly write programs in C, Python, and R, and work with LaTeX and Typst.
+
+        Some custom configuration lives in my
+        [dotfiles](https://github.com/sahasatvik/dotfiles).
+    # extra_links:
+    #   - label: "Squares modulo 4"
+    #     url: "/squares/"
+    #   - label: "Dotfiles"
+    #     url: "https://sahasatvik.github.io/dotfiles"
+
+  cv:
+    label: "CV"
+    url: "/cv.pdf"

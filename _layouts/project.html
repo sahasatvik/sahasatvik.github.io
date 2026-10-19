@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<header class="page-header">
+  {% include eyebrow.html %}
+  <h1>{{ page.title | escape }}</h1>
+  {% capture category_text %}{% include categories.html item=page %}{% endcapture %}{% assign category_text = category_text | strip %}
+  {% if category_text != "" %}<p class="page-meta">{{ category_text }}</p>{% endif %}
+</header>
+<article class="content-body prose project-detail">
+  {{ content }}
+  <div class="entry-links">{% for link in page.links %}{% include link.html link=link %}{% endfor %}</div>
+  {% if page.image.src %}
+  <div class="project-media">
+    {% include project-image.html project=page large=true %}
+  </div>
+  {% endif %}
+</article>
+{% include back-link.html %}

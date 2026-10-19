@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<header class="page-header">
+   {% include eyebrow.html %}
+   <h1>{{ page.title | escape }}</h1>
+   {% capture category_text %}{% include categories.html item=page %}{% endcapture %}{% assign category_text = category_text | strip %}
+   {% if category_text != "" %}<p class="page-meta">{{ category_text }}</p>{% endif %}
+</header>
+<div class="content-body prose gallery-intro">
+  {{ content }}
+</div>
+<div class="gallery-grid">
+  {% for item in page.gallery %}
+  <figure class="gallery-item" id="{{ item.id }}">
+    <a class="gallery-image" href="{% include url.html url=item.src %}" data-gallery-item data-gallery-title="{{ item.title | escape }}" data-gallery-alt="{{ item.alt | escape }}">
+      <img src="{% include url.html url=item.src %}" alt="{{ item.alt | escape }}" loading="lazy">
+    </a>
+    <figcaption><h2>{{ item.title | escape }}</h2>{{ item.caption | render_markdown }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+<dialog class="gallery-dialog" aria-labelledby="gallery-viewer-title">
+  <div class="gallery-toolbar"><h2 id="gallery-viewer-title"></h2><button class="text-button" type="button" data-gallery-close>Close</button></div>
+  <img class="gallery-full-image" alt="" data-gallery-full-image>
+  <div class="gallery-toolbar"><button class="text-button" type="button" data-gallery-prev><span class="text-symbol" aria-hidden="true">←</span> Previous</button><span data-gallery-counter aria-live="polite"></span><button class="text-button" type="button" data-gallery-next>Next <span class="text-symbol" aria-hidden="true">→</span></button></div>
+</dialog>
+{% include back-link.html %}
+
+<script defer src="{{ '/assets/js/gallery.js' | relative_url }}"></script>

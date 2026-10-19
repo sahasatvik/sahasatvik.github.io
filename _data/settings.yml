@@ -1,0 +1,9 @@
+links:
+  external_new_tab: true
+quotes:
+  enabled: true
+  fallback_index: 2
+  animate: true
+  character_ms: 20
+  max_animation_ms: 3000
+  cursor: true

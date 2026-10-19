@@ -1,0 +1,1 @@
+<a href="{% include url.html url=include.link.url %}"{% if include.link.new_tab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.label | default: include.link.label | escape }}</a>

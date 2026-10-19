@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<header class="page-header page-grid">
+  <div>
+    {% include eyebrow.html %}
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.subtitle %}
+      <p class="subtitle">{{ page.subtitle | escape }}</p>
+    {% endif %}
+    {% capture category_text %}{% include categories.html item=page %}{% endcapture %}{% assign category_text = category_text | strip %}
+    <p class="page-meta">{% if page.date %}<time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time>{% include meta-separator.html %}{% endif %}{{ page.author | default: site.title | escape }}{% if category_text != "" %}{% include meta-separator.html %}{{ category_text }}{% endif %}</p>
+    {% assign preface_text = page.preface | default: "" | strip %}
+    {% if preface_text != "" %}
+      <div class="preface prose">{{ preface_text | render_markdown }}</div>
+    {% endif %}
+    <span class="small-rule" aria-hidden="true"></span>
+  </div>
+  {% assign toc_html = "" %}
+  {% unless page.toc == false %}{% assign toc_html = content | article_toc %}{% endunless %}
+  {% if toc_html != "" %}
+  <aside class="sidebar">
+    <span class="small-rule" aria-hidden="true"></span>
+    <h2 class="aside-heading">Contents</h2>
+    <nav aria-label="Article contents">
+      {{ toc_html }}
+    </nav>
+  </aside>
+  {% endif %}
+</header>
+<article class="content-body article-content prose">{{ content }}</article>
+{% include back-link.html %}

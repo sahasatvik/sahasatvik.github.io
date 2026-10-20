@@ -28,5 +28,6 @@ layout: default
   </aside>
   {% endif %}
 </header>
-<article class="content-body article-content prose">{{ content }}</article>
+<article class="content-body article-content prose">{{ content | article_sidenotes }}</article>
+<script defer src="{{ '/assets/js/sidenotes.js' | relative_url }}"></script>
 {% include back-link.html %}

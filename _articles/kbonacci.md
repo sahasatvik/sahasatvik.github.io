@@ -33,6 +33,7 @@ $$
 $$
 
 where $$ \varphi $$ and $$ \psi $$ are the roots of the polynomial $$ x^2 - x - 1 = 0$$.
+The larger root $$ \varphi $$ is better known as the _golden ratio_.
 
 <aside class="sidenote" markdown="1">
 The golden ratio
@@ -41,7 +42,6 @@ $$\varphi = (1 + \sqrt{5})/2$$
 $$\approx 1.61803\ldots$$
 </aside>
 
-The larger root $$ \varphi $$ is better known as the _golden ratio_.
 The Fibonacci sequence thus proceeds as follows.
 
 $$
@@ -53,6 +53,7 @@ It can be shown that as $$ n \to \infty$$, the ratio of successive terms, $$ F_{
 ## Generalized Fibonacci sequences
 {: #generalization}
 
+<p></p>
 <aside class="sidenote" markdown="1">
 
 A longer memory
@@ -100,6 +101,7 @@ The polynomial $$ x^k - x^{k-1} - \dots - 1 $$ is of particular interest when in
 ## Roots of the characteristic polynomial
 {: #roots}
 
+<p></p>
 <aside class="sidenote" markdown="1">
 Lemmas 1–3
 {: .aside-heading}
@@ -218,6 +220,7 @@ Therefore, the remaining $$k-1$$ roots of $$q(x)$$ are all roots of $$p(x)$$, su
 ## A Binet-like formula
 {: #formula}
 
+<p></p>
 <aside class="sidenote" markdown="1">
 
 Theorem 1
@@ -366,6 +369,7 @@ Substituting this into the formula from Theorem 1 gives the desired result.
 ## The limiting ratio
 {: #limit}
 
+<p></p>
 <aside class="sidenote" markdown="1">
 
 Theorem 2
@@ -427,11 +431,11 @@ This follows directly from the approximation in Lemma 5, when taking limits usin
 {: #references}
 
 1. Gregory P. Dresden, Zhaohui Du,
-        A simplified Binet formula for k-generalized Fibonacci numbers,
+        [A simplified Binet formula for k-generalized Fibonacci numbers](https://www.maths.tcd.ie/EMIS/journals/JIS/VOL17/Dresden/dresden6.pdf),
         *Journal of Integer Sequences*, **17** (2014), 14.4.7
 
 2. Gwang-Yeon Lee, Sang-Gu Lee, Jin-Soo Kim, Hang-Kyun Shin,
-        On the k-generalized Fibonacci Matrix Q<sub>k</sub>,
+        [On the k-generalized Fibonacci Matrix Q<sub>k</sub>](https://doi.org/10.1016/0024-3795(95)00553-6),
         *Linear Algebra and its Applications*, **251** (1997), 73-88
 
 3. Wolfram MathWorld,

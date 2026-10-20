@@ -520,14 +520,17 @@ main {
     display: block;
     clear: both;
 }
-.prose > h2 {
+.prose > h2,
+.prose > .sidenote-group > h2 {
     margin-top: 40px;
     clear: both;
 }
-.prose > h2:first-child {
+.prose > h2:first-child,
+.prose > .sidenote-group:first-child > h2 {
     margin-top: 10px;
 }
-.prose > h3 {
+.prose > h3,
+.prose > .sidenote-group > h3 {
     margin-top: 26px;
 }
 .prose p {
@@ -541,6 +544,43 @@ main {
     clear: right;
     width: var(--sidebar-width);
     margin-right: calc(-1 * (var(--sidebar-width) + var(--column-gap)));
+    margin-top: 8px;
+}
+/* The build pairs paragraphs/headings with notes. Without the positioning
+   script the notes stay inline in reading order. */
+.sidenote-group {
+    position: relative;
+}
+/* A single column stacks consecutive notes without widening for equations. */
+.sidenote-notes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--paragraph-space);
+}
+.sidenote-notes > .sidenote {
+    width: auto;
+    margin: 0;
+}
+/* Only notes move to resolve collisions; paragraphs keep their normal rhythm.
+   The script supplies offsets and reserves any overhang at the article's end. */
+.sidenotes-positioned {
+    --sidenote-height: 0px;
+    position: relative;
+    min-height: var(--sidenote-height);
+}
+.sidenotes-positioned .sidenote-notes,
+.sidenotes-positioned > .sidenote {
+    --sidenote-offset: 0px;
+    position: absolute;
+    left: calc(100% + var(--column-gap));
+    width: var(--sidebar-width);
+    margin: 0 0 var(--paragraph-space);
+    transform: translateY(var(--sidenote-offset));
+}
+.sidenotes-positioned .sidenote-notes {
+    top: 0;
+}
+.sidenotes-positioned > .sidenote {
     margin-top: 8px;
 }
 .prose .sidenote .aside-heading {
@@ -913,7 +953,24 @@ a.project-preview:hover {
 }
 
 @media (max-width: 820px) {
-    .sidenote {
+    .sidenotes-positioned {
+        min-height: 0;
+    }
+    .sidenotes-positioned .sidenote-notes,
+    .sidenotes-positioned > .sidenote {
+        position: static;
+        width: auto;
+        transform: none;
+    }
+    .sidenotes-positioned .sidenote-notes {
+        margin: 0;
+    }
+    .sidenote-notes {
+        display: block;
+    }
+    .sidenote,
+    .sidenote-notes > .sidenote,
+    .sidenotes-positioned > .sidenote {
         float: none;
         width: 100%;
         margin: var(--paragraph-space) 0 var(--entry-space);
@@ -1072,7 +1129,24 @@ a.project-preview:hover {
         display: none !important;
         animation: none !important;
     }
-    .sidenote {
+    .sidenotes-positioned {
+        min-height: 0;
+    }
+    .sidenotes-positioned .sidenote-notes,
+    .sidenotes-positioned > .sidenote {
+        position: static;
+        width: auto;
+        transform: none;
+    }
+    .sidenotes-positioned .sidenote-notes {
+        margin: 0;
+    }
+    .sidenote-notes {
+        display: block;
+    }
+    .sidenote,
+    .sidenote-notes > .sidenote,
+    .sidenotes-positioned > .sidenote {
         float: none;
         width: 100%;
         margin: 10px 0;

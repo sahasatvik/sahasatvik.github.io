@@ -546,8 +546,8 @@ main {
     margin-right: calc(-1 * (var(--sidebar-width) + var(--column-gap)));
     margin-top: 8px;
 }
-/* The build pairs paragraphs/headings with notes. Without the positioning
-   script the notes stay inline in reading order. */
+/* The build pairs paragraphs, headings, and divs with notes. Without the
+   positioning script the notes stay inline in reading order. */
 .sidenote-group {
     position: relative;
 }

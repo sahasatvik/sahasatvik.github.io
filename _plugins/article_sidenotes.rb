@@ -29,7 +29,7 @@ module AcademicSite
 
   module ArticleSidenoteFilters
     # The article layout receives HTML after Markdown and Liquid conversion.
-    # Adjacent top-level paragraphs or headings pair with their following notes.
+    # Adjacent top-level paragraphs, headings, or divs pair with their following notes.
     def article_sidenotes(input)
       html = input.to_s
       return html unless html.include?("sidenote")
@@ -50,7 +50,9 @@ module AcademicSite
         anchor = blocks[index]
         index += 1
         next unless anchor.type == :html_element &&
-          %w[p h1 h2 h3 h4 h5 h6].include?(anchor.value)
+          %w[div p h1 h2 h3 h4 h5 h6].include?(anchor.value)
+        classes = anchor.attr.fetch("class", "").split
+        next if (classes & %w[sidenote sidenote-group sidenote-notes]).any?
 
         notes = []
         while index < blocks.length && article_sidenote?(blocks[index])

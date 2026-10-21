@@ -53,8 +53,7 @@ It can be shown that as $$ n \to \infty$$, the ratio of successive terms, $$ F_{
 ## Generalized Fibonacci sequences
 {: #generalization}
 
-<p></p>
-<aside class="sidenote" markdown="1">
+<aside class="sidenote" markdown="1" data-attach="next">
 
 A longer memory
 {: .aside-heading}
@@ -101,8 +100,7 @@ The polynomial $$ x^k - x^{k-1} - \dots - 1 $$ is of particular interest when in
 ## Roots of the characteristic polynomial
 {: #roots}
 
-<p></p>
-<aside class="sidenote" markdown="1">
+<aside class="sidenote" markdown="1" data-attach="next">
 Lemmas 1–3
 {: .aside-heading}
 The positive root lies between 1 and 2.
@@ -220,8 +218,7 @@ Therefore, the remaining $$k-1$$ roots of $$q(x)$$ are all roots of $$p(x)$$, su
 ## A Binet-like formula
 {: #formula}
 
-<p></p>
-<aside class="sidenote" markdown="1">
+<aside class="sidenote" markdown="1" data-attach="next">
 
 Theorem 1
 {: .aside-heading}
@@ -369,8 +366,7 @@ Substituting this into the formula from Theorem 1 gives the desired result.
 ## The limiting ratio
 {: #limit}
 
-<p></p>
-<aside class="sidenote" markdown="1">
+<aside class="sidenote" markdown="1" data-attach="next">
 
 Theorem 2
 {: .aside-heading}

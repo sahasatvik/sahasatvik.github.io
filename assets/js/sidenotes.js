@@ -30,7 +30,7 @@
         if (following?.matches(".sidenote-group")) {
             following = following.firstElementChild;
         }
-        return following?.matches("p, h1, h2, h3, h4, h5, h6")
+        return following?.matches("div, p, h1, h2, h3, h4, h5, h6")
             ? following
             : null;
     }

@@ -12,10 +12,10 @@ layout: default
     {% case page.section %}
     {% when 'writing' %}
       {% assign articles = site.articles | sort: "date" | reverse %}
-      {% for article in articles %}{% include article-entry.html article=article %}{% endfor %}
+      {% for article in articles %}{% include entry.html item=article show_date=true %}{% endfor %}
     {% when 'projects' %}
       {% assign projects = site.projects | sort: "order" | reverse %}
-      {% for project in projects %}{% include project-entry.html project=project %}{% endfor %}
+      {% for project in projects %}{% include entry.html item=project %}{% endfor %}
     {% endcase %}
     {% if section.extra_links %}<div class="entry-links">{% for link in section.extra_links %}{% include link.html link=link %}{% endfor %}</div>{% endif %}
   </div>

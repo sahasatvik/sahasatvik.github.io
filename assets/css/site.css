@@ -313,7 +313,6 @@ main {
     align-items: baseline;
     gap: var(--footer-link-gap);
     border-top: var(--rule-width) solid var(--rule);
-    margin-top: auto;
     padding-top: 22px;
     color: var(--muted);
     font-size: 15px;
@@ -346,14 +345,13 @@ main {
     padding-bottom: 0;
     border-bottom: 0;
 }
-.entry p {
-    margin: 0;
+.entry-body > p:last-child {
+    margin-bottom: 0;
 }
-.entry .entry-meta {
+.entry-meta {
     font-size: var(--meta-size);
     font-style: var(--meta-style);
     color: var(--muted);
-    margin: var(--entry-detail-space) 0 0;
 }
 .meta-separator {
     font-weight: 700;
@@ -385,6 +383,34 @@ main {
 }
 .entry-body {
     min-width: 0;
+}
+.entry--with-image {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--preview-width);
+    grid-template-areas: "body preview";
+    align-items: center;
+    column-gap: var(--preview-gap);
+    row-gap: var(--entry-detail-space);
+}
+.entry--with-image:has(> .entry-footer) {
+    grid-template-areas:
+        "body preview"
+        "footer preview";
+}
+.entry--with-image > .entry-body {
+    grid-area: body;
+}
+/* Keep the text and footer together when a taller preview spans both rows. */
+.entry--with-image:has(> .entry-footer) > .entry-body {
+    align-self: end;
+}
+.entry--with-image > .content-figure {
+    grid-area: preview;
+}
+.entry--with-image > .entry-footer {
+    grid-area: footer;
+    align-self: start;
+    margin-top: 0;
 }
 .section-heading {
     display: flex;
@@ -693,60 +719,36 @@ math[display="block"] {
 }
 
 /* ==========================================================================
-   10. Project previews and detail media
+   10. Shared preview images and project detail media
    ========================================================================== */
-.project-entry {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) var(--preview-width);
-    grid-template-areas: "body preview";
-    align-items: center;
-    column-gap: var(--preview-gap);
-    row-gap: var(--entry-detail-space);
-}
-.project-entry:has(> .entry-footer) {
-    grid-template-areas:
-        "body preview"
-        "footer preview";
-}
-.project-entry > .entry-body {
-    grid-area: body;
-}
-/* Keep the text and footer together when a taller preview spans both rows. */
-.project-entry:has(> .entry-footer) > .entry-body {
-    align-self: end;
-}
-.project-entry > .project-figure {
-    grid-area: preview;
-}
-.project-entry > .entry-footer {
-    grid-area: footer;
-    align-self: start;
-    margin-top: 0;
-}
-.project-figure {
+.content-figure {
     margin: 0;
 }
-.project-preview {
+.content-preview {
     display: block;
     background: var(--preview-background);
     border: var(--rule-width) solid var(--rule);
 }
-a.project-preview:hover {
+a.content-preview:hover {
     border-color: var(--preview-hover-rule);
 }
-.project-preview img {
+.content-preview img {
     display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: contain;
 }
-.project-preview .preview-filtered {
+.content-figure--height-capped .content-preview img {
+    width: auto;
+    max-width: 100%;
+    max-height: var(--preview-image-max-height);
+    aspect-ratio: auto;
+    margin-inline: auto;
+}
+.content-preview .preview-filtered {
     filter: var(--preview-filter);
     mix-blend-mode: multiply;
-}
-.project-detail .project-figure {
-    width: 100%;
 }
 .project-detail {
     padding-bottom: 20px;
@@ -754,7 +756,7 @@ a.project-preview:hover {
 .project-media {
     margin-top: 30px;
 }
-.project-figure-large .project-preview img {
+.content-figure--large .content-preview img {
     aspect-ratio: auto;
     max-height: 720px;
 }
@@ -952,7 +954,8 @@ a.project-preview:hover {
     }
 }
 
-@media (max-width: 820px) {
+/* Narrow screens and print share inline notes; their spacing differs below. */
+@media (max-width: 820px), print {
     .sidenotes-positioned {
         min-height: 0;
     }
@@ -973,6 +976,16 @@ a.project-preview:hover {
     .sidenotes-positioned > .sidenote {
         float: none;
         width: 100%;
+    }
+    .content-body {
+        width: 100%;
+    }
+}
+
+@media (max-width: 820px) {
+    .sidenote,
+    .sidenote-notes > .sidenote,
+    .sidenotes-positioned > .sidenote {
         margin: var(--paragraph-space) 0 var(--entry-space);
         border-left: var(--rule-width) solid var(--rule);
         padding-left: var(--paragraph-space);
@@ -983,9 +996,6 @@ a.project-preview:hover {
     }
     .gallery-image img {
         height: var(--gallery-image-height-stacked);
-    }
-    .content-body {
-        width: 100%;
     }
     .page {
         margin: 0 var(--page-side-stacked);
@@ -1020,9 +1030,6 @@ a.project-preview:hover {
     }
     .content-section {
         padding: 30px 0 36px;
-    }
-    .page-header .sidebar {
-        padding-top: 8px;
     }
     .page-header {
         padding: 44px 0 25px;
@@ -1081,14 +1088,14 @@ a.project-preview:hover {
     .page-header .subtitle {
         font-size: var(--page-subtitle-size-mobile);
     }
-    .project-entry {
+    .entry--with-image {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
             "body"
             "preview";
         gap: 17px;
     }
-    .project-entry:has(> .entry-footer) {
+    .entry--with-image:has(> .entry-footer) {
         grid-template-areas:
             "body"
             "preview"
@@ -1100,9 +1107,6 @@ a.project-preview:hover {
     }
     .entry-footer > .entry-links:only-child {
         margin-left: 0;
-    }
-    .project-figure {
-        width: 100%;
     }
 }
 
@@ -1117,7 +1121,7 @@ a.project-preview:hover {
     }
 }
 
-/* Print comes last so narrow-screen overrides cannot supersede print layout. */
+/* Print-specific spacing comes last to override narrow-screen decoration. */
 @media print {
     .notes-search {
         display: none !important;
@@ -1129,32 +1133,12 @@ a.project-preview:hover {
         display: none !important;
         animation: none !important;
     }
-    .sidenotes-positioned {
-        min-height: 0;
-    }
-    .sidenotes-positioned .sidenote-notes,
-    .sidenotes-positioned > .sidenote {
-        position: static;
-        width: auto;
-        transform: none;
-    }
-    .sidenotes-positioned .sidenote-notes {
-        margin: 0;
-    }
-    .sidenote-notes {
-        display: block;
-    }
     .sidenote,
     .sidenote-notes > .sidenote,
     .sidenotes-positioned > .sidenote {
-        float: none;
-        width: 100%;
         margin: 10px 0;
         border: 0;
         padding: 0;
-    }
-    .content-body {
-        width: 100%;
     }
     .gallery-image img {
         height: 200px;
@@ -1195,7 +1179,7 @@ a.project-preview:hover {
     .statement {
         break-inside: avoid;
     }
-    .project-preview {
+    .content-preview {
         border-color: var(--print-preview-rule);
     }
 }

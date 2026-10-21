@@ -11,8 +11,11 @@ layout: default
   {{ content }}
   <div class="entry-links">{% for link in page.links %}{% include link.html link=link %}{% endfor %}</div>
   {% if page.image.src %}
+  {% assign primary_link = page.links | where: "primary", true | first %}
+  {% assign primary_link = primary_link | default: page.links.first %}
+  {% assign image_action = primary_link.label | default: "Open" %}
   <div class="project-media">
-    {% include project-image.html project=page large=true %}
+    {% include content-image.html image=page.image title=page.title destination=primary_link.url action=image_action large=true %}
   </div>
   {% endif %}
 </article>

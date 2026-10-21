@@ -1,19 +1,18 @@
-# Populate in-memory project metadata before Liquid renders any previews/pages.
+# Populate in-memory article/project metadata before Liquid renders previews/pages.
 # Source Markdown is never rewritten.
 require "fastimage"
 require "uri"
 
 module AcademicSite
-  class ProjectImageDimensions < Jekyll::Generator
+  class ImageDimensions < Jekyll::Generator
     priority :high
 
     def generate(site)
       dimensions = {} # Fresh on every rebuild, so replaced images are remeasured.
-      projects = site.collections["projects"]
-      return unless projects
+      documents = %w[articles projects].flat_map { |name| site.collections[name]&.docs || [] }
 
-      projects.docs.each do |project|
-        image = project.data["image"]
+      documents.each do |document|
+        image = document.data["image"]
         next unless image.is_a?(Hash) && image["src"].is_a?(String)
 
         source = image["src"]
@@ -37,7 +36,7 @@ module AcademicSite
           image["height"] = height
         rescue StandardError => error
           raise Jekyll::Errors::FatalException,
-                "Cannot measure project image #{source.inspect} in #{project.relative_path}: #{error.message}"
+                "Cannot measure image #{source.inspect} in #{document.relative_path}: #{error.message}"
         end
       end
     end

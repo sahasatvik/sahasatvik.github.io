@@ -28,7 +28,7 @@
     --link-underline-hover: var(--ink);
     --nav-active-color: var(--link);
     --focus-color: var(--link);
-    --preview-background: #f4f2f1;
+    --preview-background: #f6f4f2;
     --preview-hover-rule: #aab5a4;
     --highlight-background: color-mix(in srgb, var(--ochre) 55%, var(--paper));
     --gallery-backdrop: rgba(43, 48, 44, 0.55);
@@ -113,13 +113,13 @@
     --page-side-stacked: 30px;
     --page-side-mobile: 24px;
 
-    /* Layout — shared rhythm (entry rules follow preview spacing by default) */
+    /* Layout — shared rhythm */
     --paragraph-space: 18px;
     --entry-space: 24px;
-    --entry-rule-space: var(--preview-gap);
+    --entry-rule-space: 26px;
     --entry-detail-space: 8px;
 
-    /* 4. Media — project previews and gallery images */
+    /* 4. Media — article/project previews and gallery images */
     --preview-width: 160px;
     --preview-gap: 26px;
     --entry-link-size: 16px;

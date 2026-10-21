@@ -1,0 +1,16 @@
+{% assign image = include.image %}
+{% if image.src %}
+{% assign preview_max_height = "" %}
+{% unless include.large %}{% assign preview_max_height = image.preview_max_height | default: "" | strip %}{% endunless %}
+<figure class="content-figure{% if include.large %} content-figure--large{% endif %}{% if preview_max_height != "" %} content-figure--height-capped{% endif %}"{% if preview_max_height != "" %} style="--preview-image-max-height: {{ preview_max_height | escape }};"{% endif %}>
+  {% if include.destination %}
+  <a class="content-preview" href="{% include url.html url=include.destination %}" aria-label="{{ include.action | default: 'Read' | escape }}: {{ include.title | escape }}">
+  {% else %}
+  <div class="content-preview">
+  {% endif %}
+    <img src="{% include url.html url=image.src %}"
+      {% if image.filter %}class="preview-filtered" style="--preview-filter: {{ image.filter | escape }};"{% endif %}
+      {% if image.width and image.height %}width="{{ image.width }}" height="{{ image.height }}"{% endif %} loading="{% if include.large %}eager{% else %}lazy{% endif %}" alt="{{ image.alt | escape }}">
+  {% if include.destination %}</a>{% else %}</div>{% endif %}
+</figure>
+{% endif %}

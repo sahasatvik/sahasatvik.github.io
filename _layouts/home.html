@@ -31,7 +31,7 @@ layout: default
     </div>
     {% assign articles = site.articles | where: "featured", true | sort: "date" | reverse %}
     {% for article in articles %}
-      {% include article-entry.html article=article %}
+      {% include entry.html item=article show_date=true %}
     {% endfor %}
   </div>
   {% include sidebar.html sidebar=writing_section.sidebar %}
@@ -45,7 +45,7 @@ layout: default
     </div>
     {% assign projects = site.projects | where: "featured", true | sort: "order" | reverse %}
     {% for project in projects %}
-      {% include project-entry.html project=project %}
+      {% include entry.html item=project %}
     {% endfor %}
   </div>
   {% include sidebar.html sidebar=projects_section.sidebar %}

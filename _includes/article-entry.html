@@ -1,6 +1,0 @@
-<article class="entry">
-  <h3><a href="{{ include.article.url | relative_url }}">{{ include.article.title | escape }}</a></h3>
-  <p>{{ include.article.summary | escape }}</p>
-  {% capture category_text %}{% include categories.html item=include.article %}{% endcapture %}{% assign category_text = category_text | strip %}
-  <p class="entry-meta">{{ include.article.date | date: "%-d %B %Y" }}{% if category_text != "" %}{% include meta-separator.html %}{{ category_text }}{% endif %}</p>
-</article>

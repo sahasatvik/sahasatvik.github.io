@@ -1,0 +1,20 @@
+{% assign entry = include.item %}
+{% assign summary_text = entry.summary | default: "" | strip %}
+{% capture category_text %}{% include categories.html item=entry %}{% endcapture %}
+{% assign category_text = category_text | strip %}
+{% capture metadata %}{% if include.show_date and entry.date %}<time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: "%-d %B %Y" }}</time>{% endif %}{% if category_text != "" %}{% if include.show_date and entry.date %}{% include meta-separator.html %}{% endif %}{{ category_text }}{% endif %}{% endcapture %}
+{% assign metadata = metadata | strip %}
+{% assign action_count = entry.links | size %}
+<article class="entry{% if entry.image.src %} entry--with-image{% endif %}" id="{{ entry.slug | escape }}">
+  <div class="entry-body">
+    <h3><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h3>
+    {% if summary_text != "" %}<p>{{ summary_text | escape }}</p>{% else %}{{ entry.excerpt }}{% endif %}
+  </div>
+  {% include content-image.html image=entry.image title=entry.title destination=entry.url %}
+  {% if metadata != "" or action_count > 0 %}
+  <div class="entry-footer">
+    {% if metadata != "" %}<p class="entry-meta">{{ metadata }}</p>{% endif %}
+    {% if action_count > 0 %}<div class="entry-links">{% for link in entry.links %}{% include link.html link=link %}{% endfor %}</div>{% endif %}
+  </div>
+  {% endif %}
+</article>

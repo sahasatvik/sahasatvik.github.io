@@ -62,7 +62,7 @@ $$
 $$
 
 where $$A$$ and $$C$$ each have $$k$$ digits, and $$b$$ is a single nonzero digit.
-The bars mean joining digits, so $$\overline{24\,9} = 249$$.
+The bars mean joining digits, so $$\overline{(24)\,9} = 249$$.
 The fraction on the right need not be in lowest terms: deleting the digits must simply preserve its value.
 There are no leading zeros, and we set aside identities like $$55/55 = 5/5$$, where every digit is the same.
 From here on, a _solution_ means a nontrivial example of this particular form.

@@ -7,3 +7,11 @@ quotes:
   character_ms: 20
   max_animation_ms: 3000
   cursor: true
+activity:
+  enabled: true
+  refresh_seconds: 30
+  lastfm:
+    username: "sahasatvik"
+    api_key: "3193e14c84770e38d316f60f08134807"
+  lichess:
+    username: "sahasatvik"

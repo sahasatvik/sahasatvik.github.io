@@ -72,3 +72,7 @@ layout: default
   </div>
   {% include sidebar.html sidebar=home_section.reading.sidebar %}
 </section>
+{% if site.data.settings.activity.enabled %}
+<script type="application/json" id="activity-settings">{{ site.data.settings.activity | jsonify | replace: '<', '\u003c' }}</script>
+<script defer src="{{ '/assets/js/activity.js' | relative_url }}" data-external-new-tab="{% if site.data.settings.links.external_new_tab == false %}false{% else %}true{% endif %}"></script>
+{% endif %}

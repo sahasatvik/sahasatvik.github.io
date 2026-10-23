@@ -13,7 +13,11 @@ sections:
         text: |-
           I enjoy [experiments with paper]({{ '/origami/' | relative_url }}) too!
 
+          I’m an amateur violinist, and enjoy both Western and Hindustani classical [music](https://www.last.fm/user/sahasatvik).
+          {% include activity-sentence.html service="lastfm" %}
+
           How about a nice game of [chess](https://lichess.org/@/sahasatvik)?
+          {% include activity-sentence.html service="lichess" %}
 
   writing:
     label: "Writing"

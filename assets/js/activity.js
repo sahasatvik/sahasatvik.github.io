@@ -134,10 +134,9 @@
             link.textContent = name;
             setLink(link, href);
             slot.querySelector("[data-activity-artist]").textContent = artist;
-            slot.querySelector("[data-activity-album]").textContent = album;
+            slot.title = album ? `Album: ${album}` : "";
             slot.querySelector("[data-activity-artist-clause]").hidden =
                 !artist;
-            slot.querySelector("[data-activity-album-clause]").hidden = !album;
             slot.hidden = false;
         });
     }

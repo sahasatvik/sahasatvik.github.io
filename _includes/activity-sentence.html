@@ -1,7 +1,7 @@
 {%- if site.data.settings.activity.enabled -%}
 {%- case include.service -%}
 {%- when 'lastfm' -%}
-<span data-activity="lastfm" hidden> I’m currently listening to <a data-activity-track></a><span data-activity-artist-clause> by <span data-activity-artist></span></span><span data-activity-album-clause> from <cite data-activity-album></cite></span>.</span>
+<span data-activity="lastfm" hidden> I’m currently listening to <a data-activity-track></a><span data-activity-artist-clause> by <span data-activity-artist></span></span>.</span>
 {%- when 'lichess' -%}
 <span data-activity="lichess" hidden><span data-activity-online hidden> I’m online on Lichess.</span><span data-activity-playing hidden> I’m <a data-activity-game>playing a game</a><span data-activity-opponent-clause> against <span data-activity-opponent></span></span>.</span></span>
 {%- endcase -%}
